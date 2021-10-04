@@ -32,6 +32,7 @@
   z-index: 2;
   padding: 25px 0;
   transition: all 0.3s ease;
+  border-bottom: 2px solid #2691d9;
 }
 .navbar .sticky {
   background: #1b1b1b;
@@ -65,8 +66,10 @@
   text-decoration: none;
   transition: all 0.3s ease;
 }
-.menu-list li a:hover {
+.menu-list a:hover {
   color: #2691d9;
+  border-bottom: 1px solid #2691d9;
+  transition: 0.5s;
 }
 
 .icon {
@@ -142,3 +145,60 @@
 
 /*--------------*/
 
+.container {
+  max-width: 500px;
+  width: 90%;
+  margin: 40px auto;
+}
+
+.content {
+  width: 100%;
+}
+
+.txt-home {
+  padding-left: 23px;
+  padding-top: 10px;
+  margin-left: 57px;
+  float: left;
+  position: relative;
+  width: 45%;
+  height: auto;
+  margin-top: 85px;
+}
+
+.txt-home p {
+  text-align: left;
+  padding-top: 40px;
+  font-size: 20px;
+  color: #2691d9;
+}
+
+.img-home {
+  padding-top: 10px;
+  padding-left: 3px;
+  margin-left: -105px;
+  position: relative;
+  float: left;
+  width: 45%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .img-home img {
+    width: 262%;
+    position: relative;
+    padding-right: 2px;
+    margin-left: 61px;
+    margin-top: 65px;
+  }
+
+  .txt-home {
+    display: contents;
+  }
+
+  .txt-home h1,
+  h2,
+  p {
+    text-align: center;
+  }
+}
