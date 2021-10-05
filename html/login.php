@@ -13,26 +13,11 @@
 
 <body>
     <div class="center">
-        <h1>Sign Up</h1>
+        <h1>Login</h1>
         <form method="POST">
             <div class="field">
                 <input type="text" required>
-                <label>Name</label>
-                <span></span>
-            </div>
-            <div class="field">
-                <input type="text" required>
-                <label>Last name</label>
-                <span></span>
-            </div>
-            <div class="field">
-                <input type="text" required>
                 <label>Username</label>
-                <span></span>
-            </div>
-            <div class="field">
-                <input type="text" required>
-                <label>Email</label>
                 <span></span>
             </div>
             <div class="field">
@@ -40,9 +25,9 @@
                 <label>Password</label>
                 <span></span>
             </div>
-            <input type="submit" value="Sign up" class="btn-login">
+            <input type="submit" value="Login" class="btn-login">
             <div class="signup_link">
-                Have an account? <a href="login.html">Log in</a>
+                Not a member? <a href="signup.php">Sign up</a>
             </div>
 
         </form>
