@@ -1,25 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+:root {
+  --first-color: #3f3d90;
+  --second-color: #2691d9;
+  --third-color: #e9f4fb;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  background: white;
+  background: var(--first-color);
 }
 
-/* custom scroll bar */
+/* custom scroll bar  #3f3d56*/
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #2691d9;
+  background: var(--second-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--second-color);
 }
 ::selection {
-  background: #2691d9;
+  background: var(--second-color);
 }
 .content {
   max-width: 1250px;
@@ -32,7 +38,7 @@
   z-index: 2;
   padding: 25px 0;
   transition: all 0.3s ease;
-  border-bottom: 2px solid #2691d9;
+  border-bottom: 2px solid var(--second-color);
 }
 .navbar .sticky {
   background: #1b1b1b;
@@ -45,7 +51,7 @@
   justify-content: space-between;
 }
 .navbar .logo a {
-  color: black;
+  color: var(--third-color);
   font-size: 30px;
   font-weight: 600;
   text-decoration: none;
@@ -58,7 +64,7 @@
   background: none;
 }
 .menu-list li a {
-  color: black;
+  color: var(--third-color);
   background: none;
   font-size: 18px;
   font-weight: 500;
@@ -67,8 +73,8 @@
   transition: all 0.3s ease;
 }
 .menu-list a:hover {
-  color: #2691d9;
-  border-bottom: 1px solid #2691d9;
+  color: var(--second-color);
+  border-bottom: 1px solid var(--second-color);
   transition: 0.5s;
 }
 
@@ -118,7 +124,7 @@
     display: block;
     padding: 40px 0;
     text-align: center;
-    background: black;
+    background: var(--first-color);
     transition: all 0.3s ease;
   }
   .navbar.show .menu-list {
@@ -133,6 +139,11 @@
     transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     color: white;
   }
+
+   .navbar .menu-list li a:hover {
+    color: var(--second-color);
+  }
+
   .navbar.show .menu-list li a {
     margin-left: 0px;
   }
@@ -156,6 +167,7 @@
 }
 
 .txt-home {
+  color: var(--third-color);
   padding-left: 23px;
   padding-top: 10px;
   margin-left: 57px;
@@ -164,13 +176,6 @@
   width: 45%;
   height: auto;
   margin-top: 85px;
-}
-
-.txt-home p {
-  text-align: left;
-  padding-top: 40px;
-  font-size: 20px;
-  color: #2691d9;
 }
 
 .img-home {
@@ -183,13 +188,107 @@
   height: auto;
 }
 
+.txt {
+  text-align: left;
+  padding-top: 40px;
+  font-size: 26px;
+  color: var(--second-color);
+}
+.blink {
+  animation-name: parpadeo;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name: parpadeo;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn-stats {
+  margin-top: 30px;
+  margin-left: 35%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 40px;
+  border: 1px solid;
+  background: var(--first-color);
+  border-radius: 25px;
+  font-size: 18px;
+  color: var(--third-color);
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-stats:hover {
+  border-color: var(--second-color);
+  color: var(--second-color);
+  transition: 0.5s;
+}
+
+.footer p {
+  color: #8e8e8e;
+  background-color: #3f3d56;
+  padding: 30px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 40%;
+}
+
+.footer a {
+  background: none;
+  color: #8e8e8e;
+}
+
+.footer a:hover {
+  color: #f5f5f5;
+}
+
 @media (max-width: 767px) {
   .img-home img {
-    width: 262%;
+    width: 250%;
     position: relative;
     padding-right: 2px;
-    margin-left: 61px;
-    margin-top: 65px;
+    margin-left: 77px;
+    margin-top: 95px;
   }
 
   .txt-home {
@@ -200,5 +299,19 @@
   h2,
   p {
     text-align: center;
+  }
+
+  .txt {
+    text-align: center;
+  }
+
+  .btn-stats {
+    margin-left: 38%;
+    transform: translateX(-50%);
+  }
+  .footer p {
+    margin-top: 83%;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
