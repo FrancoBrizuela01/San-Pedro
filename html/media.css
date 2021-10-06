@@ -130,3 +130,28 @@
     font-size: 27px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .listaEmpleado .navbar {
+    display: table-caption;
+  }
+  .Divcontainer {
+    display: table-cell;
+    margin: -9rem;
+    padding-top: 180px;
+  }
+
+  table {
+    display: inherit;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  table td::before {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
