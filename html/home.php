@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <title>Panaderia San Pedro</title>
 </head>
 
@@ -25,6 +31,7 @@
                 </div>
                 <li><a href="home.php">Inicio</a></li>
                 <li><a href="ListaDeEmpleados.php">Empleados</a></li>
+                <li><a href="#">Adelantos</a></li>
                 <li><a href="provider.php">Proveedor</a></li>
                 <li><a href="#">Productos</a></li>
                 <li><a href="#">Registrar ventas</a></li>
@@ -42,7 +49,7 @@
             <h2>Gestioná tu negocio de la manera más fácil</h2>
 
             <p class="blink txt">Observe las estadísticas de su negocio</p>
-            <button class="btn-stats">See stats</button>
+            <button class="btn-stats">VER ESTADÍSTICAS</button>
         </div>
         <div class="img-home">
             <img src="img/home.svg" alt="instant analysis">

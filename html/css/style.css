@@ -4,6 +4,8 @@
   --first-color: #3f3d90;
   --second-color: #2691d9;
   --third-color: #e9f4fb;
+  --btn-modificar: #1ecd97;
+  --btn-eliminar: #dd0d0d;
 }
 
 * {
@@ -17,7 +19,7 @@ body {
   background: var(--first-color);
 }
 
-/* custom scroll bar  #3f3d56*/
+/*---------- custom scroll bar----------*/
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -25,11 +27,14 @@ body {
   background: var(--second-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--second-color);
+  background: var(--third-color);
+  border-radius: 10px;
 }
 ::selection {
   background: var(--second-color);
 }
+
+/*---------navbar---------*/
 .content {
   max-width: 1250px;
   margin: auto;
@@ -93,14 +98,13 @@ body {
   top: 20px;
 }
 
-/*--------------*/
-
 .container {
   max-width: 500px;
   width: 90%;
   margin: 40px auto;
 }
 
+/*----------txt home----------*/
 .content {
   width: 100%;
 }
@@ -181,28 +185,7 @@ body {
   }
 }
 
-.btn-stats {
-  margin-top: 30px;
-  margin-left: 35%;
-  transform: translateX(-50%);
-  width: 30%;
-  height: 40px;
-  border: 1px solid;
-  background: var(--first-color);
-  border-radius: 25px;
-  font-size: 18px;
-  color: var(--third-color);
-  font-weight: 700;
-  cursor: pointer;
-  outline: none;
-}
-
-.btn-stats:hover {
-  border-color: var(--second-color);
-  color: var(--second-color);
-  transition: 0.5s;
-}
-
+/*----------footer----------*/
 .footer p {
   color: #8e8e8e;
   background-color: #3f3d56;
@@ -222,6 +205,7 @@ body {
   color: #f5f5f5;
 }
 
+/*----------table----------*/
 .Divcontainer {
   margin: 9rem;
   padding: 1rem;
@@ -234,7 +218,6 @@ body {
   text-align: center;
   padding-bottom: 30px;
 }
-
 table {
   table-layout: fixed;
   width: 100%;
@@ -268,6 +251,50 @@ td {
   padding: 20px;
 }
 
+/*/*----------buttons----------*/
+.btn-stats {
+  /* margin-top: 30px;
+  margin-left: 35%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 40px;
+  border: 1px solid;
+  background: var(--first-color);
+  border-radius: 25px;
+  font-size: 18px;
+  color: var(--third-color);
+  font-weight: 700;
+  cursor: pointer;
+  outline: none; */
+  margin-top: 30px;
+  margin-left: 35%;
+  transform: translateX(-50%);
+  outline: none;
+  height: 40px;
+  text-align: center;
+  width: 30%;
+  border-radius: 40px;
+  background: var(--first-color);
+  border: 2px solid var(--second-color);
+  color: var(--second-color);
+  text-shadow: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-right: 10px;
+}
+
+.btn-stats:hover {
+  /* border-color: var(--second-color);
+  color: var(--second-color);
+  transition: 0.5s; */
+  color: white;
+  background: var(--second-color);
+}
+
+.btn-stats:active {
+  letter-spacing: 1px;
+}
+
 .btn-modificar {
   outline: none;
   height: 34px;
@@ -275,8 +302,8 @@ td {
   width: 100px;
   border-radius: 40px;
   background: #fff;
-  border: 2px solid #1ecd97;
-  color: #1ecd97;
+  border: 2px solid var(--btn-modificar);
+  color: var(--btn-modificar);
   text-shadow: 0;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -285,7 +312,7 @@ td {
 
 .btn-modificar:hover {
   color: white;
-  background: #1ecd97;
+  background: var(--btn-modificar);
 }
 
 .btn-modificar:active {
@@ -299,8 +326,8 @@ td {
   width: 100px;
   border-radius: 40px;
   background: #fff;
-  border: 2px solid #dd0d0d;
-  color: #dd0d0d;
+  border: 2px solid var(--btn-eliminar);
+  color: var(--btn-eliminar);
   text-shadow: 0;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -308,10 +335,9 @@ td {
 
 .btn-eliminar:hover {
   color: white;
-  background: #dd0d0d;
+  background: var(--btn-eliminar);
 }
 
 .btn-eliminar:active {
   letter-spacing: 1px;
 }
-

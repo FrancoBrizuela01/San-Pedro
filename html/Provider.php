@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -28,6 +34,7 @@
                     </div>
                     <li><a href="home.php">Inicio</a></li>
                     <li><a href="ListaDeEmpleados.php">Empleados</a></li>
+                    <li><a href="#">Adelantos</a></li>
                     <li><a href="provier.php">Proveedor</a></li>
                     <li><a href="#">Productos</a></li>
                     <li><a href="#">Registrar ventas</a></li>
@@ -54,7 +61,7 @@
                 <tr>
                     <td>nombre</td>
                     <td>Razón Social</td>
-                    <td id=""><button>MODIFICAR</button><button>ELIMINAR</button></td>
+                    <td id=""><button class="btn-modificar">MODIFICAR</button><button class="btn-eliminar">ELIMINAR</button></td>
                 </tr>
             </table>
         </div>

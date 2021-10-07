@@ -13,6 +13,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -35,6 +41,7 @@
                     </div>
                     <li><a href="home.php">Inicio</a></li>
                     <li><a href="ListaDeEmpleados.php">Empleados</a></li>
+                    <li><a href="#">Adelantos</a></li>
                     <li><a href="provider.php">Proveedor</a></li>
                     <li><a href="#">Productos</a></li>
                     <li><a href="#">Registrar ventas</a></li>
@@ -53,19 +60,37 @@
                     <th>NOMBRE</th>
                     <th>APELLIDO</th>
                     <th>DNI</th>
-                    <th>ADELANTOS</th>
                     <th>ACCIONES</th>
                 </tr>
                 <tr>
                     <td>nombre</td>
                     <td>apellido</td>
                     <td>DNI</td>
-                    <td>adelantos</td>
                     <td id=""><button class="btn-modificar">MODIFICAR</button><button class="btn-eliminar">ELIMINAR</button></td>
                     <!--en el id de td pone el codigo del empleado-->
                 </tr>
             </table>
         </div>
+
+        <div class="Divcontainer">
+            <h2>Modificar empleado:</h2>
+            <table>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>DNI</th>
+                    <th>ACCIONES</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="nombre" id="nombre" maxlenght="20" value="aca iria el nombre actual"></td>
+                    <td><input type="text" name="nombre" id="nombre" value="aca iria el apellido actual"></td>
+                    <td><input type="number" name="nombre" id="nombre" value="41589456"></td>
+                    <td id=""><button class="btn-modificar">CONFIRMAR</button><button class="btn-eliminar">CANCELAR</button></td>
+                    <!--en el id de td pone el codigo del empleado-->
+                </tr>
+            </table>
+        </div>
+
 
 
     </div>
