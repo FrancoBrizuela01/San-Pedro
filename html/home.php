@@ -1,3 +1,15 @@
+<?php
+/*controlo si estoy logueado sino no entro*/
+// session_start();
+// if (!isset($_SESSION["logueado"])) {
+//     header("Location: login.php");
+//     exit;
+// }
+
+// $cn = mysqli_connect("localhost", "root", "", "san_pedro");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +57,7 @@
 
     <div class="content">
         <div class="txt-home">
-            <h1>Hola @nombre</h1>
+            <h1>Hola xxxxxx</h1>
             <h2>Gestioná tu negocio de la manera más fácil</h2>
 
             <p class="blink txt">Observe las estadísticas de su negocio</p>
