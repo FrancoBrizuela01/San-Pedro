@@ -90,6 +90,10 @@
   .navbar.show .menu-list li a {
     margin-left: 0px;
   }
+
+  .btn-newEmpleado {
+    width: 18%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -128,5 +132,42 @@
 @media (max-width: 380px) {
   .navbar .logo a {
     font-size: 27px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .listaEmpleado .navbar {
+    display: table-caption;
+  }
+  .Divcontainer {
+    display: table-cell;
+    margin: -9rem;
+    padding-top: 180px;
+    padding-bottom: 150px;
+  }
+
+  .mod-empleados {
+    display: none;
+    margin: -9rem;
+    padding-top: 180px;
+  }
+
+  table {
+    display: inherit;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  table td::before {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .btn-newEmpleado {
+    margin-left: 62%;
+    transform: translateX(-50%);
+    width: 35%;
   }
 }

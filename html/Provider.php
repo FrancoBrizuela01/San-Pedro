@@ -1,10 +1,3 @@
-<!-- /html/ListaDeEmpleados.php (Tiene que tener el mismo nombre que en views)-->
-
-<!-- Aca necesito una pantalla para mostrar el detalle de los empleados -->
-<!-- Tiene que tener un boton para volver al home -->
-<!-- Necesito un boton para agregar un adelanto (me tiene que llevara otra pantalla)-->
-<!-- Y supongo que otro boton para poder ver los adelantos que se hicieron (me tiene que llevar a otra pantalla) -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,69 +46,64 @@
             </div>
         </nav>
 
-        <div class="Divcontainer" id="Divcontainer">
-            <h2>LISTA DE EMPLEADOS:</h2>
+
+
+
+        <div class="Divcontainer">
+            <h2>LISTA DE PROVEEDORES:</h2>
             <table>
                 <tr>
-                    <th>NOMBRE</th>
-                    <th>APELLIDO</th>
-                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Razón Social</th>
                     <th>ACCIONES</th>
                 </tr>
                 <tr>
                     <td>nombre</td>
-                    <td>apellido</td>
-                    <td>DNI</td>
+                    <td>Razón Social</td>
                     <td id=""><a href="#mod-empleados"><button class="btn-modificar" id="btn-modificar" onclick="mostrarModificarEmpleados()">MODIFICAR</button></a>
                         <button class="btn-eliminar">ELIMINAR</button>
-                    </td>
-                    <!--en el id de td pone el codigo del empleado-->
                 </tr>
             </table>
         </div>
 
-        <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO EMPLEADO</button></a>
+        <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO PROVEEDOR</button></a>
 
         <div class="mod-empleados" id="mod-empleados">
-            <h2>MODIFICAR EMPLEADO:</h2>
+            <h2>MODIFICAR PROVEEDOR:</h2>
             <table>
                 <tr>
                     <th>NOMBRE</th>
-                    <th>APELLIDO</th>
-                    <th>DNI</th>
+                    <th>RAZÓN SOCIAL</th>
                     <th>ACCIONES</th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td><input type="text" name="nombre" id="nombre" maxlenght="20" value="aca iria el nombre actual"></td>
                     <td><input type="text" name="nombre" id="nombre" value="aca iria el apellido actual"></td>
-                    <td><input type="number" name="nombre" id="nombre" value="41589456"></td>
-                    <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
-                    <!--en el id de td pone el codigo del empleado-->
-                </tr>
-            </table>
-        </div>
-
-
-
-        <div class="mod-empleados" id="new-empleado">
-            <h2>Nuevo empleado:</h2>
-            <table>
-                <tr>
-                    <th>NOMBRE</th>
-                    <th>APELLIDO</th>
-                    <th>DNI</th>
-                    <th>ACCIONES</th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="nombre" id="nombre" maxlenght="20" value=""></td>
-                    <td><input type="text" name="nombre" id="nombre" value=""></td>
-                    <td><input type="number" name="nombre" id="nombre" value=""></td>
                     <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
                 </tr>
             </table>
         </div>
-
     </div>
+
+    <div class="mod-empleados" id="new-empleado">
+        <h2>Nuevo Proveedor:</h2>
+        <table>
+            <tr>
+                <th>NOMBRE</th>
+                <th>RAZÓN SOCIAL</th>
+                <th>ACCIONES</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><input type="text" name="nombre" id="nombre" maxlenght="20" value=""></td>
+                <td><input type="text" name="nombre" id="nombre" value=""></td>
+                <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+            </tr>
+        </table>
+    </div>
+
+
 
     <script src="js/app.js"></script>
 </body>
