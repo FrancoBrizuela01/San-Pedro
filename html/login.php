@@ -16,12 +16,12 @@
         <h1>Login</h1>
         <form method="POST">
             <div class="field">
-                <input type="text" required>
-                <label>Username</label>
+                <input type="text" required name="email">
+                <label>Email</label>
                 <span></span>
             </div>
             <div class="field">
-                <input type="password" required>
+                <input type="password" required name="passwd">
                 <label>Password</label>
                 <span></span>
             </div>
