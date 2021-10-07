@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
 
     <title>Panadería San Pedro</title>
 </head>
@@ -26,9 +26,6 @@
                 <span></span>
             </div>
             <input type="submit" value="Login" class="btn-login">
-            <div class="signup_link">
-                Not a member? <a href="signup.php">Sign up</a>
-            </div>
 
         </form>
     </div>

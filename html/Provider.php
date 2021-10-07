@@ -1,10 +1,3 @@
-<!-- /html/ListaDeEmpleados.php (Tiene que tener el mismo nombre que en views)-->
-
-<!-- Aca necesito una pantalla para mostrar el detalle de los empleados -->
-<!-- Tiene que tener un boton para volver al home -->
-<!-- Necesito un boton para agregar un adelanto (me tiene que llevara otra pantalla)-->
-<!-- Y supongo que otro boton para poder ver los adelantos que se hicieron (me tiene que llevar a otra pantalla) -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +28,7 @@
                     </div>
                     <li><a href="home.php">Inicio</a></li>
                     <li><a href="ListaDeEmpleados.php">Empleados</a></li>
-                    <li><a href="provider.php">Proveedor</a></li>
+                    <li><a href="provier.php">Proveedor</a></li>
                     <li><a href="#">Productos</a></li>
                     <li><a href="#">Registrar ventas</a></li>
                     <li><a href="#">Estadísticas</a></li>
@@ -46,29 +39,28 @@
             </div>
         </nav>
 
+
+
+
         <div class="Divcontainer">
-            <h2>Lista de empleados:</h2>
+            <h2>Lista de proveedores:</h2>
             <table>
                 <tr>
-                    <th>NOMBRE</th>
-                    <th>APELLIDO</th>
-                    <th>DNI</th>
-                    <th>ADELANTOS</th>
+                    <th>Nombre</th>
+                    <th>Razón Social</th>
                     <th>ACCIONES</th>
                 </tr>
+
                 <tr>
                     <td>nombre</td>
-                    <td>apellido</td>
-                    <td>DNI</td>
-                    <td>adelantos</td>
-                    <td id=""><button class="btn-modificar">MODIFICAR</button><button class="btn-eliminar">ELIMINAR</button></td>
-                    <!--en el id de td pone el codigo del empleado-->
+                    <td>Razón Social</td>
+                    <td id=""><button>MODIFICAR</button><button>ELIMINAR</button></td>
                 </tr>
             </table>
         </div>
-
-
     </div>
+
+
 
     <script src="js/app.js"></script>
 </body>

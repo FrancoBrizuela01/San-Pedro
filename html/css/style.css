@@ -240,6 +240,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   background-color: white;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
 }
 
 th {
@@ -266,3 +267,51 @@ th,
 td {
   padding: 20px;
 }
+
+.btn-modificar {
+  outline: none;
+  height: 34px;
+  text-align: center;
+  width: 100px;
+  border-radius: 40px;
+  background: #fff;
+  border: 2px solid #1ecd97;
+  color: #1ecd97;
+  text-shadow: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-right: 10px;
+}
+
+.btn-modificar:hover {
+  color: white;
+  background: #1ecd97;
+}
+
+.btn-modificar:active {
+  letter-spacing: 1px;
+}
+
+.btn-eliminar {
+  outline: none;
+  height: 34px;
+  text-align: center;
+  width: 100px;
+  border-radius: 40px;
+  background: #fff;
+  border: 2px solid #dd0d0d;
+  color: #dd0d0d;
+  text-shadow: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-eliminar:hover {
+  color: white;
+  background: #dd0d0d;
+}
+
+.btn-eliminar:active {
+  letter-spacing: 1px;
+}
+
