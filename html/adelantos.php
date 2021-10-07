@@ -46,64 +46,29 @@
             </div>
         </nav>
 
-
-
-
-        <div class="Divcontainer">
-            <h2>LISTA DE PROVEEDORES:</h2>
-            <table>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Razón Social</th>
-                    <th>ACCIONES</th>
-                </tr>
-                <tr>
-                    <td>nombre</td>
-                    <td>Razón Social</td>
-                    <td id=""><a href="#mod-empleados"><button class="btn-modificar" id="btn-modificar" onclick="mostrarModificarEmpleados()">MODIFICAR</button></a>
-                        <button class="btn-eliminar">ELIMINAR</button>
-                </tr>
-            </table>
-        </div>
-
-        <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO PROVEEDOR</button></a>
-
-        <div class="mod-empleados" id="mod-empleados">
-            <h2>MODIFICAR PROVEEDOR:</h2>
+        <div class="Divcontainer" id="Divcontainer">
+            <h2>LISTA DE ADELANTOS:</h2>
             <table>
                 <tr>
                     <th>NOMBRE</th>
-                    <th>RAZÓN SOCIAL</th>
-                    <th>ACCIONES</th>
-                    <th></th>
+                    <th>APELLIDO</th>
+                    <th>DNI</th>
+                    <th>FECHA</th>
+                    <th>CANTIDAD</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="nombre" id="nombre" maxlenght="20" value="aca iria el nombre actual"></td>
-                    <td><input type="text" name="nombre" id="nombre" value="aca iria el apellido actual"></td>
-                    <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+                    <td>nombre</td>
+                    <td>apellido</td>
+                    <td>DNI</td>
+                    <td>fecha</td>
+                    <td>cantidad</td>           
                 </tr>
             </table>
         </div>
+
+        <a href="altaadelanto.php"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">ALTA DE ADELANTOS</button></a>
+
     </div>
-
-    <div class="mod-empleados" id="new-empleado">
-        <h2>Nuevo Proveedor:</h2>
-        <table>
-            <tr>
-                <th>NOMBRE</th>
-                <th>RAZÓN SOCIAL</th>
-                <th>ACCIONES</th>
-                <th></th>
-            </tr>
-            <tr>
-                <td><input type="text" name="nombre" id="nombre" maxlenght="20" value=""></td>
-                <td><input type="text" name="nombre" id="nombre" value=""></td>
-                <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
-            </tr>
-        </table>
-    </div>
-
-
 
     <script src="js/app.js"></script>
 </body>

@@ -16,7 +16,7 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <title>Panaderia San Pedro</title>
+    <title>Ventas</title>
 </head>
 
 <body>
@@ -43,25 +43,7 @@
         </div>
     </nav>
 
-    <div class="content">
-        <div class="txt-home">
-            <h1>Hola @nombre</h1>
-            <h2>Gestioná tu negocio de la manera más fácil</h2>
-
-            <p class="blink txt">Observe las estadísticas de su negocio</p>
-            <a href="estadisticas.php"><button class="btn-stats">VER ESTADÍSTICAS</button></a>
-        </div>
-        <div class="img-home">
-            <img src="img/home.svg" alt="instant analysis">
-        </div>
-    </div>
-
-    <footer class="footer">
-        <p>
-            Copyright © 2021. <a href="#">@SanPedro</a> <br />
-            All Rights Reserved
-        </p>
-    </footer>
+    <h1>VENTAS</h1>
 
     <script src="js/app.js"></script>
 </body>

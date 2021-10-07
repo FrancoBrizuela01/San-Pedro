@@ -40,12 +40,12 @@
                         <i class="fas fa-times"></i>
                     </div>
                     <li><a href="home.php">Inicio</a></li>
-                    <li><a href="ListaDeEmpleados.php">Empleados</a></li>
-                    <li><a href="#">Adelantos</a></li>
+                    <li><a href="listaDeEmpleados.php">Empleados</a></li>
+                    <li><a href="adelantos.php">Adelantos</a></li>
                     <li><a href="provider.php">Proveedor</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Registrar ventas</a></li>
-                    <li><a href="#">Estadísticas</a></li>
+                    <li><a href="productos.php">Productos</a></li>
+                    <li><a href="ventas.php">Registrar ventas</a></li>
+                    <li><a href="estadisticas.php">Estadísticas</a></li>
                 </ul>
                 <div class="icon menu-btn">
                     <i class="fas fa-bars"></i>
@@ -53,8 +53,8 @@
             </div>
         </nav>
 
-        <div class="Divcontainer">
-            <h2>Lista de empleados:</h2>
+        <div class="Divcontainer" id="Divcontainer">
+            <h2>LISTA DE EMPLEADOS:</h2>
             <table>
                 <tr>
                     <th>NOMBRE</th>
@@ -66,14 +66,18 @@
                     <td>nombre</td>
                     <td>apellido</td>
                     <td>DNI</td>
-                    <td id=""><button class="btn-modificar">MODIFICAR</button><button class="btn-eliminar">ELIMINAR</button></td>
+                    <td id=""><a href="#mod-empleados"><button class="btn-modificar" id="btn-modificar" onclick="mostrarModificarEmpleados()">MODIFICAR</button></a>
+                        <button class="btn-eliminar">ELIMINAR</button>
+                    </td>
                     <!--en el id de td pone el codigo del empleado-->
                 </tr>
             </table>
         </div>
 
-        <div class="Divcontainer">
-            <h2>Modificar empleado:</h2>
+        <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO EMPLEADO</button></a>
+
+        <div class="mod-empleados" id="mod-empleados">
+            <h2>MODIFICAR EMPLEADO:</h2>
             <table>
                 <tr>
                     <th>NOMBRE</th>
@@ -85,13 +89,31 @@
                     <td><input type="text" name="nombre" id="nombre" maxlenght="20" value="aca iria el nombre actual"></td>
                     <td><input type="text" name="nombre" id="nombre" value="aca iria el apellido actual"></td>
                     <td><input type="number" name="nombre" id="nombre" value="41589456"></td>
-                    <td id=""><button class="btn-modificar">CONFIRMAR</button><button class="btn-eliminar">CANCELAR</button></td>
+                    <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
                     <!--en el id de td pone el codigo del empleado-->
                 </tr>
             </table>
         </div>
 
 
+
+        <div class="mod-empleados" id="new-empleado">
+            <h2>Nuevo empleado:</h2>
+            <table>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>DNI</th>
+                    <th>ACCIONES</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="nombre" id="nombre" maxlenght="20" value=""></td>
+                    <td><input type="text" name="nombre" id="nombre" value=""></td>
+                    <td><input type="number" name="nombre" id="nombre" value=""></td>
+                    <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+                </tr>
+            </table>
+        </div>
 
     </div>
 
