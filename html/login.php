@@ -1,3 +1,43 @@
+<?php
+//inicio de session
+// session_start();
+
+// $cn = mysqli_connect("localhost", "root", "", "san_pedro");
+
+// if (count($_POST) > 0) {
+//     //validar email
+//     if (!isset($_POST["email"])) die("error1");
+//     if (strlen($_POST["email"]) < 1) die("error2");
+//     if (strlen($_POST["email"]) > 200) die("error3");
+//     $_POST["email"] = substr($_POST["email"], 0, 200);
+//     $_POST["email"] = mysqli_escape_string($cn, $_POST["email"]);
+//     $email = $_POST["email"];
+
+//     //validar password
+//     if (!isset($_POST["passwd"])) die("error4");
+//     if (strlen($_POST["passwd"]) < 4) die("error5");
+//     if (strlen($_POST["passwd"]) > 40) die("error6");
+//     $_POST["passwd"] = mysqli_escape_string($cn, $_POST["passwd"]);
+//     $passwd = sha1($_POST["passwd"]); //calculo el sha1 y guardo la variable
+
+//     $res = mysqli_query($cn, "SELECT *
+//     FROM administrador
+//     WHERE email = '$email' and password = '$passwd' 
+//     LIMIT 1");
+
+//     if (mysqli_num_rows($res) == 1) {
+//         $_SESSION["logueado"] = true;
+//         $fila = mysqli_fetch_assoc($res);
+//         $_SESSION["nombre"] = $fila["nombre"];
+//         header("Location: home.php");
+//         exit;
+//     }else {
+//         echo "error";
+//     }
+// }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +54,7 @@
 <body>
     <div class="center">
         <h1>Login</h1>
-        <form method="POST">
+        <form method="post">
             <div class="field">
                 <input type="text" required name="email">
                 <label>Email</label>
@@ -22,11 +62,14 @@
             </div>
             <div class="field">
                 <input type="password" required name="passwd">
+<<<<<<< HEAD
                 <label>Password</label>
+=======
+                <label>Contraseña</label>
+>>>>>>> c85b150cc561ec41e8f6a4d5afcce4f23a6d0ddc
                 <span></span>
             </div>
             <input type="submit" value="Login" class="btn-login">
-
         </form>
     </div>
 </body>
