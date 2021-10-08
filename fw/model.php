@@ -2,7 +2,7 @@
 
 // fw/model.php
 
-abstract class Model {
+abstract class model {
 
 	protected $db;
 

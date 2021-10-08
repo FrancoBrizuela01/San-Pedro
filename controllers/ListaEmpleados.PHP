@@ -1,14 +1,15 @@
 <?php
 
-// controllers/ListaEmpleados.php
+//controllers/listaempleados.php
 
-require '../fw/fw.php'
-require '../models/Empleado.php'		// esto seria como los include
-require '../views/ListaDeEmpleados.php'
+require '../fw/fw.php';
+require '../models/Empleado.php';
+require '../views/Listadoempleados.php';
 
-$e = new Empleado();					// models
+$e = new Empleado ();
 $todos = $e->getTodos();
 
-$v = new ListaDeEmpleados();			// views
+
+$v = new ListadoEmpleados();
 $v->empleados = $todos;
-$v->render();
+$v->render(); 				

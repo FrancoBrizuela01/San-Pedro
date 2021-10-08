@@ -63,9 +63,11 @@
                     <th>ACCIONES</th>
                 </tr>
                 <tr>
-                    <td>nombre</td>
-                    <td>apellido</td>
-                    <td>DNI</td>
+                    <?php foreach($this->empleados as $e) { ?>
+                    <td><?= $e['nombre'] ?></td>
+                    <td><?= $e['apellido'] ?></td>
+                    <td><?= $e['dni'] ?></td>
+                    <?php } ?>
                     <td id=""><a href="#mod-empleados"><button class="btn-modificar" id="btn-modificar" onclick="mostrarModificarEmpleados()">MODIFICAR</button></a>
                         <button class="btn-eliminar">ELIMINAR</button>
                     </td>

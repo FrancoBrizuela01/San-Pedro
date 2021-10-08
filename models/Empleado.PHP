@@ -1,14 +1,20 @@
 <?php
 
-// models/Empleado.php
+//models/Empleado.php
 
-class Empleados extends Model {			// usar el mismo nombre de la clase con el archivo!
+class Empleado extends model {
+
 
 	public function getTodos(){
+		$this->db->query ("SELECT * 
+							From empleados");
+		return $this->db->fetchAll();
+	}
 
-		//aca tienen que ir las validaciones!!!!!!
-
-		$this->db->query("SELECT * FROM empleados");
+	public function getListaAdelantos(){
+		$this->db->query ("SELECT e.nombre, e.apellido, e.dni, a.fecha, a.cantidad
+							FROM empleados e
+							LEFT JOIN adelantos a ON a.codigo_empleado = e.codigo_empleado");
 		return $this->db->fetchAll();
 	}
 

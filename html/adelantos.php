@@ -33,7 +33,7 @@
                         <i class="fas fa-times"></i>
                     </div>
                     <li><a href="home.php">Inicio</a></li>
-                    <li><a href="listaDeEmpleados.php">Empleados</a></li>
+                    <li><a href="ListadoEmpleados.php">Empleados</a></li>
                     <li><a href="adelantos.php">Adelantos</a></li>
                     <li><a href="provider.php">Proveedor</a></li>
                     <li><a href="productos.php">Productos</a></li>
@@ -57,12 +57,14 @@
                     <th>CANTIDAD</th>
                 </tr>
                 <tr>
-                    <td>nombre</td>
-                    <td>apellido</td>
-                    <td>DNI</td>
-                    <td>fecha</td>
-                    <td>cantidad</td>           
+                    <?php foreach ($this->empleados as $a) { ?>
+                    <td><?= $a['nombre'] ?></td>
+                    <td><?= $a['apellido'] ?></td>
+                    <td><?= $a['dni'] ?></td>
+                    <td><?= $a['fecha'] ?></td>
+                    <td><?= $a['cantidad'] ?></td>   
                 </tr>
+                    <?php } ?>        
             </table>
         </div>
 
