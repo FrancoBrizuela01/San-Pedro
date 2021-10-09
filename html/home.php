@@ -1,14 +1,4 @@
-<?php
-/*controlo si estoy logueado sino no entro*/
-// session_start();
-// if (!isset($_SESSION["logueado"])) {
-//     header("Location: login.php");
-//     exit;
-// }
 
-// $cn = mysqli_connect("localhost", "root", "", "san_pedro");
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +32,7 @@
                     <i class="fas fa-times"></i>
                 </div>
                 <li><a href="home.php">Inicio</a></li>
-                <li><a href="ListadoEmpleados.php">Empleados</a></li>
+                <li><a href="../controllers/ListaEmpleados.php">Empleados</a></li>
                 <li><a href="adelantos.php">Adelantos</a></li>
                 <li><a href="provider.php">Proveedor</a></li>
                 <li><a href="productos.php">Productos</a></li>

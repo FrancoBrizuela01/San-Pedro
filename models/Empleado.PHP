@@ -18,4 +18,18 @@ class Empleado extends model {
 		return $this->db->fetchAll();
 	}
 
+	public function existeEmpleado($eid){
+
+		if(!ctype_digit($eid)) return false;
+		if($eid < 1) return false;
+
+		$this->db->query ("SELECT * FROM  empleados
+							WHERE codigo_empleado = $eid");
+		
+		if($this->db->numRows() != 1) return false;
+
+		return true;
+
+	}
+
 }

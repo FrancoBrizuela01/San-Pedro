@@ -48,24 +48,29 @@
 
         <div class="Divcontainer" id="Divcontainer">
             <h2>AGREAGAR ADELANTO:</h2>
-            <form action="">
+            <form action="" method="post">
                 <table>
                     <tr>
                         <th>SELECCIONE UN EMPLEADO</th>
-                        <th>FECHA</th>
                         <th>MONTO</th>
+                        <th>FECHA</th>
                         <th>ACCIONES</th>
                     </tr>
                     <tr>
                         <td>
                             <select name="empleado" id="empleado">
-                                <option value="">emp1</option>
+                                <?php foreach($this->empleados as $e) { ?>
+                                <option value="<?= $e['codigo_empleado']?>"><?= $e['nombre']?></option>
+                                <?php  } ?>
+
+                                <!-- NECESITO DEJAR EN CLARO ALGUNAS COSAS DE ACA! ( video 19:26) -->
+                                <!-- NECESITO UN CHECKBOX PARA LA FECHA DE HOY-->
                                 <option value="">emp2</option>
                                 <option value="">emp3</option>
                             </select>
                         </td>
-                        <td><input type="date" name="nombre" id="nombre" value="41589456"></td>
-                        <td>$ <input type="number" name="nombre" id="nombre" value=""></td>
+                        <td><input type="date" name="fecha" id="fecha" value=""></td>
+                        <td> <input type="number" name="monto" id="monto" value=""></td>
                         <td id=""><button class="btn-modificar">CONFIRMAR</button>
                     </tr>
                     </tr>
