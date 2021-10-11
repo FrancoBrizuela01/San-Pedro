@@ -21,13 +21,10 @@ if(count($_POST) > 0 ){
 																								//checkbox
 	else{
 
-		if(!isset($_POST['dia'])) die ("error validacion 3");	// estas variables las saco
-		if(!isset($_POST['mes'])) die ("error validacion 4");	// del id que tengo en html
-		if(!isset($_POST['anio'])) die ("error validacion 5");
+		if(!isset($_POST['fecha'])) die ("error validacion 3");	
+		
 
-		$ma->crearAdelantoFechaDeterminada($_POST['empleado'], $_POST['monto']
-											$_POST['dia'], $_POST['mes']
-											$_POST['anio']);
+		$ma->crearAdelantoFechaDeterminada($_POST['empleado'], $_POST['monto'], $_POST['fecha']);
 	}
 	$v = new altaAdelantosOk();	// este llama a la vista que da el mensaje que salio bien!
 }

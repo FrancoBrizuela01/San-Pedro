@@ -7,22 +7,25 @@ require '../models/administrador.php';
 require '../views/login.php';
 
 $a = new administrador();		//models
-$todos = $a->getAdm($email, $passw);
 
-// aca iria la funcion y recibo del models
+	if(count($_POST) > 0){
+
+		session_start();
+
+		if(!isset($_POST['email'])) die ("Error, no ingreso su email");
+		if(!isset($_POST['passwd'])) die ("Error, no ingreso su contraseña");
+
+		$todos = $a->getAdm($_POST['email'], $_POST ['passwd']);
+
+		if($todos->numRows($todos) == 1) {
+			$_SESSION['logueado'] = true;
+			$fila = $todos->fetch($todos);
+			$_SESSION['email'] = $fila['email'];
+			header("Location: inicio.php");
+			exit;
+		}
+	}
 
 $v = new login();				//views
 $v->admin = $todos;
 $v->render();
-
-
-	session_start();
-
-	if(count($_POST) > 0){
-		if ($this->db->numRows($this->db) == 1 ){
-			$_SESSION ['logueado'] = true;
-			$fila = $this->db->fetch($this->db);
-			$_SESSION ['nombre'] = $fila ['nombre'];
-			header("Location: home.php");
-			exit;
-	}

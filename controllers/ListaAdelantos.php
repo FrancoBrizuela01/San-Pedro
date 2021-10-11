@@ -1,6 +1,6 @@
 <?php
 
-// controllers/AltaDeAdelantos.php
+// controllers/ListaAdelantos.php
 
 require '../fw/fw.php';
 require '../models/Empleado.PHP';

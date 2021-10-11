@@ -64,7 +64,7 @@
                                 <?php  } ?>
 
                                 <!-- NECESITO DEJAR EN CLARO ALGUNAS COSAS DE ACA! ( video 19:26) -->
-                                <!-- NECESITO UN CHECKBOX PARA LA FECHA DE HOY-->
+                                <!-- NECESITO UN CHECKBOX PARA LA FECHA DE HOY (El id tiene que ser "hoy")-->
                                 <option value="">emp2</option>
                                 <option value="">emp3</option>
                             </select>
