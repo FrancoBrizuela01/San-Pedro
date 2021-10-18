@@ -27,5 +27,4 @@ $a = new administrador();		//models
 	}
 
 $v = new login();				//views
-$v->admin = $todos;
 $v->render();

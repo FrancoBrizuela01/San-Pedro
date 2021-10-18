@@ -6,10 +6,10 @@ require '../fw/fw.php';
 require '../models/Empleado.php';
 require '../views/Listadoempleados.php';
 
-//	if(!isset($_SESSION['logueado'])){
-//		header("Location: ListaAdministradores.php");
-//		exit;
-//	}
+	if(!isset($_SESSION['logueado'])){
+		header("Location: ListaAdministradores.php");
+		exit;
+	}
 
 	$e = new Empleado ();
 	$todos = $e->getTodos();

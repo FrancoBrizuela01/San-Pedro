@@ -9,10 +9,10 @@ require '../views/altaadelantos.php';
 require '../views/altaAdelantoOk.php';
 
 
-	//if(!isset($_SESSION['logueado'])){
-	//	header("Location: ListaAdministradores.php");
-	//	exit;
-	//}
+	if(!isset($_SESSION['logueado'])){
+		header("Location: ListaAdministradores.php");
+		exit;
+	}
 
 	$m = new Empleado();
 
