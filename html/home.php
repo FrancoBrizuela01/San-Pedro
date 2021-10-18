@@ -25,15 +25,15 @@
     <nav class="navbar">
         <div class="content">
             <div class="logo">
-                <a href="home.php">San Pedro</a>
+                <a href="../controllers/inicio.php">San Pedro</a>
             </div>
             <ul class="menu-list">
                 <div class="icon cancel-btn">
                     <i class="fas fa-times"></i>
                 </div>
-                <li><a href="home.php">Inicio</a></li>
+                <li><a href="../controllers/inicio.php">Inicio</a></li>
                 <li><a href="../controllers/ListaEmpleados.php">Empleados</a></li>
-                <li><a href="adelantos.php">Adelantos</a></li>
+                <li><a href="../controllers/ListaAdelantos.php">Adelantos</a></li>
                 <li><a href="provider.php">Proveedor</a></li>
                 <li><a href="productos.php">Productos</a></li>
                 <li><a href="ventas.php">Registrar ventas</a></li>

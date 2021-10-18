@@ -6,9 +6,14 @@ require '../fw/fw.php';
 require '../models/Empleado.PHP';
 require '../views/adelantos.php';
 
-$a = new Empleado();
-$todos = $a->getListaAdelantos();
+//	if(!isset($_SESSION['logueado'])){
+//		header("Location: ListaAdministradores.php");
+//		exit;
+//	}
 
-$v = new adelantos();
-$v->empleados = $todos;
-$v->render();
+	$a = new Empleado();
+	$todos = $a->getListaAdelantos();
+
+	$v = new adelantos();
+	$v->empleados = $todos;
+	$v->render();
