@@ -33,7 +33,7 @@
         <nav class="navbar">
             <div class="content">
                 <div class="logo">
-                    <a href="home.php">San Pedro</a>
+                    <a href="../controllers/inicio.php">San Pedro</a>
                 </div>
                 <ul class="menu-list">
                     <div class="icon cancel-btn">
