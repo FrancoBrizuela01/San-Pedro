@@ -6,6 +6,8 @@ require '../fw/fw.php';
 require '../models/Empleado.php';
 require '../views/Listadoempleados.php';
 
+	session_start();
+
 	if(!isset($_SESSION['logueado'])){
 		header("Location: ListaAdministradores.php");
 		exit;

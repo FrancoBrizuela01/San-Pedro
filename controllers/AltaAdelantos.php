@@ -8,6 +8,7 @@ require '../models/Adelantos.php';
 require '../views/altaadelantos.php';
 require '../views/altaAdelantoOk.php';
 
+	session_start();
 
 	if(!isset($_SESSION['logueado'])){
 		header("Location: ListaAdministradores.php");
