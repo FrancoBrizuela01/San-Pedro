@@ -16,11 +16,15 @@ class Adelantos extends model {
 
 	}
 
-	public function crearAdelantoFechaDeterminada($empleadoid, $monto, $dia, $mes, $anio){
+	public function crearAdelantoFechaDeterminada($empleadoid, $monto, $fecha){
 
 		$empleadoaux = new Empleado();
 		if(!$empleadoaux->existeEmpleado($empleadoid)) die ('error adelantos 1');
 		if(!is_numeric($monto)) die ('error adelantos 2');
+
+		 $anio = substr($fecha , 0 , 4); //yyyy-mm-dd
+         $mes = substr($fecha , 5 , 2);
+         $dia = substr($fecha , 8 , 2);
 
 		if(!ctype_digit($dia)) die ('error adelantos 3');
 		if($dia < 1 ) die ('error adelantos 4');
@@ -36,9 +40,11 @@ class Adelantos extends model {
 
 		if(!checkdate($mes, $dia, $anio)) die ('error adelantos 12');
 
+		$fecha = "$anio-$mes-$dia";
+
 		$this->db->query("INSERT INTO adelantos
 						(codigo_empleado, monto, fecha) VALUES
-						($empleadoid, $monto, '$anio-$mes-$dia' ) ");
+						($empleadoid, $monto, $fecha ) ");
 
 	}
 

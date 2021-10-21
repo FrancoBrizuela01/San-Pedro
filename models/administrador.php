@@ -4,32 +4,31 @@
 
 class administrador extends model {
 
-	public function getAdm(){
+	public function getAdm($email, $passwd){
 
 
 			// validacion del email
 
-			if(!isset($_POST['email'])) die ("no existe");
-			if(strlen($_POST['email']) < 1) die ("pocas letras");
-			if(strlen($_POST['email']) > 150 );
-			// $_POST['email'] = mysqli_escape_string($cn, $_POST['email']); // la validacion que haciamos antes.
-			 $_POST['email'] = $this->db->escape($_POST['email']);			// la validacion con la bse de datos del fw.
-			$email = $_POST['email'];
+			if(!isset($email)) die ("no existe");
+			if(strlen($email) < 1) die ("pocas letras");
+			if(strlen($email) > 150 );
+			$email = $this->db->escape($email);// la validacion con la bse de datos del fw.
 
 			// validacion de la password "string".
 
-			if(!isset($_POST['passwd'])) die ("no existe");
-			if(strlen($_POST['passwd']) < 1 ) die ("Contraseña muy corta");
-			if(strlen($_POST['passwd']) > 40);
-			//$_POST['passwd'] = mysqli_escape_string($cn, $_POST['passwd']); // la validacion que haciamos antes.
-			$_POST['passwd'] = $this->db->escape($_POST['passwd']);			 // la validacion con la bse de datos del fw.
+			if(!isset($passwd)) die ("no existe");
+			if(strlen($passwd) < 1 ) die ("Contraseña muy corta");
+			if(strlen($passwd) > 40);
+			$passwd = $this->db->escape($passwd);// la validacion con la bse de datos del fw.
 
-			$passwd = sha1($_POST['passwd']);
+			$passwd = sha1($passwd);
 
 			 $this->db->query ("SELECT *
 								FROM administrador
 								WHERE email = '$email' and password = '$passwd'
 								LIMIT 1");
+
+			 return $this->db;
 			
 	}
 }

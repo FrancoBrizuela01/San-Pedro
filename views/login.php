@@ -4,6 +4,5 @@
 
 class login extends view {
 
-	public $admin;
 
 }
