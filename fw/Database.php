@@ -20,7 +20,7 @@ class Database
 
     private function connect()
     {
-        $this->cn = mysqli_connect("localhost", "root", "", "san_pedro");
+        $this->cn = mysqli_connect("localhost", "root", "", "san pedro");
     }
 
     public function query($q)
