@@ -68,11 +68,11 @@
             </table>
         </div>
 
-        <a href="altaadelanto.php"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">ALTA DE ADELANTOS</button></a>
+        <a href="../controllers/AltaAdelantos.php"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">ALTA DE ADELANTOS</button></a>
 
     </div>
 
-    <script src="js/app.js"></script>
+    <script src="../html/js/app.js"></script>
 </body>
 
 </html>

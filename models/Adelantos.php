@@ -11,7 +11,7 @@ class Adelantos extends model {
 		if(!is_numeric($monto)) die ('error adelantos 2');
 
 		$this->db->query("INSERT INTO adelantos
-						(codigo_empleado, monto, fecha) VALUES
+						(codigo_empleado, cantidad, fecha) VALUES
 						($empleadoid, $monto, NOW() ) ");
 
 	}
@@ -43,7 +43,7 @@ class Adelantos extends model {
 		$fecha = "$anio-$mes-$dia";
 
 		$this->db->query("INSERT INTO adelantos
-						(codigo_empleado, monto, fecha) VALUES
+						(codigo_empleado, cantidad, fecha) VALUES
 						($empleadoid, $monto, $fecha ) ");
 
 	}

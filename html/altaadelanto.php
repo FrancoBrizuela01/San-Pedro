@@ -52,8 +52,8 @@
                 <table>
                     <tr>
                         <th>SELECCIONE UN EMPLEADO</th>
-                        <th>MONTO</th>
                         <th>FECHA</th>
+                        <th>MONTO</th>
                         <th>ACCIONES</th>
                     </tr>
                     <tr>
@@ -62,15 +62,11 @@
                                 <?php foreach ($this->empleados as $e) { ?>
                                     <option value="<?= $e['codigo_empleado'] ?>"><?= $e['nombre'] ?></option>
                                 <?php  } ?>
-
-                                <!-- NECESITO DEJAR EN CLARO ALGUNAS COSAS DE ACA! ( video 19:26) -->
-                                <!-- NECESITO UN CHECKBOX PARA LA FECHA DE HOY (El id tiene que ser "hoy")-->
-                                <option value="">emp2</option>
-                                <option value="">emp3</option>
                             </select>
                         </td>
-                        <td><input type="date" name="fecha" id="fecha" value=""></td>
-                        <td> <input type="number" name="monto" id="monto" value=""></td>
+                        <td><input type="date" name="fecha" id="fecha" value="">
+                            <input type="checkbox" name="hoy" id="hoy" value="1"></td>
+                        <td><input type="number" name="monto" id="monto" value=""></td>
                         <td id=""><button class="btn-modificar">CONFIRMAR</button>
                     </tr>
                     </tr>

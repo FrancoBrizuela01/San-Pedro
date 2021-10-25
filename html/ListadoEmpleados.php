@@ -62,16 +62,15 @@
                     <th>DNI</th>
                     <th>ACCIONES</th>
                 </tr>
-                <tr>
                     <?php foreach ($this->empleados as $e) { ?>
+                <tr>
                         <td><?= $e['nombre'] ?></td>
                         <td><?= $e['apellido'] ?></td>
                         <td><?= $e['dni'] ?></td>
-                    <?php } ?>
                     <td id=""><a href="#mod-empleados"><button class="btn-modificar" id="btn-modificar" onclick="mostrarModificarEmpleados()">MODIFICAR</button></a>
                         <button class="btn-eliminar">ELIMINAR</button>
                     </td>
-                    <!--en el id de td pone el codigo del empleado-->
+                    <?php } ?>
                 </tr>
             </table>
         </div>
@@ -88,9 +87,9 @@
                     <th>ACCIONES</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="nombre" id="nombre" maxlenght="20" value="aca iria el nombre actual"></td>
-                    <td><input type="text" name="nombre" id="nombre" value="aca iria el apellido actual"></td>
-                    <td><input type="number" name="nombre" id="nombre" value="41589456"></td>
+                    <td><input type="text" name="nombre" id="nombre" maxlenght="20" value=""></td>
+                    <td><input type="text" name="apellido" id="apellido" value=""></td>
+                    <td><input type="number" name="dni" id="dni" value=""></td>
                     <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
                     <!--en el id de td pone el codigo del empleado-->
                 </tr>
@@ -101,6 +100,7 @@
 
         <div class="mod-empleados" id="new-empleado">
             <h2>Nuevo empleado:</h2>
+            <form method="post">
             <table>
                 <tr>
                     <th>NOMBRE</th>
@@ -110,16 +110,17 @@
                 </tr>
                 <tr>
                     <td><input type="text" name="nombre" id="nombre" maxlenght="20" value=""></td>
-                    <td><input type="text" name="nombre" id="nombre" value=""></td>
-                    <td><input type="number" name="nombre" id="nombre" value=""></td>
-                    <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+                    <td><input type="text" name="apellido" id="apellido" value=""></td>
+                    <td><input type="number" name="dni" id="dni" value=""></td>
+                    <td id=""><button  type="submit" class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
                 </tr>
             </table>
+            </form>
         </div>
 
     </div>
 
-    <script src="js/app.js"></script>
+    <script src="../html/js/app.js"></script>
 </body>
 
 </html>

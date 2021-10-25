@@ -5,8 +5,8 @@
 require '../fw/fw.php';
 require '../models/Empleado.php';
 require '../models/Adelantos.php';
-require '../views/altaadelantos.php';
-require '../views/altaAdelantoOk.php';
+require '../views/altaadelanto.php';
+require '../views/AltaAdelantosOk.php';
 
 	session_start();
 
@@ -36,7 +36,7 @@ require '../views/altaAdelantoOk.php';
 		$v = new altaAdelantosOk();	// este llama a la vista que da el mensaje que salio bien!
 	}
 	else {
-		$v = new altaadelantos();	// este llama a la vista de alta de adelantos.
+		$v = new altaadelanto();	// este llama a la vista de alta de adelantos.
 		$v->empleados = $m->getTodos();
 	}
 
