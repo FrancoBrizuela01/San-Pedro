@@ -32,4 +32,12 @@ class Empleado extends model {
 
 	}
 
+	public function NuevoEmpleado($nombre, $apellido, $dni){
+
+		$this->db->query("INSERT INTO empleados
+						(nombre, apellido, dni)	VALUES	
+						($nombre, $apellido, $dni) ");
+
+	}
+
 }

@@ -45,8 +45,7 @@
 
     <div class="content">
         <div class="txt-home">
-            <h1>Hola xxxxxx</h1>
-            <h2>Gestioná tu negocio de la manera más fácil</h2>
+            <h1>Gestioná tu negocio de la manera más fácil</h1>
 
             <p class="blink txt">Observe las estadísticas de su negocio</p>
             <a href="estadisticas.php"><button class="btn-stats">VER ESTADÍSTICAS</button></a>

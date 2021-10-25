@@ -6,28 +6,33 @@ require '../fw/fw.php';
 require '../models/Empleado.php';
 require '../views/Listadoempleados.php';
 
-<<<<<<< HEAD
-$e = new Empleado();
-$todos = $e->getTodos();
-=======
+
 	session_start();
->>>>>>> 29bc4761468f5e09e355fd6d1fa31c68ea5d8e2b
+
 
 	if(!isset($_SESSION['logueado'])){
 		header("Location: ListaAdministradores.php");
 		exit;
 	}
 
-<<<<<<< HEAD
-$v = new ListadoEmpleados();
-$v->empleados = $todos;
-$v->render();
-=======
-	$e = new Empleado ();
-	$todos = $e->getTodos();
+
+	$e = new Empleado();
+
+	if(count($_POST) > 0){
+
+		if(!isset($_POST['nombre'])) die ('Escribir nombre');
+		if(!isset($_POST['apellido'])) die ('Escribir apellido');
+		if(!isset($_POST['dni'])) die ('Escribir dni');
 
 
-	$v = new ListadoEmpleados();
-	$v->empleados = $todos;
-	$v->render(); 				
->>>>>>> 29bc4761468f5e09e355fd6d1fa31c68ea5d8e2b
+		$e->NuevoEmpleado($_POST['nombre'], $_POST['apellido'], $_POST['dni']);
+
+	}
+	else{
+		$v = new ListadoEmpleados();
+		$v->empleados = $e->getTodos();
+	}
+
+	$v->render();
+
+
