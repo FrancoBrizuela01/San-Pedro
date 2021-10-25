@@ -64,8 +64,7 @@
                                 <?php  } ?>
                             </select>
                         </td>
-                        <td><input type="date" name="fecha" id="fecha" value="">
-                            <input type="checkbox" name="hoy" id="hoy" value="1"></td>
+                        <td><input type="date" name="fecha" id="fecha" value=""></td>
                         <td><input type="number" name="monto" id="monto" value=""></td>
                         <td id=""><button class="btn-modificar">CONFIRMAR</button>
                     </tr>

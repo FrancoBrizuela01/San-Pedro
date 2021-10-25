@@ -4,17 +4,7 @@
 
 class Adelantos extends model {
 
-	public function CrearAdelantoFechaHoy($empleadoid, $monto){
 
-		$empleadoaux = new Empleado();
-		if(!$empleadoaux->existeEmpleado($empleadoid)) die ('error adelantos 1');
-		if(!is_numeric($monto)) die ('error adelantos 2');
-
-		$this->db->query("INSERT INTO adelantos
-						(codigo_empleado, cantidad, fecha) VALUES
-						($empleadoid, $monto, NOW() ) ");
-
-	}
 
 	public function crearAdelantoFechaDeterminada($empleadoid, $monto, $fecha){
 
@@ -44,7 +34,7 @@ class Adelantos extends model {
 
 		$this->db->query("INSERT INTO adelantos
 						(codigo_empleado, cantidad, fecha) VALUES
-						($empleadoid, $monto, $fecha ) ");
+						($empleadoid, $monto, '$fecha' ) ");
 
 	}
 
