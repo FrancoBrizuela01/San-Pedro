@@ -3,7 +3,6 @@
 
 class Database
 {
-
     private $cn = false;
     private $res;
     private static $instance = false;
@@ -22,6 +21,7 @@ class Database
     {
         $this->cn = mysqli_connect("localhost", "root", "", "san pedro");
     }
+    
 
     public function query($q)
     {
