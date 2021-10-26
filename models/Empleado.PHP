@@ -13,8 +13,8 @@ class Empleado extends model {
 
 	public function getListaAdelantos(){
 		$this->db->query ("SELECT e.nombre, e.apellido, e.dni, a.fecha, a.cantidad
-							FROM empleados e
-							LEFT JOIN adelantos a ON a.codigo_empleado = e.codigo_empleado");
+							FROM adelantos a
+							LEFT JOIN empleados e ON a.codigo_empleado = e.codigo_empleado");
 		return $this->db->fetchAll();
 	}
 
@@ -34,9 +34,27 @@ class Empleado extends model {
 
 	public function NuevoEmpleado($nombre, $apellido, $dni){
 
+
+        if(!is_numeric($dni)) die("error 1");
+        if($dni < 1) die("error 2"); 
+       	//if($dni > 9) die("error 3");
+
+        if(!isset($nombre)) die("error 4");
+    	if(strlen($nombre) < 1 ) die("error 5");
+     	if(strlen($nombre) > 20 ) die("error 6");
+     	$nombre = $this->db->escape($nombre);
+     	$nombre = $this->db->escapeWildcards($nombre);
+
+   		if(!isset($apellido)) die("error 7");
+    	if(strlen($apellido) < 1 ) die("error 8");
+     	if(strlen($apellido) > 20 ) die("error 9");
+     	$apellido = $this->db->escape($apellido);
+     	$apellido = $this->db->escapeWildcards($apellido);
+
+
 		$this->db->query("INSERT INTO empleados
-						(nombre, apellido, dni)	VALUES	
-						($nombre, $apellido, $dni) ");
+						(nombre, apellido, dni) VALUES
+						('$nombre', '$apellido', $dni) ");
 
 	}
 
