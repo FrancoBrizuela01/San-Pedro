@@ -43,9 +43,28 @@
         </div>
     </nav>
 
-    <h1>VENTAS</h1>
+    <div class="Divcontainer" id="Divcontainer">
+        <h2>REGISTRAR VENTAS</h2>
+        <table>
+            <tr>
+                <th>PRODUCTO</th>
+                <th>FECHA</th>
+                <th>CANTIDAD</th>
+                <th>TOTAL</th>
+            </tr>
 
-    <script src="js/app.js"></script>
+            <tr>
+                <tr>
+                    <td><input type="text" name="producto" id="producto"></td> <!--aca estaria bueno poner un select para q elija directamente el producto q quiera-->
+                    <td><input type="date" name="fecha" id="fecha" value=""></td>
+                    <td><input type="number" name="cantidad" id="cantidad" value=""></td>
+                    <td><input type="number" name="total" id="total" value=""></td>
+                </tr>
+            </tr>
+        </table>
+    </div>
+
+    <script src="../html/js/app.js"></script>
 </body>
 
 </html>

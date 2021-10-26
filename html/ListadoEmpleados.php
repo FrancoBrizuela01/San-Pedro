@@ -67,7 +67,7 @@
                         <td><?= $e['nombre'] ?></td>
                         <td><?= $e['apellido'] ?></td>
                         <td><?= $e['dni'] ?></td>
-                    <td id=""><a href="#mod-empleados"><button class="btn-modificar" id="btn-modificar" onclick="mostrarModificarEmpleados()">MODIFICAR</button></a>
+                    <td id="">
                         <button class="btn-eliminar">ELIMINAR</button>
                     </td>
                     <?php } ?>
@@ -77,7 +77,7 @@
 
         <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO EMPLEADO</button></a>
 
-        <div class="mod-empleados" id="mod-empleados">
+        <!-- <div class="mod-empleados" id="mod-empleados">
             <h2>MODIFICAR EMPLEADO:</h2>
             <table>
                 <tr>
@@ -91,10 +91,9 @@
                     <td><input type="text" name="apellido" id="apellido" value=""></td>
                     <td><input type="number" name="dni" id="dni" value=""></td>
                     <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
-                    <!--en el id de td pone el codigo del empleado-->
                 </tr>
             </table>
-        </div>
+        </div> -->
 
 
 

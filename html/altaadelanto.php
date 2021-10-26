@@ -74,11 +74,11 @@
 
         </div>
 
-        <a href="adelantos.php"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="">VER LISTA DE ADELANTOS</button></a>
+        <a href="../controllers/ListaAdelantos.php"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="">VER LISTA DE ADELANTOS</button></a>
 
     </div>
 
-    <script src="js/app.js"></script>
+    <script src="../html/js/app.js"></script>
 </body>
 
 </html>

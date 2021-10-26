@@ -43,9 +43,53 @@
         </div>
     </nav>
 
-    <h1>PRODUCTOS</h1>
+    <div class="Divcontainer" id="Divcontainer">
+        <h2>LISTA DE PRODUCTOS:</h2>
+        <table>
+            <tr>
+                <th>DESCRIPCIÓN</th>
+                <th>PRECIO COSTO</th>
+                <th>PROVEEDOR</th>
+                <th>ACCIONES</th>
+            </tr>
 
-    <script src="js/app.js"></script>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="">
+                    <button class="btn-eliminar">ELIMINAR</button>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+    <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">AGREGAR PRODUCTO</button></a>
+
+    <div class="mod-empleados" id="new-empleado">
+        <h2>Nuevo producto:</h2>
+        <form method="post">
+            <table>
+                <tr>
+                    <th>DESCRIPCIÓN</th>
+                    <th>PRECIO COSTO</th>
+                    <th>PROVEEDOR</th>
+                    <th>ACCIONES</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="descripcion" id="descripcion"></td>
+                    <td><input type="number" name="precio_costo" id="precio_costo" value=""></td>
+                    <td><input type="text" name="proveedor" id="proveedor" value=""></td>
+                    <td id=""><button type="submit" class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    </div>
+
+    <script src="../html/js/app.js"></script>
 </body>
 
 </html>

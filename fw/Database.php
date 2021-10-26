@@ -3,7 +3,7 @@
 
 class Database
 {
-    private $cn = false;
+    private $cn;
     private $res;
     private static $instance = false;
 
@@ -20,6 +20,7 @@ class Database
     private function connect()
     {
         $this->cn = mysqli_connect("localhost", "root", "", "san pedro");
+        $this->cn->set_charset('utf8');
     }
     
 

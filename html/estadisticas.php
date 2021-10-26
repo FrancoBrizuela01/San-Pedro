@@ -45,7 +45,7 @@
 
     <h1>ESTADISTICAS</h1>
 
-    <script src="js/app.js"></script>
+    <script src="../html/js/app.js"></script>
 </body>
 
 </html>

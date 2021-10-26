@@ -62,7 +62,7 @@
         </p>
     </footer>
 
-    <script src="js/app.js"></script>
+    <script src="../html/js/app.js"></script>
 </body>
 
 </html>

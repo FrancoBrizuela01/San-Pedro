@@ -46,9 +46,6 @@
             </div>
         </nav>
 
-
-
-
         <div class="Divcontainer">
             <h2>LISTA DE PROVEEDORES:</h2>
             <table>
@@ -60,7 +57,7 @@
                 <tr>
                     <td>nombre</td>
                     <td>Razón Social</td>
-                    <td id=""><a href="#mod-empleados"><button class="btn-modificar" id="btn-modificar" onclick="mostrarModificarEmpleados()">MODIFICAR</button></a>
+                    <td id="">
                         <button class="btn-eliminar">ELIMINAR</button>
                 </tr>
             </table>
@@ -68,7 +65,7 @@
 
         <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO PROVEEDOR</button></a>
 
-        <div class="mod-empleados" id="mod-empleados">
+        <!-- <div class="mod-empleados" id="mod-empleados">
             <h2>MODIFICAR PROVEEDOR:</h2>
             <table>
                 <tr>
@@ -84,7 +81,7 @@
                 </tr>
             </table>
         </div>
-    </div>
+    </div> -->
 
     <div class="mod-empleados" id="new-empleado">
         <h2>Nuevo Proveedor:</h2>
@@ -105,7 +102,7 @@
 
 
 
-    <script src="js/app.js"></script>
+    <script src="../html/js/app.js"></script>
 </body>
 
 </html>
