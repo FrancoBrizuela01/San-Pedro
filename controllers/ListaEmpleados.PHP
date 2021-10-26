@@ -5,6 +5,7 @@
 require '../fw/fw.php';
 require '../models/Empleado.php';
 require '../views/Listadoempleados.php';
+require '../views/EmpleadoCreadoOk.php';
 
 
 	session_start();
@@ -26,7 +27,7 @@ require '../views/Listadoempleados.php';
 
 
 		$e->NuevoEmpleado($_POST['nombre'], $_POST['apellido'], $_POST['dni']);
-
+		$v = New EmpleadoCreadoOk();
 	}
 	else{
 		$v = new ListadoEmpleados();
