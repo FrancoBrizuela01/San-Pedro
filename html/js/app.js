@@ -50,3 +50,32 @@ function mostrarAgregarEmpleado() {
   DivAgregarEmpleado.style.display = "block";
   btnNewEmpleado.style.display = "none";
 }
+
+function mostrarVenta(e) {
+  const DivlistaProductos = document.getElementById("product-list");
+  const productList = document.getElementById("product-list");
+  const element = document.createElement("div");
+  DivlistaProductos.style.display = "block";
+
+  element.innerHTML = `
+            <div class="">
+                    <table>
+                        <tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                        </tr>
+                            </tr>
+            </table>
+            <div>
+        `;
+  productList.appendChild(element);
+
+  document.getElementById("producto").value = "";
+  document.getElementById("fecha").value = "";
+  document.getElementById("cantidad").value = "";
+  document.getElementById("total").value = "";
+}
+

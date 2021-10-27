@@ -389,3 +389,8 @@ a {
   text-align: center;
   padding-bottom: 30px;
 }
+
+
+#product-list{
+    display: none;
+}
