@@ -1,6 +1,6 @@
 <?php
 
-// models/Adelanto.php
+// models/Adelantos.php
 
 class Adelantos extends model {
 

@@ -32,10 +32,10 @@
                     <div class="icon cancel-btn">
                         <i class="fas fa-times"></i>
                     </div>
-                    <li><a href="home.php">Inicio</a></li>
-                    <li><a href="ListadoEmpleados.php">Empleados</a></li>
-                    <li><a href="adelantos.php">Adelantos</a></li>
-                    <li><a href="provider.php">Proveedor</a></li>
+                    <li><a href="../controllers/inicio.php">Inicio</a></li>
+                    <li><a href="../controllers/ListaEmpleados.php">Empleados</a></li>
+                    <li><a href="../controllers/ListaAdelantos.php">Adelantos</a></li>
+                    <li><a href="../controllers/Proveedor.php">Proveedor</a></li>
                     <li><a href="productos.php">Productos</a></li>
                     <li><a href="ventas.php">Registrar ventas</a></li>
                     <li><a href="estadisticas.php">Estadísticas</a></li>
@@ -54,12 +54,14 @@
                     <th>Razón Social</th>
                     <th>ACCIONES</th>
                 </tr>
+                <?php foreach($this->proveedores as $p) {  ?>
                 <tr>
-                    <td>nombre</td>
-                    <td>Razón Social</td>
+                    <td><?= $p['nombre'] ?></td>
+                    <td><?= $p['razon_social'] ?></td>
                     <td id="">
                         <button class="btn-eliminar">ELIMINAR</button>
                 </tr>
+                <?php  } ?>
             </table>
         </div>
 
@@ -85,6 +87,7 @@
 
     <div class="mod-empleados" id="new-empleado">
         <h2>Nuevo Proveedor:</h2>
+        <form method="post">
         <table>
             <tr>
                 <th>NOMBRE</th>
@@ -94,10 +97,11 @@
             </tr>
             <tr>
                 <td><input type="text" name="nombre" id="nombre" maxlenght="20" value=""></td>
-                <td><input type="text" name="nombre" id="nombre" value=""></td>
+                <td><input type="text" name="razon_social" id="razon_social" value=""></td>
                 <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
             </tr>
         </table>
+        </form>
     </div>
 
 

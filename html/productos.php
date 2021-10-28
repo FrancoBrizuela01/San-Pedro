@@ -32,7 +32,7 @@
                 <li><a href="home.php">Inicio</a></li>
                 <li><a href="ListadoEmpleados.php">Empleados</a></li>
                 <li><a href="adelantos.php">Adelantos</a></li>
-                <li><a href="provider.php">Proveedor</a></li>
+                <li><a href="../controllers/Proveedor.php">Proveedor</a></li>
                 <li><a href="productos.php">Productos</a></li>
                 <li><a href="ventas.php">Registrar ventas</a></li>
                 <li><a href="estadisticas.php">Estadísticas</a></li>
