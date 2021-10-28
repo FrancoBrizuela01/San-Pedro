@@ -44,7 +44,7 @@
     </nav>
 
     <div class="Divcontainer" id="Divcontainer">
-        <h2>REGISTRAR VENTAS</h2>
+        <h2 class="h2Initial">REGISTRAR VENTAS:</h2>
         <form action="" method="post" id="product-form">
             <table>
                 <tr>
@@ -61,7 +61,7 @@
                     <td><input type="date" name="fecha" id="fecha" value=""></td>
                     <td><input type="number" name="cantidad" id="cantidad" value=""></td>
                     <td><input type="number" name="total" id="total" value=""></td>
-                    <td><button type="button" value="AGREGAR" class="btn-modificar" id="btn-limpiar" onclick="mostrarVenta()">AGREGAR</button></td>
+                    <td><button type="submit" value="AGREGAR" class="btn-modificar" id="btn-limpiar" onclick="agregarVenta()">AGREGAR</button></td>
                 </tr>
                 </tr>
             </table>
@@ -69,6 +69,7 @@
     </div>
 
     <div id="product-list" class="Divcontainer">
+        <h2 class="h2Initial">HISTORIAL DE VENTAS:</h2>
         <table>
             <tr>
                 <th>PRODUCTO</th>
@@ -76,8 +77,13 @@
                 <th>CANTIDAD</th>
                 <th>TOTAL</th>
             </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
         </table>
-
     </div>
 
     <script src="../html/js/app.js"></script>

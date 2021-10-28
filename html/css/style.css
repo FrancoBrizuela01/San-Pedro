@@ -390,7 +390,10 @@ a {
   padding-bottom: 30px;
 }
 
-
-#product-list{
+/* #product-list{
     display: none;
+} */
+
+.h2Initial {
+  text-align: initial !important;
 }
