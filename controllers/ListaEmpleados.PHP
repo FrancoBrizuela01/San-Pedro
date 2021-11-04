@@ -5,7 +5,7 @@
 require '../fw/fw.php';
 require '../models/Empleado.php';
 require '../views/Listadoempleados.php';
-require '../views/EmpleadoCreadoOk.php';
+
 
 
 	session_start();
@@ -27,7 +27,11 @@ require '../views/EmpleadoCreadoOk.php';
 
 
 		$e->NuevoEmpleado($_POST['nombre'], $_POST['apellido'], $_POST['dni']);
-		$v = New EmpleadoCreadoOk();
+		
+		echo'<script type="text/javascript">
+        alert("Adelanto realizado con exito");
+        window.location.href="../controllers/ListaEmpleados.php";
+        </script>';
 	}
 	else{
 		$v = new ListadoEmpleados();

@@ -5,7 +5,6 @@
 require '../fw/fw.php';
 require '../models/Prove.php';
 require '../views/Provider.php';
-require '../views/ProveOk.php';
 
 
 	session_start();
@@ -23,7 +22,11 @@ require '../views/ProveOk.php';
 		if(!isset($_POST['razon_social'])) die ('Ingrese la razón social');
 
 		$p->NuevoProveedor($_POST['razon_social'], $_POST['nombre']);
-		$v = new ProveOk();
+		
+		echo'<script type="text/javascript">
+        alert("Adelanto realizado con exito");
+        window.location.href="../controllers/Proveedor.php";
+        </script>';
 	}
 	else{
 		$v = new Provider();

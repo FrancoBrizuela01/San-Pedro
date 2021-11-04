@@ -29,11 +29,11 @@
                 <div class="icon cancel-btn">
                     <i class="fas fa-times"></i>
                 </div>
-                <li><a href="home.php">Inicio</a></li>
-                <li><a href="ListadoEmpleados.php">Empleados</a></li>
-                <li><a href="adelantos.php">Adelantos</a></li>
+                <li><a href="../controllers/inicio.php">Inicio</a></li>
+                <li><a href="../controllers/ListaEmpleados.php">Empleados</a></li>
+                <li><a href="../controllers/ListaAdelantos.php">Adelantos</a></li>
                 <li><a href="../controllers/Proveedor.php">Proveedor</a></li>
-                <li><a href="productos.php">Productos</a></li>
+                <li><a href="../controllers/ListaProductos.php">Productos</a></li>
                 <li><a href="ventas.php">Registrar ventas</a></li>
                 <li><a href="estadisticas.php">Estadísticas</a></li>
             </ul>
@@ -52,16 +52,16 @@
                 <th>PROVEEDOR</th>
                 <th>ACCIONES</th>
             </tr>
-
+                <?php foreach ($this->productos as $p) { ?>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $p['descripcion'] ?></td>
+                <td><?= $p['precio_costo'] ?></td>
+                <td><?= $p['nombre'] ?></td>
                 <td id="">
                     <button class="btn-eliminar">ELIMINAR</button>
                 </td>
-
             </tr>
+            <?php   } ?>
         </table>
     </div>
 
@@ -78,9 +78,9 @@
                     <th>ACCIONES</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="descripcion" id="descripcion"></td>
-                    <td><input type="number" name="precio_costo" id="precio_costo" value=""></td>
-                    <td><input type="text" name="proveedor" id="proveedor" value=""></td>
+                    <td><input type="text" name="desc" id="desc"></td>
+                    <td><input type="number" name="precioo" id="precio" value=""></td>
+                    <td><input type="text" name="nombre" id="nombre" value=""></td>
                     <td id=""><button type="submit" class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
                 </tr>
             </table>

@@ -6,7 +6,7 @@ require '../fw/fw.php';
 require '../models/Empleado.php';
 require '../models/Adelantos.php';
 require '../views/altaadelanto.php';
-require '../views/AltaAdelantosOk.php';
+
 
 	session_start();
 
@@ -23,7 +23,11 @@ require '../views/AltaAdelantosOk.php';
 		if(!isset($_POST['fecha'])) die ("error validacion 1");	
 			
 		$ma->crearAdelantoFechaDeterminada($_POST['empleado'], $_POST['monto'], $_POST['fecha']);
-		$v = new altaAdelantosOk();	// este llama a la vista que da el mensaje que salio bien!
+		
+		echo'<script type="text/javascript">
+        alert("Adelanto realizado con exito");
+        window.location.href="../controllers/ListaAdelantos.php";
+        </script>';
 	}
 	else {
 		$v = new altaadelanto();	// este llama a la vista de alta de adelantos.
