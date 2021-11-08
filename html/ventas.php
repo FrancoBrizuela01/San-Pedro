@@ -13,26 +13,18 @@
     <?php
     require '../html/Partials/Navbar.php';
     ?>
-
-
-
     <div class="Divcontainer" id="Divcontainer">
         <h2 class="h2Initial">REGISTRAR VENTAS:</h2>
         <form action="" method="post" id="product-form">
             <table>
                 <tr>
-                    <th>PRODUCTO</th>
                     <th>FECHA</th>
-                    <th>CANTIDAD</th>
                     <th>TOTAL</th>
                 </tr>
 
                 <tr>
                 <tr>
-                    <td><input type="text" name="producto" id="producto"></td>
-                    <!--aca estaria bueno poner un select para q elija directamente el producto q quiera-->
                     <td><input type="date" name="fecha" id="fecha" value=""></td>
-                    <td><input type="number" name="cantidad" id="cantidad" value=""></td>
                     <td><input type="number" name="total" id="total" value=""></td>
                     <td><button type="submit" value="AGREGAR" class="btn-modificar" id="btn-limpiar" onclick="agregarVenta()">AGREGAR</button></td>
                 </tr>
@@ -45,17 +37,15 @@
         <h2 class="h2Initial">HISTORIAL DE VENTAS:</h2>
         <table>
             <tr>
-                <th>PRODUCTO</th>
                 <th>FECHA</th>
-                <th>CANTIDAD</th>
                 <th>TOTAL</th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            <?php foreach ($this->vendido as $v) { ?>
+                <tr>
+                    <td><?= $v['fecha'] ?></td>
+                    <td><?= $v['cantidad'] ?></td>
+                </tr>
+            <?php } ?>
         </table>
     </div>
 

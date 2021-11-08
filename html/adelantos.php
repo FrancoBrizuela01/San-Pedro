@@ -12,6 +12,7 @@
 <body>
 
     <div class="listaEmpleado">
+
         <?php
         require '../html/Partials/Navbar.php';
         ?>

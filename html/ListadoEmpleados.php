@@ -19,11 +19,10 @@
 <body>
 
     <div class="listaEmpleado">
+
         <?php
         require '../html/Partials/Navbar.php';
         ?>
-
-
 
         <div class="Divcontainer" id="Divcontainer">
             <h2>LISTA DE EMPLEADOS:</h2>
@@ -42,6 +41,10 @@
                         <td id="">
                             <button class="btn-eliminar">ELIMINAR</button>
                         </td>
+
+                    <td id="eliminar">
+                        <button class="btn-eliminar" id="codigo" value="<?= $e['codigo_empleado'] ?>">ELIMINAR</button>
+                    </td>
                     <?php } ?>
                     </tr>
             </table>

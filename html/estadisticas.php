@@ -44,6 +44,7 @@
                 </select>
                 <input type="submit" value="Buscar" class="btn-search">
             </div>
+
         </form>
 
         <table>

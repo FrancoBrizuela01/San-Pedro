@@ -24,7 +24,7 @@ require '../views/Provider.php';
 		$p->NuevoProveedor($_POST['razon_social'], $_POST['nombre']);
 		
 		echo'<script type="text/javascript">
-        alert("Adelanto realizado con exito");
+        alert("Proveedor agregado con exito");
         window.location.href="../controllers/Proveedor.php";
         </script>';
 	}
