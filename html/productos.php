@@ -34,7 +34,7 @@
                 <li><a href="../controllers/ListaAdelantos.php">Adelantos</a></li>
                 <li><a href="../controllers/Proveedor.php">Proveedor</a></li>
                 <li><a href="../controllers/ListaProductos.php">Productos</a></li>
-                <li><a href="ventas.php">Registrar ventas</a></li>
+                <li><a href="../controllers/ListaVentas.php">Registrar ventas</a></li>
                 <li><a href="estadisticas.php">Estadísticas</a></li>
             </ul>
             <div class="icon menu-btn">

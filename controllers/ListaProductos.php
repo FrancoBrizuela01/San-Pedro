@@ -24,7 +24,7 @@ require '../models/Produ.php';
 		$p->NuevoProducto($_POST['desc'], $_POST['precio'], $_POST['nombre']  );
 
 		echo'<script type="text/javascript">
-        alert("Adelanto realizado con exito");
+        alert("Producto agregado con exito");
         window.location.href="../controllers/Listaproductos.php";
         </script>';
 

@@ -9,17 +9,17 @@ class administrador extends model {
 
 			// validacion del email
 
-			if(!isset($email)) die ("no existe");
-			if(strlen($email) < 1) die ("pocas letras");
+			if(!isset($email)) throw new ValidacionException('error 1');
+			if(strlen($email) < 1) throw new ValidacionException('error 2');
 			if(strlen($email) > 150 );
-			$email = $this->db->escape($email);// la validacion con la bse de datos del fw.
+			$email = $this->db->escape($email);
 
 			// validacion de la password "string".
 
-			if(!isset($passwd)) die ("no existe");
-			if(strlen($passwd) < 1 ) die ("Contraseña muy corta");
+			if(!isset($passwd)) throw new ValidacionException('error 3');
+			if(strlen($passwd) < 1 ) throw new ValidacionException('error 4');
 			if(strlen($passwd) > 40);
-			$passwd = $this->db->escape($passwd);// la validacion con la bse de datos del fw.
+			$passwd = $this->db->escape($passwd);
 
 			$passwd = sha1($passwd);
 
@@ -32,3 +32,5 @@ class administrador extends model {
 			
 	}
 }
+
+class ValidacionException extends Exception{}
