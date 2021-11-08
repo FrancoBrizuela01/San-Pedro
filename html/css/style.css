@@ -205,7 +205,33 @@ body {
   color: #f5f5f5;
 }
 
+/*select*/
+
+.divSelect {
+  position: initial;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.divSelect select {
+  background-color: var(--third-color);
+  width: 10%;
+  height: 50px;
+  border: none;
+}
+
+.divSelect select:hover {
+  background-color: var(--second-color);
+  color: white;
+  cursor: pointer;
+}
+
+.select {
+  margin-right: 10px;
+}
+
 /*----------table----------*/
+
 .Divcontainer {
   margin: 9rem;
   padding: 1rem;
@@ -253,20 +279,30 @@ td {
 }
 
 /*/*----------buttons----------*/
-.btn-stats {
-  /* margin-top: 30px;
-  margin-left: 35%;
-  transform: translateX(-50%);
-  width: 30%;
-  height: 40px;
-  border: 1px solid;
+
+.btn-search {
+  outline: none;
+  text-align: center;
+  width: 10%;
   background: var(--first-color);
-  border-radius: 25px;
-  font-size: 18px;
-  color: var(--third-color);
-  font-weight: 700;
+  border: 2px solid var(--second-color);
+  color: var(--second-color);
+  text-shadow: 0;
   cursor: pointer;
-  outline: none; */
+  transition: all 0.25s ease;
+  margin-right: 10px;
+}
+
+.btn-search:hover {
+  color: white;
+  background: var(--second-color);
+}
+
+.btn-search:active {
+  letter-spacing: 1px;
+}
+
+.btn-stats {
   margin-top: 30px;
   margin-left: 35%;
   transform: translateX(-50%);
