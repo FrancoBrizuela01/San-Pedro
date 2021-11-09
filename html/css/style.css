@@ -444,7 +444,7 @@ a {
 }
 
 .nav li:hover > ul {
-  display: block;
+    display: inline-block;
 }
 
 .nav li ul li {
