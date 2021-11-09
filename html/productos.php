@@ -5,6 +5,7 @@
     <?php
     require '../html/Partials/Head.php';
     ?>
+
 </head>
 
 <body>
