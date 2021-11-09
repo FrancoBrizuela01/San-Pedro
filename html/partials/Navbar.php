@@ -3,7 +3,7 @@
         <div class="logo">
             <a href="../controllers/inicio.php">San Pedro</a>
         </div>
-        <ul class="menu-list">
+        <ul class="menu-list nav">
             <div class="icon cancel-btn">
                 <i class="fas fa-times"></i>
             </div>
@@ -13,7 +13,12 @@
             <li><a href="../controllers/Proveedor.php">Proveedor</a></li>
             <li><a href="../controllers/ListaProductos.php">Productos</a></li>
             <li><a href="../controllers/ListaVentas.php">Registrar ventas</a></li>
-            <li><a href="estadisticas.php">Estadísticas</a></li>
+            <li><a>Estadísticas</a>
+                <ul>
+                    <li><a href="estadisticasMes.php">Estadísticas mes</a></li>
+                    <li><a href="estadisticasAnio.php">Estadísticas año</a></li>
+                </ul>
+            </li>
         </ul>
         <div class="icon menu-btn">
             <i class="fas fa-bars"></i>
