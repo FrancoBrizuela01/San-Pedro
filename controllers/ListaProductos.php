@@ -5,13 +5,7 @@
 require '../fw/fw.php';
 require '../views/productos.php';
 require '../models/Produ.php';
-
-	session_start();
-
-	if(!isset($_SESSION['logueado'])){
-		header("Location: ListaAdministradores.php");
-		exit;
-	}
+require '../html/partials/session.php';
 
 	$p = new Produ();
 
