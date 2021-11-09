@@ -6,6 +6,7 @@
 	require '../views/estadisticasMes.php';
 	require '../models/venta.php';
 	require '../models/meses.php';
+	require '../html/partials/session.php';
 
 	$v = new venta;
 	$m = new meses;

@@ -5,6 +5,7 @@
 	require '../fw/fw.php' ;
 	require '../views/EstadisticasAnio.php' ;
 	require '../models/venta.php' ;
+	require '../html/partials/session.php';
 
 	$e = new EstadisticasAnio ;
 	$v = new venta ;

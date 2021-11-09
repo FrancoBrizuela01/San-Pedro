@@ -5,14 +5,7 @@
 require '../fw/fw.php';
 require '../models/Prove.php';
 require '../views/Provider.php';
-
-
-	session_start();
-
-	if(!isset($_SESSION['logueado'])){
-		header("Location: ListaAdministradores.php");
-		exit;
-	}
+require '../html/partials/session.php';
 
 	$p = new Prove();
 

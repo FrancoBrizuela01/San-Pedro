@@ -5,6 +5,7 @@
 require '../fw/fw.php';
 require '../models/venta.php';
 require '../views/ventas.php';
+require '../html/partials/session.php';
 
 	$ven = new venta ();
 
