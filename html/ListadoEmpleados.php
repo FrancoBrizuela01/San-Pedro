@@ -63,6 +63,7 @@
                     <th>ACCIONES</th>
                 </tr>
                     <?php foreach ($this->empleados as $e) { ?>
+                <form method="post" >
                 <tr>
                         <td><?= $e['nombre'] ?></td>
                         <td><?= $e['apellido'] ?></td>
@@ -73,6 +74,7 @@
                     <?php } ?>
                 </tr>
             </table>
+            </form>
         </div>
 
         <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO EMPLEADO</button></a>
