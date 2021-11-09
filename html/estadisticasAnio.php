@@ -39,18 +39,18 @@ if (!isset($_POST['anio'])) {
     $anio = date('Y');
 
     $mesActual = date('n');
-    $promedio  = $this->totalAño['cantidad'] / $mesActual;
+    $promedio  = $this->totalAño['precio'] / $mesActual;
 }
 
 if (isset($_POST['anio'])) {
     $anio = $_POST['anio'];
 
     if ($anio < $anioActual)
-        $promedio = $this->totalAño['cantidad'] / 12;
+        $promedio = $this->totalAño['precio'] / 12;
 
     if ($anio == $anioActual) {
         $mesActual = date('n');
-        $promedio  = $this->totalAño['cantidad'] / $mesActual;
+        $promedio  = $this->totalAño['precio'] / $mesActual;
     }
 }
 
@@ -88,7 +88,7 @@ if (isset($_POST['anio'])) {
                 <input type="submit" value="buscar" class="btn-search">
             </div>
         </form>
-        <?php if ($this->totalAño['cantidad']) : ?>
+        <?php if ($this->totalAño['precio']) : ?>
             <table>
                 <tr>
                     <th>TOTAL</th>
@@ -98,18 +98,15 @@ if (isset($_POST['anio'])) {
                     <th>VENTA RECORD</th>
                 </tr>
                 <tr>
-                    <td>$<?= $this->totalAño['cantidad'] ?></td>
+                    <td>$<?= $this->totalAño['precio'] ?></td>
                     <td>$<?= round($promedio) ?></td>
 
-                    <td><?= $this->mesMin['nombre'] ?></td>
-                    <td>$<?= $this->mesMin['total'] ?></td>
+                    <td><?= $this->mesMin['nombre'] ?>  $<?= $this->mesMin['total'] ?></td>
 
-                    <td><?= $this->mesMax['nombre'] ?></td>
-                    <td>$<?= $this->mesMax['total'] ?></td>
+                    <td><?= $this->mesMax['nombre'] ?>  $<?= $this->mesMax['total'] ?></td>
 
-                    <td><?= NombreDia($this->record['fecha']) ?> <?= $this->record['fechaRecord'] ?> <?= $this->record['mes'] ?></td>
-                    <td>$<?= $this->record['precio'] ?></td>
-
+                    <td><?= NombreDia($this->record['fecha']) ?> <?= $this->record['fechaRecord'] ?> <?= $this->record['mes'] ?>  $<?= $this->record['precio'] ?></td>
+ 
                 </tr>
             </table>
         <?php endif ?>

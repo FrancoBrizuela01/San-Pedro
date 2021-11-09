@@ -4,10 +4,10 @@
 
 class estadisticasMes extends view {
 
-		public $totalMes ;
-		public $promedioDia ;
-		public $diaMax ;
-		public $diaMin ;
-		public $nombreMes ;
-		public $lista ;
+		public $totalMes;
+		public $promedioDia;
+		public $diaMax;
+		public $diaMin;
+		public $nombreMes;
+		public $lista;
 }

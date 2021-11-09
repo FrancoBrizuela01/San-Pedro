@@ -208,7 +208,7 @@ class venta extends model {
 
 		$this->db->query ( "SELECT v.fecha , SUM(v.cantidad) precio , DATE_FORMAT(v.fecha,'%d') fechaRecord , m.nombre mes
 							FROM   codigo_venta v , meses m
-							WHERE  YEAR(v.fecha) = '2020'
+							WHERE  YEAR(v.fecha) = '$anio'
 							AND    MONTH (v.fecha) = m.numero
 							GROUP BY DAY(v.fecha) , MONTH(v.fecha)
 							ORDER BY v.cantidad DESC
@@ -216,6 +216,29 @@ class venta extends model {
 
 		return $this->db->fetch() ;
 	}
+
+	public function ListaVentasDelMes ( $mes , $anio ) {
+
+        /*  VALIDACION DEL MES  */
+        if ( $mes <= 0 ) die('ERROR1');
+        if ( $mes > 12 ) die('ERROR2');
+        if ( strlen($mes) < 1 || strlen($mes) > 2 ) die('ERROR3');
+        if ( !is_numeric($mes) ) die('ERROR4');
+
+        /*  VALIDACION DEL AÑO  */
+        if ( $anio < 2019 ) die('ERROR-1');
+        if ( strlen($anio) != 4 ) die('ERROR-2');
+        if ( !is_numeric($anio) ) die('ERROR-3');
+
+        $this->db->query ( "SELECT   DAY(fecha) dia , SUM(cantidad) precio 
+                            FROM     codigo_venta
+                            WHERE    YEAR (fecha) = '$anio'
+                            AND      MONTH(fecha) = '$mes'
+                            GROUP BY dia
+                            ORDER BY fecha ASC" ) ;
+
+        return $this->db->fetchAll() ;
+    }
 
 }
 

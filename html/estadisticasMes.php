@@ -95,7 +95,7 @@ endforeach
             </div>
 
         </form>
-        <?php if ($this->totalMes['cantidad']) : ?>
+        <?php if ($this->totalMes['precio']) : ?>
             <table>
                 <tr>
                     <th>TOTAL</th>
@@ -104,14 +104,15 @@ endforeach
                     <th>VENTA MAXIMA</th>
                 </tr>
                 <tr>
-                    <td>$<?= $this->totalMes['cantidad'] ?></td>
-                    <td>$<?= round($this->totalMes['cantidad'] / $cont) ?></td>
+                    <td>$<?= $this->totalMes['precio'] ?></td>
+                    <td>$<?= round($this->totalMes['precio'] / $cont) ?></td>
 
-                    <td><?= NombreDia($this->diaMin['fecha']) ?> <?= $DiaMin ?></td>
-                    <td>$<?= $this->diaMin['cantidad'] ?></td>
+                    <td><?= NombreDia($this->diaMin['fecha']) ?> <?= $DiaMin ?> 
+                     $<?= $this->diaMin['precio'] ?></td>
 
-                    <td><?= NombreDia($this->diaMax['fecha']) ?> <?= $DiaMax ?></td>
-                    <td>$<?= $this->diaMax['cantidad'] ?></td>
+                    <td><?= NombreDia($this->diaMax['fecha']) ?> <?= $DiaMax ?>  
+                    $<?= $this->diaMax['precio'] ?></td>
+
                 </tr>
             </table>
         <?php endif ?>
