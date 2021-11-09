@@ -65,6 +65,10 @@ class Empleado extends model {
 							FROM empleados
 							WHERE codigo_empleado = '$id' ");
 
+		$this->db->query("DELETE 
+							FROM adelantos
+							WHERE codigo_empleado = 'id' ");
+
 	}
 
 }

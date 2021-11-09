@@ -6,7 +6,7 @@
 
 		public function getTodosProdu(){
 
-			$this->db->query("SELECT produ.descripcion, produ.precio_costo, prove.nombre
+			$this->db->query("SELECT produ.descripcion, produ.precio_costo, prove.nombre, produ.stock
 							FROM productos produ
 							LEFT JOIN proveedor prove ON prove.nombre = produ.nombre_prove");
 
@@ -14,7 +14,7 @@
 
 		}
 
-		public function NuevoProducto($desc, $precio, $nombre){
+		public function NuevoProducto($desc, $precio, $nombre, $stock){
 
 			if(!isset($desc)) throw new ValidacionException('error 1');
 	    	if(strlen($desc) < 1 ) throw new ValidacionException('error 2');
@@ -33,9 +33,16 @@
 			$precio = $this->db->escape($precio);
 
 			$this->db->query("INSERT INTO productos
-								(descripcion, precio_costo, nombre_prove) VALUES
-								('$desc', $precio, '$nombre' )");
+								(descripcion, precio_costo, nombre_prove, stock) VALUES
+								('$desc', $precio, '$nombre', $stock )");
 
+		}
+
+		public function EliminarProducto($id){
+
+			$this->db->query ("DELETE
+								FROM productos
+								WHERE codigo_producto = '$id' ");
 		}
 
 		

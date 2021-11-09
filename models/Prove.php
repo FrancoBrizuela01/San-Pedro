@@ -35,6 +35,14 @@ class Prove extends model {
 
 	}
 
+	public function EliminarProveedor ($id){
+
+		$this->db->query ("DELETE 
+							FROM proveedor
+							WHERE codigo_proveedor = '$id' ");
+
+	}
+
 }
 
 class ValidacionException extends Exception{}

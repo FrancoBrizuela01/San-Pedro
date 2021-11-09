@@ -17,6 +17,17 @@ require '../models/Produ.php';
 
 	if(count($_POST) > 0 ){
 
+		if(!isset($_POST['eliminar'])){
+        	
+        	$p->EliminarProducto($_POST['codigo']);
+
+        	echo'<script type="text/javascript">
+        	alert("Producto	eliminado con exito");
+        	window.location.href="../controllers/ListaEmpleados.php";
+        	</script>';
+
+        } else {
+
 		if(!isset($_POST['nombre'])) die('Escribir el nombre');
 		if(!isset($_POST['desc'])) die('Escribir descripcion');
 		if(!isset($_POST['precio'])) die('Escribir el precio');
@@ -27,6 +38,7 @@ require '../models/Produ.php';
         alert("Producto agregado con exito");
         window.location.href="../controllers/Listaproductos.php";
         </script>';
+        } 
 
 	}
 	else {

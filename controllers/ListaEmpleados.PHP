@@ -34,14 +34,15 @@ require '../views/Listadoempleados.php';
         </script>';
 
         if(isset($_POST['eliminar'])){
-        	$e->EliminarEmpleado($_POST['codigo']);
+        	
+       	$e->EliminarEmpleado($_POST['codigo']);
 
-        	echo'<script type="text/javascript">
-        	alert("Empleado	eliminado con exito");
-        	window.location.href="../controllers/ListaEmpleados.php";
-        	</script>';
+       	echo'<script type="text/javascript">
+       	alert("Empleado	eliminado con exito");
+       	window.location.href="../controllers/ListaEmpleados.php";
+       	</script>';
+        }
 
-        } 
 	}
 	else{
 		$v = new ListadoEmpleados();
