@@ -32,6 +32,7 @@
                     <td id="">
                         <input type="hidden" name="codigo">
                         <button type="submit" class="btn-eliminar" id="eliminar">ELIMINAR</button>
+                        <button class="btn-modificar" onclick="mostrarModificarProducto()">MODIFICAR</button>
                     </td>
                 </tr>
             <?php   } ?>
@@ -60,10 +61,28 @@
         </form>
     </div>
 
+    <div class="mod-empleados" id="modificacion-producto">
+        <h2>Modificar producto</h2>
+        <form method="post">
+            <table>
+                <tr>
+                    <th>DESCRIPCIÓN</th>
+                    <th>PRECIO COSTO</th>
+                    <th>PROVEEDOR</th>
+                    <th>STOCK</th>
+                    <th>ACCIONES</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="" id="" ></td>
+                    <td><input type="number" name="" id="" value=""></td>
+                    <td><input type="text" name="" id="" value=""></td>
+                    <td><input type="number" name="" id="" value=""></td>
+                    <td id=""><button type="submit" class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+                </tr>
+            </table>
+        </form>
     </div>
-    <?php
-    require '../html/Partials/Footer.php';
-    ?>
+
     <script src="../html/js/app.js"></script>
 </body>
 

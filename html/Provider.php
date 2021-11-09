@@ -74,10 +74,6 @@
             </form>
         </div>
 
-        <?php
-        require '../html/Partials/Footer.php';
-        ?>
-
         <script src="../html/js/app.js"></script>
 </body>
 

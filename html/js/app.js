@@ -24,6 +24,8 @@ window.onscroll = () => {
 const btnNewEmpleado = document.getElementById("btn-newEmpleado");
 const DivAgregarEmpleado = document.getElementById("new-empleado");
 
+const DivModiProducto = document.getElementById("modificacion-producto");
+
 // function mostrarModificarEmpleados() {
 //   if ((ModEmpleados.style.display = "none")) {
 //     ModEmpleados.style.display = "block";
@@ -48,6 +50,11 @@ const DivAgregarEmpleado = document.getElementById("new-empleado");
 
 function mostrarAgregarEmpleado() {
   DivAgregarEmpleado.style.display = "block";
+  btnNewEmpleado.style.display = "none";
+}
+
+function mostrarModificarProducto() {
+  DivModiProducto.style.display = "block";
   btnNewEmpleado.style.display = "none";
 }
 

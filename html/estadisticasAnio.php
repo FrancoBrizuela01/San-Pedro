@@ -138,9 +138,6 @@ if (isset($_POST['anio'])) {
         <?php endif ?>
     </div>
 
-    <?php
-    require '../html/Partials/Footer.php';
-    ?>
     <script src="../html/js/app.js"></script>
 </body>
 
