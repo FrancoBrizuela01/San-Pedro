@@ -31,8 +31,14 @@
                     <th>DNI</th>
                     <th>ACCIONES</th>
                 </tr>
+<<<<<<< HEAD
+                    <?php foreach ($this->empleados as $e) { ?>
+                <form method="post" >
+                <tr>
+=======
                 <?php foreach ($this->empleados as $e) { ?>
                     <tr>
+>>>>>>> d60d9b4829ec68cb1f23051418fd3d7401250c46
                         <td><?= $e['nombre'] ?></td>
                         <td><?= $e['apellido'] ?></td>
                         <td><?= $e['dni'] ?></td>
@@ -46,6 +52,7 @@
                     <?php } ?>
                     </tr>
             </table>
+            </form>
         </div>
 
         <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO EMPLEADO</button></a>

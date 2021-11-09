@@ -35,20 +35,20 @@ class Empleado extends model {
 	public function NuevoEmpleado($nombre, $apellido, $dni){
 
 
-        if(!is_numeric($dni)) throw new ValidacionException('error 1');
+        if(!is_numeric($dni)) throw new ValidacionException1('error 1');
         
-        if($dni < 1) throw new ValidacionException('error 2');
+        if($dni < 1) throw new ValidacionException1('error 2');
        	//if($dni > 9) die("error 3");
 
-        if(!isset($nombre)) throw new ValidacionException('error 3');
-    	if(strlen($nombre) < 1 ) throw new ValidacionException('error 4');
-     	if(strlen($nombre) > 20 ) throw new ValidacionException('error 5');
+        if(!isset($nombre)) throw new ValidacionException1('error 3');
+    	if(strlen($nombre) < 1 ) throw new ValidacionException1('error 4');
+     	if(strlen($nombre) > 20 ) throw new ValidacionException1('error 5');
      	$nombre = $this->db->escape($nombre);
      	$nombre = $this->db->escapeWildcards($nombre);
 
-   		if(!isset($apellido)) throw new ValidacionException('error 6');
-    	if(strlen($apellido) < 1 ) throw new ValidacionException('error 7');
-     	if(strlen($apellido) > 20 ) throw new ValidacionException('error 8');
+   		if(!isset($apellido)) throw new ValidacionException1('error 6');
+    	if(strlen($apellido) < 1 ) throw new ValidacionException1('error 7');
+     	if(strlen($apellido) > 20 ) throw new ValidacionException1('error 8');
      	$apellido = $this->db->escape($apellido);
      	$apellido = $this->db->escapeWildcards($apellido);
 
@@ -69,4 +69,4 @@ class Empleado extends model {
 
 }
 
-class ValidacionException extends Exception{}
+class ValidacionException1 extends Exception{}
