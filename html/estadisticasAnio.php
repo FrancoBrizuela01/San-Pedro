@@ -76,7 +76,7 @@ if (isset($_POST['anio'])) {
     ?>
 
     <div class="Divcontainer" id="Divcontainer">
-        <h2 class="h2Initial">ESTADISTICAS DEL AÑO</h2>
+        <h2 class="h2Initial">ESTADISTICAS DEL AÑO:</h2>
 
         <form action="" method="post">
             <div class="divSelect">
@@ -88,7 +88,33 @@ if (isset($_POST['anio'])) {
                 <input type="submit" value="buscar" class="btn-search">
             </div>
         </form>
+
+        <?php if (!$this->totalAño['precio']) : ?>
+            <h2>AÑO SELECCIONADO: <?= $_POST['anio'] ?></h2>
+            <table>
+                <tr>
+                    <th>TOTAL</th>
+                    <th>PROMEDIO</th>
+                    <th>MES MENOS VENDIDO</th>
+                    <th>MES MÁS VENDIDO</th>
+                    <th>VENTA RECORD</th>
+                </tr>
+                <tr>
+                    <td>NULL</td>
+                    <td>NULL</td>
+
+                    <td>NULL</td>
+
+                    <td>NULL</td>
+
+                    <td>NULL</td>
+
+                </tr>
+            </table>
+        <?php endif ?>
+
         <?php if ($this->totalAño['precio']) : ?>
+            <h2>AÑO SELECCIONADO: <?=  $anio - 10 ?></h2>
             <table>
                 <tr>
                     <th>TOTAL</th>
@@ -101,12 +127,12 @@ if (isset($_POST['anio'])) {
                     <td>$<?= $this->totalAño['precio'] ?></td>
                     <td>$<?= round($promedio) ?></td>
 
-                    <td><?= $this->mesMin['nombre'] ?>  $<?= $this->mesMin['total'] ?></td>
+                    <td><?= $this->mesMin['nombre'] ?> $<?= $this->mesMin['total'] ?></td>
 
-                    <td><?= $this->mesMax['nombre'] ?>  $<?= $this->mesMax['total'] ?></td>
+                    <td><?= $this->mesMax['nombre'] ?> $<?= $this->mesMax['total'] ?></td>
 
-                    <td><?= NombreDia($this->record['fecha']) ?> <?= $this->record['fechaRecord'] ?> <?= $this->record['mes'] ?>  $<?= $this->record['precio'] ?></td>
- 
+                    <td><?= NombreDia($this->record['fecha']) ?> <?= $this->record['fechaRecord'] ?> <?= $this->record['mes'] ?> $<?= $this->record['precio'] ?></td>
+
                 </tr>
             </table>
         <?php endif ?>

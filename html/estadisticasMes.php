@@ -33,8 +33,16 @@ function NombreDia($fecha)
 ?>
 
 <?php
-$DiaMin  = substr($this->diaMin['fecha'], 8, 2);
-$DiaMax  = substr($this->diaMax['fecha'], 8, 2);
+
+
+if (isset($this->diaMin['fecha'])) {
+    $DiaMin  = substr($this->diaMin['fecha'], 8, 2);
+}
+if (isset($this->diaMax['fecha'])) {
+    $DiaMax  = substr($this->diaMax['fecha'], 8, 2);
+}
+//$DiaMin  = substr($this->diaMin['fecha'], 8, 2);
+//$DiaMax  = substr($this->diaMax['fecha'], 8, 2);
 $anio = date('Y');
 $mesAcutal = date('n');
 $anioActual = date('Y');
@@ -95,7 +103,28 @@ endforeach
             </div>
 
         </form>
+
+        <?php if (!$this->totalMes['precio']) : ?>
+            <h2><?= $this->nombreMes['nombre'] ?> del <?= $anio ?></h2>
+            <table>
+                <tr>
+                    <th>TOTAL</th>
+                    <th>PROMEDIO</th>
+                    <th>VENTA MINIMA</th>
+                    <th>VENTA MAXIMA</th>
+                </tr>
+                <tr>
+                    <td>NULL</td>
+                    <td>NULL</td>
+                    <td>NULL</td>
+                    <td>NULL</td>
+
+                </tr>
+            </table>
+        <?php endif ?>
+
         <?php if ($this->totalMes['precio']) : ?>
+            <h2><?= $this->nombreMes['nombre'] ?> del <?= $anio ?></h2>
             <table>
                 <tr>
                     <th>TOTAL</th>
@@ -107,11 +136,11 @@ endforeach
                     <td>$<?= $this->totalMes['precio'] ?></td>
                     <td>$<?= round($this->totalMes['precio'] / $cont) ?></td>
 
-                    <td><?= NombreDia($this->diaMin['fecha']) ?> <?= $DiaMin ?> 
-                     $<?= $this->diaMin['precio'] ?></td>
+                    <td><?= NombreDia($this->diaMin['fecha']) ?> <?= $DiaMin ?>
+                        $<?= $this->diaMin['precio'] ?></td>
 
-                    <td><?= NombreDia($this->diaMax['fecha']) ?> <?= $DiaMax ?>  
-                    $<?= $this->diaMax['precio'] ?></td>
+                    <td><?= NombreDia($this->diaMax['fecha']) ?> <?= $DiaMax ?>
+                        $<?= $this->diaMax['precio'] ?></td>
 
                 </tr>
             </table>

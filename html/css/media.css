@@ -91,6 +91,27 @@
     margin-left: 0px;
   }
 
+    .nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px; 
+    left: 100px;
+  }
+
+  .nav li:hover > ul {
+    display: block;
+  }
+
+  .nav li ul li {
+    position: relative;
+  }
+
+  .nav li ul li ul {
+    right: 0px;
+    top: 0px;
+  }
+
+
   .btn-newEmpleado {
     width: 18%;
   }
@@ -136,6 +157,8 @@
 }
 
 @media screen and (max-width: 600px) {
+
+
   .divSelect select {
     width: 35%;
     height: 50px;
