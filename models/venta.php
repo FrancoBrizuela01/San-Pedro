@@ -3,7 +3,7 @@
 // models/venta.php
 
 
-	class venta extends model {
+class venta extends model {
 
 
 		public function GetVentas(){
@@ -46,6 +46,177 @@
 								('$fecha', $cantidad)	");
 		}
 
+		public function totalMes ( $mes , $anio ) {
+
+		/*  VALIDACION DEL MES  */
+		if ( $mes <= 0 )  throw new ValidacionException('error 1');
+		if ( $mes > 12 )  throw new ValidacionException('error 2');
+		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException('error 3');
+		if ( !is_numeric($mes) )  throw new ValidacionException('error 4');
+		/*  VALIDACION DEL AÑO  */
+		if ( $anio < 2019 )  throw new ValidacionException('error 5');
+		if ( strlen($anio) != 4 )  throw new ValidacionException('error 6');
+		if ( !is_numeric($anio) )  throw new ValidacionException('error 7');
+
+		$this->db->query ( "SELECT SUM(cantidad) AS precio
+						    FROM   codigo_venta
+						    WHERE  MONTH (fecha) = '$mes' 
+						    AND    YEAR  (fecha) = '$anio'" ) ;
+
+		return $this->db->fetch() ;
 	}
 
-	class ValidacionException extends Exception{}
+
+	public function diaMax ( $mes , $anio ) {
+
+		/*  VALIDACION DEL MES  */
+		if ( $mes <= 0 )  throw new ValidacionException('error 1');
+		if ( $mes > 12 )  throw new ValidacionException('error 2');
+		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException('error 3');
+		if ( !is_numeric($mes) )  throw new ValidacionException('error 4');
+
+		/*  VALIDACION DEL AÑO  */
+		if ( $anio < 2019 )  throw new ValidacionException('error 5');
+		if ( strlen($anio) != 4 )  throw new ValidacionException('error 6');
+		if ( !is_numeric($anio) )  throw new ValidacionException('error 7');;
+
+		$this->db->query ( "SELECT   codigo_venta , SUM(cantidad) precio , fecha 
+							FROM     codigo_venta
+							WHERE    MONTH (fecha) = '$mes'
+							AND      YEAR  (fecha) = '$anio'
+							GROUP BY DAY   (fecha)
+							ORDER BY precio DESC
+							LIMIT    1" ) ;
+
+		return $this->db->fetch() ;
+	}
+
+
+	public function diaMin ( $mes , $anio ) {
+
+		/*  VALIDACION DEL MES  */
+		if ( $mes <= 0 )  throw new ValidacionException('error 1');
+		if ( $mes > 12 )  throw new ValidacionException('error 2');
+		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException('error 3');
+		if ( !is_numeric($mes) )  throw new ValidacionException('error 4');
+
+		/*  VALIDACION DEL AÑO  */
+		if ( $anio < 2019 )  throw new ValidacionException('error 5');
+		if ( strlen($anio) != 4 )  throw new ValidacionException('error 6');
+		if ( !is_numeric($anio) )  throw new ValidacionException('error 7');
+
+		$this->db->query ( "SELECT   codigo_venta , SUM(cantidad) precio , fecha 
+							FROM     codigo_venta
+							WHERE    MONTH (fecha) = '$mes'
+							AND      YEAR  (fecha) = '$anio'
+							GROUP BY DAY   (fecha)
+							ORDER BY precio ASC
+							LIMIT    1" ) ;
+
+		return $this->db->fetch() ;
+	}
+
+
+	public function promedioDia ( $mes , $anio ) {
+
+		/*  VALIDACION DEL MES  */
+		if ( $mes <= 0 )  throw new ValidacionException('error 1');
+		if ( $mes > 12 )  throw new ValidacionException('error 2');
+		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException('error 3');
+		if ( !is_numeric($mes) )  throw new ValidacionException('error 4');
+
+		/*  VALIDACION DEL AÑO  */
+		if ( $anio < 2019 )  throw new ValidacionException('error 5');
+		if ( strlen($anio) != 4 )  throw new ValidacionException('error 6');
+		if ( !is_numeric($anio) )  throw new ValidacionException('error 7');
+
+		$this->db->query ( "SELECT ROUND ( AVG(cantidad) ) AS Promedio
+							FROM   codigo_venta
+							WHERE  MONTH (fecha) = '$mes' 
+							AND    YEAR  (fecha) = '$anio'" ) ;
+
+		return $this->db->fetch() ;
+	}
+
+
+
+	/*                                               *
+	*                                                *
+	*                                                *
+	*		FUNCIONES PARA ESTADISTICA DEL AÑO       *
+	*                                                *
+	*                                                *
+	*                                                */
+
+
+
+	public function totalAño ( $anio ) {
+
+		/*  VALIDACION DEL AÑO  */
+		if ( $anio < 2019 )  throw new ValidacionException('error 1');
+		if ( strlen($anio) != 4 )  throw new ValidacionException('error 2');
+		if ( !is_numeric($anio) )  throw new ValidacionException('error 3');
+
+		$this->db->query ( "SELECT SUM(cantidad) AS precio
+							FROM  codigo_venta
+							WHERE YEAR(fecha) = '$anio'" ) ;
+
+		return $this->db->fetch() ;
+
+	}
+
+
+	public function mesMin ( $anio ) {
+
+		/*  VALIDACION DEL AÑO  */
+		if ( $anio < 2019 )  throw new ValidacionException('error 1');
+		if ( strlen($anio) != 4 )  throw new ValidacionException('error 2');
+		if ( !is_numeric($anio) )  throw new ValidacionException('error 3');
+
+		$this->db->query ( "SELECT   MONTH (v.fecha) AS mes , m.nombre , SUM(v.cantidad) AS total
+							FROM     codigo_venta v , meses m
+							WHERE    MONTH (v.fecha) = m.numero
+							AND      YEAR  (v.fecha) = '$anio'
+							GROUP BY mes
+							ORDER BY total ASC
+							LIMIT    1" ) ;
+
+		return $this->db->fetch() ;
+	}
+
+
+	public function mesMax ( $anio ) {
+
+		/*  VALIDACION DEL AÑO  */
+		if ( $anio < 2019 )  throw new ValidacionException('error 1');
+		if ( strlen($anio) != 4 )  throw new ValidacionException('error 2');
+		if ( !is_numeric($anio) )  throw new ValidacionException('error 3');
+
+		$this->db->query ( "SELECT   MONTH (v.fecha) AS mes , m.nombre , SUM(v.cantidad) AS total
+							FROM     codigo_venta v , meses m
+							WHERE    MONTH (v.fecha) = m.numero
+							AND      YEAR  (v.fecha) = '$anio'
+							GROUP BY mes
+							ORDER BY total DESC
+							LIMIT    1" ) ;
+
+		return $this->db->fetch() ;
+	}
+
+
+	public function VentaRecord ( $anio ) {
+
+		$this->db->query ( "SELECT v.fecha , SUM(v.cantidad) precio , DATE_FORMAT(v.fecha,'%d') fechaRecord , m.nombre mes
+							FROM   codigo_venta v , meses m
+							WHERE  YEAR(v.fecha) = '2020'
+							AND    MONTH (v.fecha) = m.numero
+							GROUP BY DAY(v.fecha) , MONTH(v.fecha)
+							ORDER BY v.cantidad DESC
+							LIMIT 1" ) ;
+
+		return $this->db->fetch() ;
+	}
+
+}
+
+class ValidacionException extends Exception{}

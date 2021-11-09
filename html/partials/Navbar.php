@@ -15,8 +15,8 @@
             <li><a href="../controllers/ListaVentas.php">Registrar ventas</a></li>
             <li><a>Estadísticas</a>
                 <ul>
-                    <li><a href="estadisticasMes.php">Estadísticas mes</a></li>
-                    <li><a href="estadisticasAnio.php">Estadísticas año</a></li>
+                    <li><a href="../controllers/Estadistica-Mes.php">Estadísticas mes</a></li>
+                    <li><a href="../controllers/Estadistica-Anio.php">Estadísticas año</a></li>
                 </ul>
             </li>
         </ul>
