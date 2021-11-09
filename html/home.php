@@ -5,8 +5,6 @@
     <?php
     require '../html/Partials/Head.php';
     ?>
-
-    <title>Panaderia San Pedro</title>
 </head>
 
 <body>

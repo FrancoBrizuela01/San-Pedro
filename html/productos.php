@@ -5,8 +5,6 @@
     <?php
     require '../html/Partials/Head.php';
     ?>
-
-    <title>Productos</title>
 </head>
 
 <body>

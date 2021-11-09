@@ -12,8 +12,6 @@
     <?php
     require '../html/Partials/Head.php';
     ?>
-
-    <title>Empleados</title>
 </head>
 
 <body>
