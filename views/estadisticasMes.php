@@ -10,5 +10,4 @@ class estadisticasMes extends view {
 		public $diaMin ;
 		public $nombreMes ;
 		public $lista ;
-
 }

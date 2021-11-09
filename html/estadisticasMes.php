@@ -1,3 +1,54 @@
+<?php
+
+/*  OBTENER NOMBRE DEL DIA  */
+function NombreDia($fecha)
+{
+    $fechats = strtotime($fecha);
+    //el parametro w en la funcion date indica que queremos el dia de la semana
+    //lo devuelve en numero 0 domingo , 1 lunes , ...
+    switch (date('w', $fechats)) {
+        case 0:
+            return "Domingo";
+            break;
+        case 1:
+            return "Lunes";
+            break;
+        case 2:
+            return "Martes";
+            break;
+        case 3:
+            return "Miércoles";
+            break;
+        case 4:
+            return "Jueves";
+            break;
+        case 5:
+            return "Viernes";
+            break;
+        case 6:
+            return "Sábado";
+            break;
+    }
+}
+?>
+
+<?php
+$DiaMin  = substr($this->diaMin['fecha'], 8, 2);
+$DiaMax  = substr($this->diaMax['fecha'], 8, 2);
+$anio = date('Y');
+$mesAcutal = date('n');
+$anioActual = date('Y');
+$cantDias = date('t');
+
+if (isset($_POST['anio']))
+    $anio = $_POST['anio'];
+
+$cont = 0;
+foreach ($this->lista as $l) :
+    $cont += 1;
+endforeach
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,21 +95,26 @@
             </div>
 
         </form>
+        <?php if ($this->totalMes['cantidad']) : ?>
+            <table>
+                <tr>
+                    <th>TOTAL</th>
+                    <th>PROMEDIO</th>
+                    <th>VENTA MINIMA</th>
+                    <th>VENTA MAXIMA</th>
+                </tr>
+                <tr>
+                    <td>$<?= $this->totalMes['cantidad'] ?></td>
+                    <td>$<?= round($this->totalMes['cantidad'] / $cont) ?></td>
 
-        <table>
-            <tr>
-                <th>TOTAL</th>
-                <th>PROMEDIO</th>
-                <th>VENTA MINIMA</th>
-                <th>VENTA MAXIMA</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+                    <td><?= NombreDia($this->diaMin['fecha']) ?> <?= $DiaMin ?></td>
+                    <td>$<?= $this->diaMin['cantidad'] ?></td>
+
+                    <td><?= NombreDia($this->diaMax['fecha']) ?> <?= $DiaMax ?></td>
+                    <td>$<?= $this->diaMax['cantidad'] ?></td>
+                </tr>
+            </table>
+        <?php endif ?>
     </div>
 
     <?php
