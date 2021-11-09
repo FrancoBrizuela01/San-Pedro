@@ -19,6 +19,7 @@
                 <th>DESCRIPCIÓN</th>
                 <th>PRECIO COSTO</th>
                 <th>PROVEEDOR</th>
+                <th>STOCK</th>
                 <th>ACCIONES</th>
             </tr>
             <?php foreach ($this->productos as $p) { ?>
@@ -26,8 +27,10 @@
                     <td><?= $p['descripcion'] ?></td>
                     <td><?= $p['precio_costo'] ?></td>
                     <td><?= $p['nombre'] ?></td>
+                    <td><?= $p['stock'] ?></td>
                     <td id="">
-                        <button class="btn-eliminar">ELIMINAR</button>
+                        <input type="hidden" name="codigo">
+                        <button type="submit" class="btn-eliminar" id="eliminar">ELIMINAR</button>
                     </td>
                 </tr>
             <?php   } ?>

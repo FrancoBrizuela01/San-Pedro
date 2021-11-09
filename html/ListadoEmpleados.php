@@ -31,8 +31,9 @@
                         <td><?= $e['nombre'] ?></td>
                         <td><?= $e['apellido'] ?></td>
                         <td><?= $e['dni'] ?></td>
-                    <td id="eliminar">
-                        <button class="btn-eliminar" id="codigo" value="<?= $e['codigo_empleado'] ?>">ELIMINAR</button>
+                    <td>
+                        <input type="hidden" name="codigo" value="<?= $e['codigo_empleado'] ?>">
+                        <button type="submit" class="btn-eliminar" id="eliminar">ELIMINAR</button>
                     </td>
                     <?php } ?>
                     </tr>
@@ -63,9 +64,9 @@
         </div>
 
     </div>
-    <?php
-    require '../html/Partials/Footer.php';
-    ?>
+    <!-- <?php
+    //require '../html/Partials/Footer.php';
+    ?>-->
     <script src="../html/js/app.js"></script>
 </body>
 

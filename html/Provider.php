@@ -26,8 +26,10 @@
                     <tr>
                         <td><?= $p['nombre'] ?></td>
                         <td><?= $p['razon_social'] ?></td>
-                        <td id="">
-                            <button class="btn-eliminar">ELIMINAR</button>
+                        <td>
+                        <input type="hidden" name="codigo" value="<?= $p['codigo_proveedor'] ?>">
+                        <button type="submit" class="btn-eliminar" id="eliminar">ELIMINAR</button>
+                        </td>
                     </tr>
                 <?php  } ?>
             </table>
