@@ -31,8 +31,7 @@
                         <td><?= $e['apellido'] ?></td>
                         <td><?= $e['dni'] ?></td>
                     <td>
-                        <a href="../controllers/Eliminar-Empleado.php?id=<?= $e['codigo_empleado'] ?>" class="btn-eliminar"     
-                        > ELIMINAR </a>
+                        <a href="../controllers/Eliminar-Empleado.php?id=<?= $e['codigo_empleado'] ?>" class="btn-eliminar"> ELIMINAR </a>
                     </td>
                     <?php } ?>
                     </tr>

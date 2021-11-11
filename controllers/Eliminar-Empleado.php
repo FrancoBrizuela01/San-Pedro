@@ -5,7 +5,6 @@
 require '../fw/fw.php';
 require '../models/Empleado.php';
 require '../models/Adelantos.php';
-require '../views/EliminarEmple.php';
 require '../html/partials/session.php';
 
 	$e = new Empleado (); 

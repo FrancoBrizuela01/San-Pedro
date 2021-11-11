@@ -28,11 +28,11 @@
                     <td><?= $p['precio_costo'] ?></td>
                     <td><?= $p['stock'] ?></td>
                     <td>
-                <a href='../controllers/Eliminar-Producto?id=<?= $p['codigo_producto'] ?> '> ELIMINAR </a>
-                    <button class="btn-modificar" onclick="mostrarModificarProducto()">MODIFICAR</button>
+                <a href='../controllers/Eliminar-Producto?id=<?= $p['codigo_producto'] ?> ' class="btn-eliminar"> ELIMINAR </a>
                     </td>
+            <?php } ?>
                 </tr>
-            <?php   } ?>
+            
         </table>
     </div>
 
