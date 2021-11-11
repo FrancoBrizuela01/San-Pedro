@@ -19,7 +19,6 @@
             <tr>
                 <th>DESCRIPCIÓN</th>
                 <th>PRECIO COSTO</th>
-                <th>PROVEEDOR</th>
                 <th>STOCK</th>
                 <th>ACCIONES</th>
             </tr>
@@ -27,12 +26,10 @@
                 <tr>
                     <td><?= $p['descripcion'] ?></td>
                     <td><?= $p['precio_costo'] ?></td>
-                    <td><?= $p['nombre'] ?></td>
                     <td><?= $p['stock'] ?></td>
-                    <td id="">
-                        <input type="hidden" name="codigo">
-                        <button type="submit" class="btn-eliminar" id="eliminar">ELIMINAR</button>
-                        <button class="btn-modificar" onclick="mostrarModificarProducto()">MODIFICAR</button>
+                    <td>
+                <a href='../controllers/Eliminar-Producto?id=<?= $p['codigo_producto'] ?> '> ELIMINAR </a>
+                    <button class="btn-modificar" onclick="mostrarModificarProducto()">MODIFICAR</button>
                     </td>
                 </tr>
             <?php   } ?>
@@ -49,12 +46,14 @@
                     <th>DESCRIPCIÓN</th>
                     <th>PRECIO COSTO</th>
                     <th>PROVEEDOR</th>
+                    <th>STOCK</th>
                     <th>ACCIONES</th>
                 </tr>
                 <tr>
                     <td><input type="text" name="desc" id="desc"></td>
-                    <td><input type="number" name="precioo" id="precio" value=""></td>
+                    <td><input type="number" name="precio" id="precio" value=""></td>
                     <td><input type="text" name="nombre" id="nombre" value=""></td>
+                    <td><input type="number" name="stock" id="stock"></td>
                     <td id=""><button type="submit" class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
                 </tr>
             </table>
@@ -73,11 +72,17 @@
                     <th>ACCIONES</th>
                 </tr>
                 <tr>
-                    <td><input type="text" name="" id="" ></td>
-                    <td><input type="number" name="" id="" value=""></td>
-                    <td><input type="text" name="" id="" value=""></td>
-                    <td><input type="number" name="" id="" value=""></td>
-                    <td id=""><button type="submit" class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+                    <td>
+                        <select id="desc">
+                                <?php foreach ($this->productos as $p) { ?>
+                                    <option><?= $p['descripcion'] ?></option>
+                                <?php  } ?>
+                            </select>
+                    </td>
+                    <td><input type="number" name="" id="precio_costo" value=""></td>
+                    <td><input type="text" name="" id="proveedor" value=""></td>
+                    <td><input type="number" name="" id="stock" value=""></td>
+                    <td id=""><button type="submit" class="btn-modificar" id="confirmar" >CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
                 </tr>
             </table>
         </form>

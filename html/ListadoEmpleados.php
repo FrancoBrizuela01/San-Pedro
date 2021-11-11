@@ -24,7 +24,6 @@
                     <th>DNI</th>
                     <th>ACCIONES</th>
                 </tr>
-                <form method="post" >
                 <tr>
                 <?php foreach ($this->empleados as $e) { ?>
                     <tr>
@@ -32,13 +31,13 @@
                         <td><?= $e['apellido'] ?></td>
                         <td><?= $e['dni'] ?></td>
                     <td>
-                        <input type="hidden" name="codigo" value="<?= $e['codigo_empleado'] ?>">
-                        <button type="submit" class="btn-eliminar" id="eliminar">ELIMINAR</button>
+                        <a href="../controllers/Eliminar-Empleado.php?id=<?= $e['codigo_empleado'] ?>" class="btn-eliminar"     
+                        > ELIMINAR </a>
                     </td>
                     <?php } ?>
                     </tr>
             </table>
-            </form>
+            
         </div>
 
         <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO EMPLEADO</button></a>

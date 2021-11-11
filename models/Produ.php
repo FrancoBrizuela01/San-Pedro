@@ -42,7 +42,33 @@
 
 			$this->db->query ("DELETE
 								FROM productos
-								WHERE codigo_producto = '$id' ");
+								WHERE codigo_producto = $id ");
+		}
+
+		public function ModificarProducto ($desc, $precio, $prove, $stock, $id){
+
+
+	     	if(strlen($precio) < 1 ) throw new ValidacionException('error 1');
+			if(strlen($precio) > 40) throw new ValidacionException('error 2');
+			$precio = $this->db->escape($precio);
+
+			if(!isset($prove)) throw new ValidacionException('error 3');
+	    	if(strlen($prove) < 1 ) throw new ValidacionException('error 4');
+	     	if(strlen($prove) > 20 ) throw new ValidacionException('error 5');
+	     	$prove = $this->db->escape($prove);
+	     	$prove = $this->db->escapeWildcards($prove);
+
+	     	if(strlen($stock) < 1 ) throw new ValidacionException('error 6');
+			if(strlen($stock) > 40) throw new ValidacionException('error 7');
+			$stock = $this->db->escape($stock);
+
+			$this->db->query ("UPDATE productos
+								set descripcion = '$desc'
+									precio_costo = $precio
+									proveedor = '$prove'
+									stock = $stock
+									$codigo_producto = $id"); 
+
 		}
 
 		

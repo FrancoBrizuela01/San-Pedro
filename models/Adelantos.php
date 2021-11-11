@@ -38,6 +38,14 @@ class Adelantos extends model {
 
 	}
 
+	public function EliminarAdelanto($id){
+
+		$this->db->query("DELETE
+							FROM adelantos
+							WHERE codigo_empleado = $id ");
+
+	}
+
 }
 
 class ValidacionException extends Exception{}

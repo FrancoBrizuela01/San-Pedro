@@ -13,10 +13,8 @@ require '../html/partials/session.php';
 
 		$ven->AgregarVenta($_POST['fecha'], $_POST['total']);
 
-		echo'<script type="text/javascript">
-        alert("Venta agregado con exito");
-        window.location.href="../controllers/ListaVentas.php";
-        </script>';
+		header('location: ../controllers/ListaVentas.php');
+
 
 	}
 	else{

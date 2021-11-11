@@ -18,21 +18,7 @@ require '../html/partials/session.php';
 
 
 		$e->NuevoEmpleado($_POST['nombre'], $_POST['apellido'], $_POST['dni']);
-		
-		echo'<script type="text/javascript">
-        alert("Empleado agregado con exito");
-        window.location.href="../controllers/ListaEmpleados.php";
-        </script>';
-
-        if(isset($_POST['eliminar'])){
-        	
-       	$e->EliminarEmpleado($_POST['codigo']);
-
-       	echo'<script type="text/javascript">
-       	alert("Empleado	eliminado con exito");
-       	window.location.href="../controllers/ListaEmpleados.php";
-       	</script>';
-        }
+		header('location: ../controllers/ListaEmpleados.php');
 
 	}
 	else{

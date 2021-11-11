@@ -27,8 +27,8 @@
                         <td><?= $p['nombre'] ?></td>
                         <td><?= $p['razon_social'] ?></td>
                         <td>
-                        <input type="hidden" name="codigo" value="<?= $p['codigo_proveedor'] ?>">
-                        <button type="submit" class="btn-eliminar" id="eliminar">ELIMINAR</button>
+                        <a href="../controllers/Eliminar-Proveedor.php?id=<?= $p['codigo_proveedor'] ?>" class="btn-eliminar"     
+                        > ELIMINAR </a>
                         </td>
                     </tr>
                 <?php  } ?>
@@ -37,23 +37,6 @@
 
         <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO PROVEEDOR</button></a>
 
-        <!-- <div class="mod-empleados" id="mod-empleados">
-            <h2>MODIFICAR PROVEEDOR:</h2>
-            <table>
-                <tr>
-                    <th>NOMBRE</th>
-                    <th>RAZÓN SOCIAL</th>
-                    <th>ACCIONES</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td><input type="text" name="nombre" id="nombre" maxlenght="20" value="aca iria el nombre actual"></td>
-                    <td><input type="text" name="nombre" id="nombre" value="aca iria el apellido actual"></td>
-                    <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
-                </tr>
-            </table>
-        </div>
-    </div> -->
 
         <div class="mod-empleados" id="new-empleado">
             <h2>Nuevo Proveedor:</h2>

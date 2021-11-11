@@ -18,10 +18,8 @@ require '../html/partials/session.php';
 			
 		$ma->crearAdelantoFechaDeterminada($_POST['empleado'], $_POST['monto'], $_POST['fecha']);
 		
-		echo'<script type="text/javascript">
-        alert("Adelanto realizado con exito");
-        window.location.href="../controllers/ListaAdelantos.php";
-        </script>';
+		header('location: ../controllers/AltaAdelantos.php');
+
 	}
 	else {
 		$v = new altaadelanto();	// este llama a la vista de alta de adelantos.
