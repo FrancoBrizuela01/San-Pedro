@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // controllers/ListaProductos.php
 
@@ -7,23 +7,24 @@ require '../views/productos.php';
 require '../models/Produ.php';
 require '../html/partials/session.php';
 
-	$p = new Produ();
+$p = new Produ();
 
-	if(count($_POST) > 0 ){
+if (isset($_POST['cancelar'])) {
+    header('Location: ../controllers/ListaProductos.php');
+}
 
-		if(!isset($_POST['nombre'])) die('Escribir el nombre');
-		if(!isset($_POST['desc'])) die('Escribir descripcion');
-		if(!isset($_POST['precio'])) die('Escribir el precio');
+if (count($_POST) > 0) {
 
-		$p->NuevoProducto($_POST['desc'], $_POST['precio'], $_POST['nombre'], $_POST['stock']  );
+    if (!isset($_POST['nombre'])) die('Escribir el nombre');
+    if (!isset($_POST['desc'])) die('Escribir descripcion');
+    if (!isset($_POST['precio'])) die('Escribir el precio');
 
-		header('location: ../controllers/ListaProductos.php');
+    $p->NuevoProducto($_POST['desc'], $_POST['precio'], $_POST['nombre'], $_POST['stock']);
 
-    } else {
-		$v = new productos();
-		$v->productos = $p->getTodosProdu();
-	}
+    header('location: ../controllers/ListaProductos.php');
+} else {
+    $v = new productos();
+    $v->productos = $p->getTodosProdu();
+}
 
-	$v->render();
-
-	
+$v->render();

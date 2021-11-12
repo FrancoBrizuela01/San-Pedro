@@ -281,6 +281,13 @@ td {
 
 /*/*----------buttons----------*/
 
+a {
+  color: red;
+}
+a:hover {
+  color: white;
+}
+
 .btn-search {
   outline: none;
   text-align: center;
@@ -376,6 +383,10 @@ td {
   background: var(--btn-eliminar);
 }
 
+.btn-eliminar:hover a {
+  color: white;
+}
+
 .btn-eliminar:active {
   letter-spacing: 1px;
 }
@@ -435,9 +446,6 @@ a {
   text-align: initial !important;
 }
 
-
-
-
 .nav li ul {
   display: none;
   position: absolute;
@@ -445,7 +453,7 @@ a {
 }
 
 .nav li:hover > ul {
-    display: inline-block;
+  display: inline-block;
 }
 
 .nav li ul li {

@@ -27,8 +27,7 @@
                         <td><?= $p['nombre'] ?></td>
                         <td><?= $p['razon_social'] ?></td>
                         <td>
-                        <a href="../controllers/Eliminar-Proveedor.php?id=<?= $p['codigo_proveedor'] ?>" class="btn-eliminar"     
-                        > ELIMINAR </a>
+                            <button class="btn-eliminar"><a href="../controllers/Eliminar-Proveedor.php?id=<?= $p['codigo_proveedor'] ?>">ELIMINAR </a></button>
                         </td>
                     </tr>
                 <?php  } ?>
@@ -36,7 +35,6 @@
         </div>
 
         <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO PROVEEDOR</button></a>
-
 
         <div class="mod-empleados" id="new-empleado">
             <h2>Nuevo Proveedor:</h2>
@@ -51,7 +49,10 @@
                     <tr>
                         <td><input type="text" name="nombre" id="nombre" maxlenght="20" value=""></td>
                         <td><input type="text" name="razon_social" id="razon_social" value=""></td>
-                        <td id=""><button class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+                        <td>
+                            <button class="btn-modificar" type="submit" name="cancelar" value="Cancelar">CONFIRMAR</button>
+                            <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
+                        </td>
                     </tr>
                 </table>
             </form>

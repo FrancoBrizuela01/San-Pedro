@@ -18,8 +18,8 @@
                 <tr>
                     <th>FECHA</th>
                     <th>TOTAL</th>
+                    <th>ACCIONES</th>
                 </tr>
-
                 <tr>
                 <tr>
                     <td><input type="date" name="fecha" id="fecha" value=""></td>

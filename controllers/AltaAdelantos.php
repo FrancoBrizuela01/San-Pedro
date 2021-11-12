@@ -18,7 +18,7 @@ require '../html/partials/session.php';
 			
 		$ma->crearAdelantoFechaDeterminada($_POST['empleado'], $_POST['monto'], $_POST['fecha']);
 		
-		header('location: ../controllers/AltaAdelantos.php');
+		header('location: ../controllers/ListaAdelantos.php');
 
 	}
 	else {

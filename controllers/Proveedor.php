@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // ..controllers/Proveedor.php
 
@@ -7,21 +7,23 @@ require '../models/Prove.php';
 require '../views/Provider.php';
 require '../html/partials/session.php';
 
-	$p = new Prove();
+$p = new Prove();
 
-	if(count($_POST) > 0 ){
+if (isset($_POST['cancelar'])) {
+    header('Location: ../controllers/Proveedor.php');
+}
 
-		if(!isset($_POST['nombre'])) die ('Ingrese el nombre');
-		if(!isset($_POST['razon_social'])) die ('Ingrese la razón social');
+if (count($_POST) > 0) {
 
-		$p->NuevoProveedor($_POST['razon_social'], $_POST['nombre']);
-		
-		header('location: ../controllers/Proveedor.php');
+    if (!isset($_POST['nombre'])) die('Ingrese el nombre');
+    if (!isset($_POST['razon_social'])) die('Ingrese la razón social');
 
-	}
-	else{
-		$v = new Provider();
-		$v->proveedores = $p->GetProve();
-	}
-	
-	$v->render();
+    $p->NuevoProveedor($_POST['razon_social'], $_POST['nombre']);
+
+    header('location: ../controllers/Proveedor.php');
+} else {
+    $v = new Provider();
+    $v->proveedores = $p->GetProve();
+}
+
+$v->render();

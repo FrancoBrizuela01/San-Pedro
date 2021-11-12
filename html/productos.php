@@ -28,11 +28,11 @@
                     <td><?= $p['precio_costo'] ?></td>
                     <td><?= $p['stock'] ?></td>
                     <td>
-                <a href='../controllers/Eliminar-Producto.php?id=<?= $p['codigo_producto'] ?> ' class="btn-eliminar"> ELIMINAR </a>
+                        <button class="btn-eliminar"><a href='../controllers/Eliminar-Producto.php?id=<?= $p['codigo_producto'] ?> '>ELIMINAR </a></button>
                     </td>
-            <?php } ?>
+                <?php } ?>
                 </tr>
-            
+
         </table>
     </div>
 
@@ -54,13 +54,16 @@
                     <td><input type="number" name="precio" id="precio" value=""></td>
                     <td><input type="text" name="nombre" id="nombre" value=""></td>
                     <td><input type="number" name="stock" id="stock"></td>
-                    <td id=""><button type="submit" class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+                    <td>
+                        <button type="submit" class="btn-modificar">CONFIRMAR</button>
+                        <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
+                    </td>
                 </tr>
             </table>
         </form>
     </div>
 
-    <div class="mod-empleados" id="modificacion-producto">
+    <!-- <div class="mod-empleados" id="modificacion-producto">
         <h2>Modificar producto</h2>
         <form method="post">
             <table>
@@ -74,19 +77,19 @@
                 <tr>
                     <td>
                         <select id="desc">
-                                <?php foreach ($this->productos as $p) { ?>
-                                    <option><?= $p['descripcion'] ?></option>
-                                <?php  } ?>
-                            </select>
+                            <?php foreach ($this->productos as $p) { ?>
+                                <option><?= $p['descripcion'] ?></option>
+                            <?php  } ?>
+                        </select>
                     </td>
                     <td><input type="number" name="" id="precio_costo" value=""></td>
                     <td><input type="text" name="" id="proveedor" value=""></td>
                     <td><input type="number" name="" id="stock" value=""></td>
-                    <td id=""><button type="submit" class="btn-modificar" id="confirmar" >CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+                    <td id=""><button type="submit" class="btn-modificar" id="confirmar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
                 </tr>
             </table>
         </form>
-    </div>
+    </div> -->
 
     <script src="../html/js/app.js"></script>
 </body>

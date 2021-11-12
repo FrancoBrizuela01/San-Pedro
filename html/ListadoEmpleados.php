@@ -25,18 +25,18 @@
                     <th>ACCIONES</th>
                 </tr>
                 <tr>
-                <?php foreach ($this->empleados as $e) { ?>
-                    <tr>
-                        <td><?= $e['nombre'] ?></td>
-                        <td><?= $e['apellido'] ?></td>
-                        <td><?= $e['dni'] ?></td>
+                    <?php foreach ($this->empleados as $e) { ?>
+                <tr>
+                    <td><?= $e['nombre'] ?></td>
+                    <td><?= $e['apellido'] ?></td>
+                    <td><?= $e['dni'] ?></td>
                     <td>
-                        <a href="../controllers/Eliminar-Empleado.php?id=<?= $e['codigo_empleado'] ?>" class="btn-eliminar"> ELIMINAR </a>
+                        <button class="btn-eliminar"><a href="../controllers/Eliminar-Empleado.php?id=<?= $e['codigo_empleado'] ?>">ELIMINAR </a></button>
                     </td>
-                    <?php } ?>
-                    </tr>
+                <?php } ?>
+                </tr>
             </table>
-            
+
         </div>
 
         <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO EMPLEADO</button></a>
@@ -55,7 +55,10 @@
                         <td><input type="text" name="nombre" id="nombre" maxlenght="20" value=""></td>
                         <td><input type="text" name="apellido" id="apellido" value=""></td>
                         <td><input type="number" name="dni" id="dni" value=""></td>
-                        <td id=""><button type="submit" class="btn-modificar">CONFIRMAR</button><a href="#Divcontainer"><button class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a></td>
+                        <td>
+                            <button type="submit" class="btn-modificar">CONFIRMAR</button>
+                            <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
+                        </td>
                     </tr>
                 </table>
             </form>
