@@ -28,7 +28,7 @@
                     <td><?= $p['precio_costo'] ?></td>
                     <td><?= $p['stock'] ?></td>
                     <td>
-                <a href='../controllers/Eliminar-Producto?id=<?= $p['codigo_producto'] ?> ' class="btn-eliminar"> ELIMINAR </a>
+                <a href='../controllers/Eliminar-Producto.php?id=<?= $p['codigo_producto'] ?> ' class="btn-eliminar"> ELIMINAR </a>
                     </td>
             <?php } ?>
                 </tr>

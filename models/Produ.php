@@ -6,7 +6,7 @@
 
 		public function getTodosProdu(){
 
-			$this->db->query("SELECT descripcion, precio_costo, stock
+			$this->db->query("SELECT descripcion, precio_costo, stock, codigo_producto
 							FROM productos");
 
 			return $this->db->fetchAll();
