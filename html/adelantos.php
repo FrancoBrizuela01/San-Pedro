@@ -27,11 +27,11 @@
                 </tr>
                 <tr>
                     <?php foreach ($this->empleados as $a) { ?>
-                        <td><?= $a['nombre'] ?></td>
-                        <td><?= $a['apellido'] ?></td>
-                        <td><?= $a['dni'] ?></td>
-                        <td><?= $a['fecha'] ?></td>
-                        <td><?= $a['cantidad'] ?></td>
+                        <td><?= htmlentities($a['nombre']) ?></td>
+                        <td><?= htmlentities($a['apellido']) ?></td>
+                        <td><?= htmlentities($a['dni']) ?></td>
+                        <td><?= htmlentities($a['fecha']) ?></td>
+                        <td><?= htmlentities($a['cantidad']) ?></td>
                 </tr>
             <?php } ?>
             </table>

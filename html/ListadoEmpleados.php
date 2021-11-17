@@ -27,11 +27,11 @@
                 <tr>
                     <?php foreach ($this->empleados as $e) { ?>
                 <tr>
-                    <td><?= $e['nombre'] ?></td>
-                    <td><?= $e['apellido'] ?></td>
-                    <td><?= $e['dni'] ?></td>
+                    <td><?= htmlentities($e['nombre']) ?></td>
+                    <td><?= htmlentities($e['apellido']) ?></td>
+                    <td><?= htmlentities($e['dni']) ?></td>
                     <td>
-                        <button class="btn-eliminar"><a href="../controllers/Eliminar-Empleado.php?id=<?= $e['codigo_empleado'] ?>">ELIMINAR </a></button>
+                        <button class="btn-eliminar"><a href="../controllers/Eliminar-Empleado.php?id=<?=    htmlentities($e['codigo_empleado']) ?>">ELIMINAR </a></button>
                     </td>
                 <?php } ?>
                 </tr>

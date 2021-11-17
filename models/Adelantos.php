@@ -40,6 +40,9 @@ class Adelantos extends model {
 
 	public function EliminarAdelanto($id){
 
+		if(!is_numeric($id)) throw new ValidacionException1('error 1');
+		if(!ctype_digit($id))  throw new ValidacionException1('error 2');
+
 		$this->db->query("DELETE
 							FROM adelantos
 							WHERE codigo_empleado = $id ");

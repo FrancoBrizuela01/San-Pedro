@@ -61,6 +61,9 @@ class Empleado extends model {
 
 	public function EliminarEmpleado($id){
 
+		if(!is_numeric($id)) throw new ValidacionException1('error 1');
+		if(!ctype_digit($id))  throw new ValidacionException1('error 2');
+
 		$this->db->query("DELETE
 							FROM empleados
 							WHERE codigo_empleado = $id ");
@@ -68,6 +71,9 @@ class Empleado extends model {
 	}
 
 	public function BuscarEmpleado($id){
+
+		if(!is_numeric($id)) throw new ValidacionException1('error 1');
+		if(!ctype_digit($id))  throw new ValidacionException1('error 2');
 
 		$this->db->query ("SELECT * 
 							FROM empleados

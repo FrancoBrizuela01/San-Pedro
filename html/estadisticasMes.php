@@ -114,10 +114,10 @@ endforeach
                     <th>VENTA MAXIMA</th>
                 </tr>
                 <tr>
-                    <td>NULL</td>
-                    <td>NULL</td>
-                    <td>NULL</td>
-                    <td>NULL</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
 
                 </tr>
             </table>

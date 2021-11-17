@@ -100,14 +100,14 @@ if (isset($_POST['anio'])) {
                     <th>VENTA RECORD</th>
                 </tr>
                 <tr>
-                    <td>NULL</td>
-                    <td>NULL</td>
+                    <td>-</td>
+                    <td>-</td>
 
-                    <td>NULL</td>
+                    <td>-</td>
 
-                    <td>NULL</td>
+                    <td>-</td>
 
-                    <td>NULL</td>
+                    <td>-</td>
 
                 </tr>
             </table>

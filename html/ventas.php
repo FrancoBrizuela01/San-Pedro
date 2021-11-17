@@ -40,8 +40,8 @@
             </tr>
             <?php foreach ($this->vendido as $v) { ?>
                 <tr>
-                    <td><?= $v['fecha'] ?></td>
-                    <td><?= $v['cantidad'] ?></td>
+                    <td><?= htmlentities($v['fecha']) ?></td>
+                    <td><?= htmlentities($v['cantidad']) ?></td>
                 </tr>
             <?php } ?>
         </table>

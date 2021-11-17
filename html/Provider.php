@@ -24,10 +24,10 @@
                 </tr>
                 <?php foreach ($this->proveedores as $p) {  ?>
                     <tr>
-                        <td><?= $p['nombre'] ?></td>
-                        <td><?= $p['razon_social'] ?></td>
+                        <td><?= htmlentities($p['nombre'])?></td>
+                        <td><?= htmlentities($p['razon_social']) ?></td>
                         <td>
-                            <button class="btn-eliminar"><a href="../controllers/Eliminar-Proveedor.php?id=<?= $p['codigo_proveedor'] ?>">ELIMINAR </a></button>
+                            <button class="btn-eliminar"><a href="../controllers/Eliminar-Proveedor.php?id=<?= htmlentities($p['codigo_proveedor']) ?>">ELIMINAR </a></button>
                         </td>
                     </tr>
                 <?php  } ?>

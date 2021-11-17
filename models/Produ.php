@@ -6,10 +6,10 @@
 
 		public function getTodosProdu(){
 
-			$this->db->query("SELECT descripcion, precio_costo, stock, codigo_producto
+		$this->db->query("SELECT * 
 							FROM productos");
 
-			return $this->db->fetchAll();
+		return $this->db->fetchAll();
 
 		}
 
@@ -38,6 +38,9 @@
 		}
 
 		public function EliminarProducto($id){
+
+			if(!is_numeric($id)) throw new ValidacionException1('error 1');
+			if(!ctype_digit($id))  throw new ValidacionException1('error 2');
 
 			$this->db->query ("DELETE
 								FROM productos

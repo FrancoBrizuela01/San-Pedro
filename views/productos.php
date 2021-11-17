@@ -5,5 +5,6 @@
 	class productos extends view {
 
 		public $productos;
+		public $prove;
 
 	}

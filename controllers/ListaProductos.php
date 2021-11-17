@@ -5,9 +5,11 @@
 require '../fw/fw.php';
 require '../views/productos.php';
 require '../models/Produ.php';
+require '../models/Prove.php';
 require '../html/partials/session.php';
 
 $p = new Produ();
+$pr = new Prove();
 
 if (isset($_POST['cancelar'])) {
     header('Location: ../controllers/ListaProductos.php');
@@ -25,6 +27,7 @@ if (count($_POST) > 0) {
 } else {
     $v = new productos();
     $v->productos = $p->getTodosProdu();
+    $v->prove = $pr->GetProve();
 }
 
 $v->render();
