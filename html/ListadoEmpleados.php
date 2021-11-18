@@ -31,7 +31,8 @@
                     <td><?= htmlentities($e['apellido']) ?></td>
                     <td><?= htmlentities($e['dni']) ?></td>
                     <td>
-                        <button class="btn-eliminar"><a href="../controllers/Eliminar-Empleado.php?id=<?=    htmlentities($e['codigo_empleado']) ?>">ELIMINAR </a></button>
+                        <button class="btn-eliminar"><a href="../controllers/Eliminar-Empleado.php?id=<?= htmlentities($e['codigo_empleado']) ?>">ELIMINAR </a></button>
+                        <a href="#modificacion-producto"><button onclick="mostrarModificarProducto()" class="btn-modificar"> MODIFICAR </button></a>
                     </td>
                 <?php } ?>
                 </tr>
@@ -57,6 +58,37 @@
                         <td><input type="number" name="dni" id="dni" value=""></td>
                         <td>
                             <button type="submit" class="btn-modificar">CONFIRMAR</button>
+                            <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="mod-empleados" id="modificacion-producto">
+            <h2>Modificar empleado</h2>
+            <form method="post">
+                <table>
+                    <tr>
+                        <th>SELECCIONE UN EMPLEADO</th>
+                        <th>NUEVO NOMBRE</th>
+                        <th>NUEVO APELLIDO</th>
+                        <th>NUEVO DNI</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="id" name="id">
+                                <?php foreach ($this->productos as $p) { ?>
+                                    <option value="<?= $p['codigo_producto'] ?>"><?= $p['descripcion'] ?></option>
+                                <?php  } ?>
+                            </select>
+                        </td>
+                        <td><input type="text" name="nombre" id="nombre" value=""></td>
+                        <td><input type="text" name="apellido" id="apellido" value=""></td>
+                        <td><input type="number" name="stock" id="stock" value=""></td>
+                        <td id="">
+                            <a><button type="submit" name="Modificar" value="Modificar" class="btn-modificar">GUARDAR</button></a>
                             <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
                         </td>
                     </tr>

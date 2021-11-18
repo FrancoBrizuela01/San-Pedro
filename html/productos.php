@@ -29,6 +29,7 @@
                     <td><?= htmlentities($p['stock']) ?></td>
                     <td>
                         <button class="btn-eliminar"><a href='../controllers/Eliminar-Producto.php?id=<?= htmlentities($p['codigo_producto']) ?> '>ELIMINAR </a></button>
+                        <a href="#modificacion-producto"><button onclick="mostrarModificarProducto()" class="btn-modificar"> MODIFICAR </button></a>
                     </td>
                 <?php } ?>
                 </tr>
@@ -55,13 +56,46 @@
                     <td>
                         <select name="nombre" id="nombre">
                             <?php foreach ($this->prove as $p) {  ?>
-                            <option><?= htmlentities($p['nombre']) ?></option>
+                                <option><?= htmlentities($p['nombre']) ?></option>
                             <?php } ?>
                         </select>
                     </td>
                     <td><input type="number" name="stock" id="stock"></td>
                     <td>
                         <button type="submit" class="btn-modificar">CONFIRMAR</button>
+                        <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div class="mod-empleados" id="modificacion-producto">
+        <h2>Modificar producto</h2>
+        <form method="post">
+            <table>
+                <tr>
+                    <th>SELECCIONE UN PRODUCTO</th>
+                    <th>NUEVA DESCRIPCIÓN</th>
+                    <th>NUEVO PRECIO COSTO</th>
+                    <th>NUEVO PROVEEDOR</th>
+                    <th>NUEVO STOCK</th>
+                    <th>ACCIONES</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="id" name="id">
+                            <?php foreach ($this->productos as $p) { ?>
+                                <option value="<?= $p['codigo_producto'] ?>"><?= $p['descripcion'] ?></option>
+                            <?php  } ?>
+                        </select>
+                    </td>
+                    <td><input type="text" name="descripcion" id="descripcion" value=""></td>
+                    <td><input type="number" name="precio_costo" id="precio_costo" value=""></td>
+                    <td><input type="text" name="proveedor" id="proveedor" value=""></td>
+                    <td><input type="number" name="stock" id="stock" value=""></td>
+                    <td id="">
+                        <a><button type="submit" name="Modificar" value="Modificar" class="btn-modificar">MODIFICAR</button></a>
                         <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
                     </td>
                 </tr>

@@ -1,0 +1,2 @@
+1) Cargue la base de datos "san_pedro_3.sql" en su phpmyadmin.
+2) En el inicio de sesion use el mail: marcelotronce@gmail.com con la contraseña: MarceloT4CD

@@ -24,10 +24,11 @@
                 </tr>
                 <?php foreach ($this->proveedores as $p) {  ?>
                     <tr>
-                        <td><?= htmlentities($p['nombre'])?></td>
+                        <td><?= htmlentities($p['nombre']) ?></td>
                         <td><?= htmlentities($p['razon_social']) ?></td>
                         <td>
                             <button class="btn-eliminar"><a href="../controllers/Eliminar-Proveedor.php?id=<?= htmlentities($p['codigo_proveedor']) ?>">ELIMINAR </a></button>
+                            <a href="#modificacion-producto"><button onclick="mostrarModificarProducto()" class="btn-modificar"> MODIFICAR </button></a>
                         </td>
                     </tr>
                 <?php  } ?>
@@ -51,6 +52,35 @@
                         <td><input type="text" name="razon_social" id="razon_social" value=""></td>
                         <td>
                             <button class="btn-modificar" type="submit" name="cancelar" value="Cancelar">CONFIRMAR</button>
+                            <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="mod-empleados" id="modificacion-producto">
+            <h2>Modificar proveedor</h2>
+            <form method="post">
+                <table>
+                    <tr>
+                        <th>SELECCIONE UN PROVEEDOR</th>
+                        <th>NUEVO NOMBRE</th>
+                        <th>NUEVA RAZÓN SOCIAL</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="id" name="id">
+                                <?php foreach ($this->productos as $p) { ?>
+                                    <option value="<?= $p['codigo_producto'] ?>"><?= $p['descripcion'] ?></option>
+                                <?php  } ?>
+                            </select>
+                        </td>
+                        <td><input type="text" name="nombre" id="nombre" value=""></td>
+                        <td><input type="text" name="razon_social" id="razon_social" value=""></td>
+                        <td id="">
+                            <a><button type="submit" name="Modificar" value="Modificar" class="btn-modificar">GUARDAR</button></a>
                             <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
                         </td>
                     </tr>
