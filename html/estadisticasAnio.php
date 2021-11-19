@@ -62,13 +62,13 @@
                     <th>VENTA RECORD</th>
                 </tr>
                 <tr>
-                    <td>$<?= $this->totalAño['precio'] ?></td>
+                    <td>$<?= htmlentities($this->totalAño['precio']) ?></td>
 
-                    <td><?= $this->mesMin['nombre'] ?> $<?= $this->mesMin['total'] ?></td>
+    <td><?= htmlentities($this->mesMin['nombre']) ?> $<?= htmlentities($this->mesMin['total'])?></td>
 
-                    <td><?= $this->mesMax['nombre'] ?> $<?= $this->mesMax['total'] ?></td>
+    <td><?= htmlentities($this->mesMax['nombre']) ?> $<?= htmlentities($this->mesMax['total']) ?></td>
 
-                    <td><?= $this->NombreDia($this->record['fecha']) ?> <?= $this->record['fechaRecord'] ?> <?= $this->record['mes'] ?> $<?= $this->record['precio'] ?></td>
+    <td><?= htmlentities($this->NombreDia($this->record['fecha'])) ?> <?= htmlentities($this->record['fechaRecord']) ?> <?= htmlentities($this->record['mes']) ?> $<?= htmlentities($this->record['precio']) ?></td>
 
                 </tr>
             </table>

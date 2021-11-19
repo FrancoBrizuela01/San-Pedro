@@ -70,6 +70,9 @@
 	     	$desc = $this->db->escape($desc);
 	     	$desc = $this->db->escapeWildcards($desc);
 
+	     	if(!is_numeric($id)) throw new ValidacionException1('error 11');
+			if(!ctype_digit($id))  throw new ValidacionException1('error 12');
+
 			$this->db->query ("UPDATE productos
 								set descripcion = '$desc',
 									precio_costo = $precio,

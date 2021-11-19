@@ -87,6 +87,9 @@ class Empleado extends model {
      	if(!is_numeric($dni)) throw new ValidacionException1('error 7');
 		if(!ctype_digit($dni))  throw new ValidacionException1('error 8');
 
+		if(!is_numeric($id)) throw new ValidacionException1('error 9');
+		if(!ctype_digit($id))  throw new ValidacionException1('error 10');
+
 		$this->db->query("UPDATE empleados
 							set nombre = '$nombre',
 								apellido = '$apellido',

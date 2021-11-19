@@ -49,6 +49,9 @@ class Prove extends model {
 	   	$razonsocial = $this->db->escape($razonsocial);
 	    $razonsocial = $this->db->escapeWildcards($razonsocial);
 
+	    if(!is_numeric($id)) throw new ValidacionException1('error 7');
+		if(!ctype_digit($id))  throw new ValidacionException1('error 8');
+
 		$this->db->query ("UPDATE proveedor
 								set nombre = '$nombre',
 									razon_social = '$razonsocial'

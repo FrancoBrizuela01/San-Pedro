@@ -73,7 +73,7 @@
                         <td>
                             <select id="id" name="id">
                                 <?php foreach ($this->proveedores as $p) { ?>
-                            <option value="<?= $p['codigo_proveedor'] ?>"><?= htmlentities($p['nombre']) ?></option>
+                            <option value="<?= htmlentities($p['codigo_proveedor']) ?>"><?= htmlentities($p['nombre']) ?></option>
                                 <?php  } ?>
                             </select>
                         </td>

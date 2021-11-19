@@ -46,7 +46,7 @@
         </form>
 
         <?php if (!$this->totalMes['precio']) : ?>
-            <h2><?= $this->nombreMes['nombre'] ?></h2>
+            <h2><?= htmlentities($this->nombreMes['nombre']) ?></h2>
             <table>
                 <tr>
                     <th>TOTAL</th>
@@ -65,7 +65,7 @@
         <?php endif ?>
 
         <?php if ($this->totalMes['precio']) : ?>
-            <h2><?= $this->nombreMes['nombre'] ?></h2>
+            <h2><?= htmlentities($this->nombreMes['nombre']) ?></h2>
             <table>
                 <tr>
                     <th>TOTAL</th>
@@ -73,13 +73,13 @@
                     <th>VENTA MAXIMA</th>
                 </tr>
                 <tr>
-                    <td>$<?= $this->totalMes['precio'] ?></td>
+                    <td>$<?= htmlentities($this->totalMes['precio']) ?></td>
 
-                    <td><?= $this->NombreDia($this->diaMin['fecha']) ?> 
-                        $<?= $this->diaMin['precio'] ?></td>
+                    <td><?= htmlentities($this->NombreDia($this->diaMin['fecha'])) ?> 
+                        $<?= htmlentities($this->diaMin['precio']) ?></td>
 
-                    <td><?= $this->NombreDia($this->diaMax['fecha']) ?> 
-                        $<?= $this->diaMax['precio'] ?></td>
+                    <td><?= htmlentities($this->NombreDia($this->diaMax['fecha'])) ?> 
+                        $<?= htmlentities($this->diaMax['precio']) ?></td>
 
                 </tr>
             </table>
