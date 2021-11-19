@@ -15,6 +15,7 @@
 	if ( isset ( $_POST['mes'] ) ) {
 		$mes  = $_POST['mes'];
 		$anio = $_POST['anio'];
+
 	}
 
 	if ( !isset ( $_POST['mes'] ) ) {

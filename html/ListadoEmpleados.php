@@ -57,7 +57,7 @@
                         <td><input type="text" name="apellido" id="apellido" value=""></td>
                         <td><input type="number" name="dni" id="dni" value=""></td>
                         <td>
-                            <button type="submit" class="btn-modificar">CONFIRMAR</button>
+                            <button type="submit" class="btn-modificar" name="nuevo" value="nuevo">CONFIRMAR</button>
                             <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
                         </td>
                     </tr>
@@ -79,14 +79,14 @@
                     <tr>
                         <td>
                             <select id="id" name="id">
-                                <?php foreach ($this->productos as $p) { ?>
-                                    <option value="<?= $p['codigo_producto'] ?>"><?= $p['descripcion'] ?></option>
+                                <?php foreach ($this->empleados as $e) { ?>
+                        <option value="<?= $e['codigo_empleado'] ?>"><?= htmlentities($e['nombre']) ?></option>
                                 <?php  } ?>
                             </select>
                         </td>
                         <td><input type="text" name="nombre" id="nombre" value=""></td>
                         <td><input type="text" name="apellido" id="apellido" value=""></td>
-                        <td><input type="number" name="stock" id="stock" value=""></td>
+                        <td><input type="number" name="dni" id="dni" value=""></td>
                         <td id="">
                             <a><button type="submit" name="Modificar" value="Modificar" class="btn-modificar">GUARDAR</button></a>
                             <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>

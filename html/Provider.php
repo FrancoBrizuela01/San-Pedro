@@ -51,7 +51,7 @@
                         <td><input type="text" name="nombre" id="nombre" maxlenght="20" value=""></td>
                         <td><input type="text" name="razon_social" id="razon_social" value=""></td>
                         <td>
-                            <button class="btn-modificar" type="submit" name="cancelar" value="Cancelar">CONFIRMAR</button>
+                            <button class="btn-modificar" type="submit" name="nuevo" value="nuevo">CONFIRMAR</button>
                             <a href="#Divcontainer"><button type="submit" name="cancelar" value="Cancelar" class="btn-eliminar" onclick="ocultarModificarEmpleados()">CANCELAR</button></a>
                         </td>
                     </tr>
@@ -72,8 +72,8 @@
                     <tr>
                         <td>
                             <select id="id" name="id">
-                                <?php foreach ($this->productos as $p) { ?>
-                                    <option value="<?= $p['codigo_producto'] ?>"><?= $p['descripcion'] ?></option>
+                                <?php foreach ($this->proveedores as $p) { ?>
+                            <option value="<?= $p['codigo_proveedor'] ?>"><?= htmlentities($p['nombre']) ?></option>
                                 <?php  } ?>
                             </select>
                         </td>

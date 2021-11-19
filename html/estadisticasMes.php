@@ -1,62 +1,3 @@
-<?php
-
-/*  OBTENER NOMBRE DEL DIA  */
-function NombreDia($fecha)
-{
-    $fechats = strtotime($fecha);
-    //el parametro w en la funcion date indica que queremos el dia de la semana
-    //lo devuelve en numero 0 domingo , 1 lunes , ...
-    switch (date('w', $fechats)) {
-        case 0:
-            return "Domingo";
-            break;
-        case 1:
-            return "Lunes";
-            break;
-        case 2:
-            return "Martes";
-            break;
-        case 3:
-            return "Miércoles";
-            break;
-        case 4:
-            return "Jueves";
-            break;
-        case 5:
-            return "Viernes";
-            break;
-        case 6:
-            return "Sábado";
-            break;
-    }
-}
-?>
-
-<?php
-
-
-if (isset($this->diaMin['fecha'])) {
-    $DiaMin  = substr($this->diaMin['fecha'], 8, 2);
-}
-if (isset($this->diaMax['fecha'])) {
-    $DiaMax  = substr($this->diaMax['fecha'], 8, 2);
-}
-//$DiaMin  = substr($this->diaMin['fecha'], 8, 2);
-//$DiaMax  = substr($this->diaMax['fecha'], 8, 2);
-$anio = date('Y');
-$mesAcutal = date('n');
-$anioActual = date('Y');
-$cantDias = date('t');
-
-if (isset($_POST['anio']))
-    $anio = $_POST['anio'];
-
-$cont = 0;
-foreach ($this->lista as $l) :
-    $cont += 1;
-endforeach
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,7 +46,7 @@ endforeach
         </form>
 
         <?php if (!$this->totalMes['precio']) : ?>
-            <h2><?= $this->nombreMes['nombre'] ?> del <?= $anio ?></h2>
+            <h2><?= $this->nombreMes['nombre'] ?></h2>
             <table>
                 <tr>
                     <th>TOTAL</th>
@@ -124,22 +65,20 @@ endforeach
         <?php endif ?>
 
         <?php if ($this->totalMes['precio']) : ?>
-            <h2><?= $this->nombreMes['nombre'] ?> del <?= $anio ?></h2>
+            <h2><?= $this->nombreMes['nombre'] ?></h2>
             <table>
                 <tr>
                     <th>TOTAL</th>
-                    <th>PROMEDIO</th>
                     <th>VENTA MINIMA</th>
                     <th>VENTA MAXIMA</th>
                 </tr>
                 <tr>
                     <td>$<?= $this->totalMes['precio'] ?></td>
-                    <td>$<?= round($this->totalMes['precio'] / $cont) ?></td>
 
-                    <td><?= NombreDia($this->diaMin['fecha']) ?> <?= $DiaMin ?>
+                    <td><?= $this->NombreDia($this->diaMin['fecha']) ?> 
                         $<?= $this->diaMin['precio'] ?></td>
 
-                    <td><?= NombreDia($this->diaMax['fecha']) ?> <?= $DiaMax ?>
+                    <td><?= $this->NombreDia($this->diaMax['fecha']) ?> 
                         $<?= $this->diaMax['precio'] ?></td>
 
                 </tr>

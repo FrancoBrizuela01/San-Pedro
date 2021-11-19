@@ -70,13 +70,27 @@ class Empleado extends model {
 
 	}
 
-	public function BuscarEmpleado($id){
+	public function ModificarEmpleado ($nombre, $apellido, $dni, $id){
 
-		if(!is_numeric($id)) throw new ValidacionException1('error 1');
-		if(!ctype_digit($id))  throw new ValidacionException1('error 2');
+		if(!isset($nombre)) throw new ValidacionException1('error 1');
+    	if(strlen($nombre) < 1 ) throw new ValidacionException1('error 2');
+     	if(strlen($nombre) > 20 ) throw new ValidacionException1('error 3');
+     	$nombre = $this->db->escape($nombre);
+     	$nombre = $this->db->escapeWildcards($nombre);
 
-		$this->db->query ("SELECT * 
-							FROM empleados
+     	if(!isset($apellido)) throw new ValidacionException1('error 4');
+    	if(strlen($apellido) < 1 ) throw new ValidacionException1('error 5');
+     	if(strlen($apellido) > 20 ) throw new ValidacionException1('error 6');
+     	$apellido = $this->db->escape($apellido);
+     	$apellido = $this->db->escapeWildcards($apellido);
+
+     	if(!is_numeric($dni)) throw new ValidacionException1('error 7');
+		if(!ctype_digit($dni))  throw new ValidacionException1('error 8');
+
+		$this->db->query("UPDATE empleados
+							set nombre = '$nombre',
+								apellido = '$apellido',
+								dni 	= $dni
 							WHERE codigo_empleado = $id");
 
 	}

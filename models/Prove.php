@@ -35,6 +35,28 @@ class Prove extends model {
 
 	}
 
+	public function ModificarProveedor($razonsocial, $nombre, $id){
+
+		if(!isset($nombre)) throw new ValidacionException3('error 1');
+	    if(strlen($nombre) < 1 ) throw new ValidacionException3('error 2');
+	    if(strlen($nombre) > 20 ) throw new ValidacionException3('error 3');
+	   	$nombre = $this->db->escape($nombre);
+	    $nombre = $this->db->escapeWildcards($nombre);
+
+	    if(!isset($razonsocial)) throw new ValidacionException3('error 4');
+	    if(strlen($razonsocial) < 1 ) throw new ValidacionException3('error 5');
+	    if(strlen($razonsocial) > 20 ) throw new ValidacionException3('error 6');
+	   	$razonsocial = $this->db->escape($razonsocial);
+	    $razonsocial = $this->db->escapeWildcards($razonsocial);
+
+		$this->db->query ("UPDATE proveedor
+								set nombre = '$nombre',
+									razon_social = '$razonsocial'
+								WHERE codigo_proveedor = $id "); 
+
+
+	}
+
 	public function EliminarProveedor ($id){
 
 		if(!is_numeric($id)) throw new ValidacionException3('error 1');

@@ -92,7 +92,13 @@
                     </td>
                     <td><input type="text" name="descripcion" id="descripcion" value=""></td>
                     <td><input type="number" name="precio_costo" id="precio_costo" value=""></td>
-                    <td><input type="text" name="proveedor" id="proveedor" value=""></td>
+                    <td>
+                        <select id="proveedor" name="proveedor">
+                            <?php foreach ($this->prove as $p) { ?>
+                    <option value="<?= $p['nombre'] ?>"><?= htmlentities($p['nombre']) ?></option>
+                            <?php  } ?>
+                        </select>
+                    </td>
                     <td><input type="number" name="stock" id="stock" value=""></td>
                     <td id="">
                         <a><button type="submit" name="Modificar" value="Modificar" class="btn-modificar">MODIFICAR</button></a>

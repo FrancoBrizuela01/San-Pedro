@@ -1,62 +1,3 @@
-<?php
-
-function NombreDia($fecha)
-{
-
-    $fechats = strtotime($fecha);
-
-    switch (date('w', $fechats)) {
-        case 0:
-            return "Domingo";
-            break;
-        case 1:
-            return "Lunes";
-            break;
-        case 2:
-            return "Martes";
-            break;
-        case 3:
-            return "Miércoles";
-            break;
-        case 4:
-            return "Jueves";
-            break;
-        case 5:
-            return "Viernes";
-            break;
-        case 6:
-            return "Sábado";
-            break;
-    }
-}
-
-?>
-
-<?php
-$anioActual = date('Y');
-
-if (!isset($_POST['anio'])) {
-    $anio = date('Y');
-
-    $mesActual = date('n');
-    $promedio  = $this->totalAño['precio'] / $mesActual;
-}
-
-if (isset($_POST['anio'])) {
-    $anio = $_POST['anio'];
-
-    if ($anio < $anioActual)
-        $promedio = $this->totalAño['precio'] / 12;
-
-    if ($anio == $anioActual) {
-        $mesActual = date('n');
-        $promedio  = $this->totalAño['precio'] / $mesActual;
-    }
-}
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -94,13 +35,11 @@ if (isset($_POST['anio'])) {
             <table>
                 <tr>
                     <th>TOTAL</th>
-                    <th>PROMEDIO</th>
                     <th>MES MENOS VENDIDO</th>
                     <th>MES MÁS VENDIDO</th>
                     <th>VENTA RECORD</th>
                 </tr>
                 <tr>
-                    <td>-</td>
                     <td>-</td>
 
                     <td>-</td>
@@ -118,20 +57,18 @@ if (isset($_POST['anio'])) {
             <table>
                 <tr>
                     <th>TOTAL</th>
-                    <th>PROMEDIO</th>
                     <th>MES MENOS VENDIDO</th>
                     <th>MES MÁS VENDIDO</th>
                     <th>VENTA RECORD</th>
                 </tr>
                 <tr>
                     <td>$<?= $this->totalAño['precio'] ?></td>
-                    <td>$<?= round($promedio) ?></td>
 
                     <td><?= $this->mesMin['nombre'] ?> $<?= $this->mesMin['total'] ?></td>
 
                     <td><?= $this->mesMax['nombre'] ?> $<?= $this->mesMax['total'] ?></td>
 
-                    <td><?= NombreDia($this->record['fecha']) ?> <?= $this->record['fechaRecord'] ?> <?= $this->record['mes'] ?> $<?= $this->record['precio'] ?></td>
+                    <td><?= $this->NombreDia($this->record['fecha']) ?> <?= $this->record['fechaRecord'] ?> <?= $this->record['mes'] ?> $<?= $this->record['precio'] ?></td>
 
                 </tr>
             </table>

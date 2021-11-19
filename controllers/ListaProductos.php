@@ -15,6 +15,12 @@ if (isset($_POST['cancelar'])) {
     header('Location: ../controllers/ListaProductos.php');
 }
 
+if (isset($_POST['Modificar'])) {
+
+    $p->ModificarProducto($_POST['descripcion'], $_POST['precio_costo'], $_POST['proveedor'],              			$_POST['stock'], $_POST['id']);
+    header('Location: ../controllers/ListaProductos.php');
+}
+
 if (count($_POST) > 0) {
 
     if (!isset($_POST['nombre'])) die('Escribir el nombre');

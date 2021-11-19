@@ -13,7 +13,13 @@ if (isset($_POST['cancelar'])) {
     header('Location: ../controllers/Proveedor.php');
 }
 
-if (count($_POST) > 0) {
+if (isset($_POST['Modificar'])) {
+
+    $p->ModificarProveedor($_POST['razon_social'], $_POST['nombre'], $_POST['id']);
+    header('Location: ../controllers/Proveedor.php');
+}
+
+if (isset($_POST['nuevo'])) {
 
     if (!isset($_POST['nombre'])) die('Ingrese el nombre');
     if (!isset($_POST['razon_social'])) die('Ingrese la razón social');

@@ -19,6 +19,7 @@
 		$anio = date ('Y') ;
 	}
 
+
 	$e->totalAño = $v->totalAño ( $anio ) ;
 	$e->mesMin = $v->mesMin ( $anio ) ;
 	$e->mesMax = $v->mesMax ( $anio ) ;

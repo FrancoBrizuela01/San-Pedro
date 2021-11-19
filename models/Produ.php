@@ -46,6 +46,38 @@
 								FROM productos
 								WHERE codigo_producto = $id ");
 		}
+
+		public function ModificarProducto ($desc, $precio, $prove, $stock, $id){
+
+
+	     	if(strlen($precio) < 1 ) throw new ValidacionException2('error 1');
+			if(strlen($precio) > 40) throw new ValidacionException2('error 2');
+			$precio = $this->db->escape($precio);
+
+			if(!isset($prove)) throw new ValidacionException2('error 3');
+	    	if(strlen($prove) < 1 ) throw new ValidacionException2('error 4');
+	     	if(strlen($prove) > 20 ) throw new ValidacionException2('error 5');
+	     	$prove = $this->db->escape($prove);
+	     	$prove = $this->db->escapeWildcards($prove);
+
+	     	if(strlen($stock) < 1 ) throw new ValidacionException2('error 6');
+			if(strlen($stock) > 40) throw new ValidacionException2('error 7');
+			$stock = $this->db->escape($stock);
+
+			if(!isset($desc)) throw new ValidacionException2('error 8');
+	    	if(strlen($desc) < 1 ) throw new ValidacionException2('error 9');
+	     	if(strlen($desc) > 20 ) throw new ValidacionException2('error 10');
+	     	$desc = $this->db->escape($desc);
+	     	$desc = $this->db->escapeWildcards($desc);
+
+			$this->db->query ("UPDATE productos
+								set descripcion = '$desc',
+									precio_costo = $precio,
+									nombre_prove = '$prove',
+									stock = $stock
+								WHERE codigo_producto = $id"); 
+
+		}
 		
 	}
 
