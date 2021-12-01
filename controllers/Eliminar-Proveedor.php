@@ -15,6 +15,6 @@ require '../html/partials/session.php';
 		$p->EliminarProveedor($id_prove);
 
 
-		header('location: ../controllers/Proveedor.php');
+		header('location: ../controllers/CrMdRProveedor.php');
 
 	}

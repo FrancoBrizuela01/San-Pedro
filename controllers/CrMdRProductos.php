@@ -12,13 +12,13 @@ $p = new Produ();
 $pr = new Prove();
 
 if (isset($_POST['cancelar'])) {
-    header('Location: ../controllers/ListaProductos.php');
+    header('Location: ../controllers/CrMdRProductos.php');
 }
 
 if (isset($_POST['Modificar'])) {
 
     $p->ModificarProducto($_POST['descripcion'], $_POST['precio_costo'], $_POST['proveedor'],              			$_POST['stock'], $_POST['id']);
-    header('Location: ../controllers/ListaProductos.php');
+    header('Location: ../controllers/CrMdRProductos.php');
 }
 
 if (count($_POST) > 0) {
@@ -29,7 +29,7 @@ if (count($_POST) > 0) {
 
     $p->NuevoProducto($_POST['desc'], $_POST['precio'], $_POST['nombre'], $_POST['stock']);
 
-    header('location: ../controllers/ListaProductos.php');
+    header('location: ../controllers/CrMdRProductos.php');
 } else {
     $v = new productos();
     $v->productos = $p->getTodosProdu();

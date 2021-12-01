@@ -13,7 +13,7 @@ require '../html/partials/session.php';
 		$id_produ = $_GET['id'];
 		$p->EliminarProducto($id_produ);
 
-		header('location: ../controllers/ListaProductos.php');
+		header('location: ../controllers/CrMdRProductos.php');
 
 	}
 

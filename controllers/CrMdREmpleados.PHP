@@ -11,13 +11,13 @@ require '../html/partials/session.php';
 $e = new Empleado();
 
 if (isset($_POST['cancelar'])) {
-    header('Location: ../controllers/listaEmpleados.php');
+    header('Location: ../controllers/CrMdREmpleados.php');
 }
 
 if(isset($_POST['Modificar'])){
 
 	$e->ModificarEmpleado($_POST['nombre'], $_POST['apellido'], $_POST['dni'], $_POST['id']);
-	header('Location: ../controllers/listaEmpleados.php');
+	header('Location: ../controllers/CrMdREmpleados.php');
 }
 
 if (isset($_POST['nuevo'])) {
@@ -28,7 +28,7 @@ if (isset($_POST['nuevo'])) {
 
 
     $e->NuevoEmpleado($_POST['nombre'], $_POST['apellido'], $_POST['dni']);
-    header('location: ../controllers/ListaEmpleados.php');
+    header('location: ../controllers/CrMdREmpleados.php');
 } else {
     $v = new ListadoEmpleados();
     $v->empleados = $e->getTodos();

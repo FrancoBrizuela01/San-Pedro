@@ -43,14 +43,12 @@ class Empleado extends model {
         if(!isset($nombre)) throw new ValidacionException1('error 3');
     	if(strlen($nombre) < 1 ) throw new ValidacionException1('error 4');
      	if(strlen($nombre) > 20 ) throw new ValidacionException1('error 5');
-     	$nombre = $this->db->escape($nombre);
-     	$nombre = $this->db->escapeWildcards($nombre);
+     	$nombre = $this->db->escape($nombre);    	
 
    		if(!isset($apellido)) throw new ValidacionException1('error 6');
     	if(strlen($apellido) < 1 ) throw new ValidacionException1('error 7');
      	if(strlen($apellido) > 20 ) throw new ValidacionException1('error 8');
      	$apellido = $this->db->escape($apellido);
-     	$apellido = $this->db->escapeWildcards($apellido);
 
 
 		$this->db->query("INSERT INTO empleados
@@ -76,13 +74,11 @@ class Empleado extends model {
     	if(strlen($nombre) < 1 ) throw new ValidacionException1('error 2');
      	if(strlen($nombre) > 20 ) throw new ValidacionException1('error 3');
      	$nombre = $this->db->escape($nombre);
-     	$nombre = $this->db->escapeWildcards($nombre);
 
      	if(!isset($apellido)) throw new ValidacionException1('error 4');
     	if(strlen($apellido) < 1 ) throw new ValidacionException1('error 5');
      	if(strlen($apellido) > 20 ) throw new ValidacionException1('error 6');
      	$apellido = $this->db->escape($apellido);
-     	$apellido = $this->db->escapeWildcards($apellido);
 
      	if(!is_numeric($dni)) throw new ValidacionException1('error 7');
 		if(!ctype_digit($dni))  throw new ValidacionException1('error 8');

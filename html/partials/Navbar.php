@@ -8,11 +8,11 @@
                 <i class="fas fa-times"></i>
             </div>
             <li><a href="../controllers/inicio.php">Inicio</a></li>
-            <li><a href="../controllers/ListaEmpleados.php">Empleados</a></li>
+            <li><a href="../controllers/CrMdREmpleados.php">Empleados</a></li>
             <li><a href="../controllers/ListaAdelantos.php">Adelantos</a></li>
-            <li><a href="../controllers/Proveedor.php">Proveedor</a></li>
-            <li><a href="../controllers/ListaProductos.php">Productos</a></li>
-            <li><a href="../controllers/ListaVentas.php">Registrar ventas</a></li>
+            <li><a href="../controllers/CrMdRProveedor.php">Proveedor</a></li>
+            <li><a href="../controllers/CrMdRProductos.php">Productos</a></li>
+            <li><a href="../controllers/CrRVentas.php">Registrar ventas</a></li>
             <li><a>Estadísticas</a>
                 <ul>
                     <li><a href="../controllers/Estadistica-Mes.php">Estadísticas mes</a></li>

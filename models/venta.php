@@ -17,27 +17,27 @@ class venta extends model {
 
 		public function AgregarVenta($fecha, $cantidad){
 
-			if(strlen($cantidad) < 1 ) throw new ValidacionException('error 1');
-			if(strlen($cantidad) > 40) throw new ValidacionException('error 2');
+			if(strlen($cantidad) < 1 ) throw new ValidacionException5('error 1');
+			if(strlen($cantidad) > 40) throw new ValidacionException5('error 2');
 			$cantidad = $this->db->escape($cantidad);
 
 			$anio = substr($fecha , 0 , 4); //yyyy-mm-dd
          	$mes = substr($fecha , 5 , 2);
         	 $dia = substr($fecha , 8 , 2);
 
-			if(!ctype_digit($dia)) throw new ValidacionException('error 3');
-			if($dia < 1 ) throw new ValidacionException('error 4');
-			if($dia > 31 ) throw new ValidacionException('error 5');
+			if(!ctype_digit($dia)) throw new ValidacionException5('error 3');
+			if($dia < 1 ) throw new ValidacionException5('error 4');
+			if($dia > 31 ) throw new ValidacionException5('error 5');
 
-			if(!ctype_digit($mes)) throw new ValidacionException('error 6');
-			if($mes < 1 ) throw new ValidacionException('error 7');
-			if($mes > 12 ) throw new ValidacionException('error 8');
+			if(!ctype_digit($mes)) throw new ValidacionException5('error 6');
+			if($mes < 1 ) throw new ValidacionException5('error 7');
+			if($mes > 12 ) throw new ValidacionException5('error 8');
 
-			if(!ctype_digit($anio)) throw new ValidacionException('error 9');
-			if($anio < date('Y')-1) throw new ValidacionException('error 10');
-			if($anio > date('Y')) throw new ValidacionException('error 11');
+			if(!ctype_digit($anio)) throw new ValidacionException5('error 9');
+			if($anio < date('Y')-1) throw new ValidacionException5('error 10');
+			if($anio > date('Y')) throw new ValidacionException5('error 11');
 
-			if(!checkdate($mes, $dia, $anio)) throw new ValidacionException('error 12');
+			if(!checkdate($mes, $dia, $anio)) throw new ValidacionException5('error 12');
 
 			$fecha = "$anio-$mes-$dia";
 
@@ -49,14 +49,14 @@ class venta extends model {
 		public function totalMes ( $mes , $anio ) {
 
 		/*  VALIDACION DEL MES  */
-		if ( $mes <= 0 )  throw new ValidacionException('error 1');
-		if ( $mes > 12 )  throw new ValidacionException('error 2');
-		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException('error 3');
-		if ( !is_numeric($mes) )  throw new ValidacionException('error 4');
+		if ( $mes <= 0 )  throw new ValidacionException5('error 1');
+		if ( $mes > 12 )  throw new ValidacionException5('error 2');
+		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException5('error 3');
+		if ( !is_numeric($mes) )  throw new ValidacionException5('error 4');
 		/*  VALIDACION DEL AÑO  */
-		if ( $anio < 2019 )  throw new ValidacionException('error 5');
-		if ( strlen($anio) != 4 )  throw new ValidacionException('error 6');
-		if ( !is_numeric($anio) )  throw new ValidacionException('error 7');
+		if ( $anio < 2019 )  throw new ValidacionException5('error 5');
+		if ( strlen($anio) != 4 )  throw new ValidacionException5('error 6');
+		if ( !is_numeric($anio) )  throw new ValidacionException5('error 7');
 
 		$this->db->query ( "SELECT SUM(cantidad) AS precio
 						    FROM   codigo_venta
@@ -70,15 +70,15 @@ class venta extends model {
 	public function diaMax ( $mes , $anio ) {
 
 		/*  VALIDACION DEL MES  */
-		if ( $mes <= 0 )  throw new ValidacionException('error 1');
-		if ( $mes > 12 )  throw new ValidacionException('error 2');
-		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException('error 3');
-		if ( !is_numeric($mes) )  throw new ValidacionException('error 4');
+		if ( $mes <= 0 )  throw new ValidacionException5('error 1');
+		if ( $mes > 12 )  throw new ValidacionException5('error 2');
+		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException5('error 3');
+		if ( !is_numeric($mes) )  throw new ValidacionException5('error 4');
 
 		/*  VALIDACION DEL AÑO  */
-		if ( $anio < 2019 )  throw new ValidacionException('error 5');
-		if ( strlen($anio) != 4 )  throw new ValidacionException('error 6');
-		if ( !is_numeric($anio) )  throw new ValidacionException('error 7');;
+		if ( $anio < 2019 )  throw new ValidacionException5('error 5');
+		if ( strlen($anio) != 4 )  throw new ValidacionException5('error 6');
+		if ( !is_numeric($anio) )  throw new ValidacionException5('error 7');;
 
 		$this->db->query ( "SELECT   codigo_venta , SUM(cantidad) precio , fecha 
 							FROM     codigo_venta
@@ -95,15 +95,15 @@ class venta extends model {
 	public function diaMin ( $mes , $anio ) {
 
 		/*  VALIDACION DEL MES  */
-		if ( $mes <= 0 )  throw new ValidacionException('error 1');
-		if ( $mes > 12 )  throw new ValidacionException('error 2');
-		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException('error 3');
-		if ( !is_numeric($mes) )  throw new ValidacionException('error 4');
+		if ( $mes <= 0 )  throw new ValidacionException5('error 1');
+		if ( $mes > 12 )  throw new ValidacionException5('error 2');
+		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException5('error 3');
+		if ( !is_numeric($mes) )  throw new ValidacionException5('error 4');
 
 		/*  VALIDACION DEL AÑO  */
-		if ( $anio < 2019 )  throw new ValidacionException('error 5');
-		if ( strlen($anio) != 4 )  throw new ValidacionException('error 6');
-		if ( !is_numeric($anio) )  throw new ValidacionException('error 7');
+		if ( $anio < 2019 )  throw new ValidacionException5('error 5');
+		if ( strlen($anio) != 4 )  throw new ValidacionException5('error 6');
+		if ( !is_numeric($anio) )  throw new ValidacionException5('error 7');
 
 		$this->db->query ( "SELECT   codigo_venta , SUM(cantidad) precio , fecha 
 							FROM     codigo_venta
@@ -120,15 +120,15 @@ class venta extends model {
 	public function promedioDia ( $mes , $anio ) {
 
 		/*  VALIDACION DEL MES  */
-		if ( $mes <= 0 )  throw new ValidacionException('error 1');
-		if ( $mes > 12 )  throw new ValidacionException('error 2');
-		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException('error 3');
-		if ( !is_numeric($mes) )  throw new ValidacionException('error 4');
+		if ( $mes <= 0 )  throw new ValidacionException5('error 1');
+		if ( $mes > 12 )  throw new ValidacionException5('error 2');
+		if ( strlen($mes) < 1 || strlen($mes) > 2 )  throw new ValidacionException5('error 3');
+		if ( !is_numeric($mes) )  throw new ValidacionException5('error 4');
 
 		/*  VALIDACION DEL AÑO  */
-		if ( $anio < 2019 )  throw new ValidacionException('error 5');
-		if ( strlen($anio) != 4 )  throw new ValidacionException('error 6');
-		if ( !is_numeric($anio) )  throw new ValidacionException('error 7');
+		if ( $anio < 2019 )  throw new ValidacionException5('error 5');
+		if ( strlen($anio) != 4 )  throw new ValidacionException5('error 6');
+		if ( !is_numeric($anio) )  throw new ValidacionException5('error 7');
 
 		$this->db->query ( "SELECT ROUND ( AVG(cantidad) ) AS Promedio
 							FROM   codigo_venta
@@ -153,9 +153,9 @@ class venta extends model {
 	public function totalAño ( $anio ) {
 
 		/*  VALIDACION DEL AÑO  */
-		if ( $anio < 2019 )  throw new ValidacionException('error 1');
-		if ( strlen($anio) != 4 )  throw new ValidacionException('error 2');
-		if ( !is_numeric($anio) )  throw new ValidacionException('error 3');
+		if ( $anio < 2019 )  throw new ValidacionException5('error 1');
+		if ( strlen($anio) != 4 )  throw new ValidacionException5('error 2');
+		if ( !is_numeric($anio) )  throw new ValidacionException5('error 3');
 
 		$this->db->query ( "SELECT SUM(cantidad) AS precio
 							FROM  codigo_venta
@@ -169,9 +169,9 @@ class venta extends model {
 	public function mesMin ( $anio ) {
 
 		/*  VALIDACION DEL AÑO  */
-		if ( $anio < 2019 )  throw new ValidacionException('error 1');
-		if ( strlen($anio) != 4 )  throw new ValidacionException('error 2');
-		if ( !is_numeric($anio) )  throw new ValidacionException('error 3');
+		if ( $anio < 2019 )  throw new ValidacionException5('error 1');
+		if ( strlen($anio) != 4 )  throw new ValidacionException5('error 2');
+		if ( !is_numeric($anio) )  throw new ValidacionException5('error 3');
 
 		$this->db->query ( "SELECT   MONTH (v.fecha) AS mes , m.nombre , SUM(v.cantidad) AS total
 							FROM     codigo_venta v , meses m
@@ -188,9 +188,9 @@ class venta extends model {
 	public function mesMax ( $anio ) {
 
 		/*  VALIDACION DEL AÑO  */
-		if ( $anio < 2019 )  throw new ValidacionException('error 1');
-		if ( strlen($anio) != 4 )  throw new ValidacionException('error 2');
-		if ( !is_numeric($anio) )  throw new ValidacionException('error 3');
+		if ( $anio < 2019 )  throw new ValidacionException5('error 1');
+		if ( strlen($anio) != 4 )  throw new ValidacionException5('error 2');
+		if ( !is_numeric($anio) )  throw new ValidacionException5('error 3');
 
 		$this->db->query ( "SELECT   MONTH (v.fecha) AS mes , m.nombre , SUM(v.cantidad) AS total
 							FROM     codigo_venta v , meses m
@@ -242,4 +242,4 @@ class venta extends model {
 
 }
 
-class ValidacionException extends Exception{}
+class ValidacionException5 extends Exception{}

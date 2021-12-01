@@ -10,6 +10,7 @@ class estadisticasAnio extends view {
 		public $record;
 		public $nombreMes;
         public $promedio;
+        public $AnioSelect;
 
 
 public function NombreDia($fecha){
@@ -40,6 +41,7 @@ public function NombreDia($fecha){
             break;
     }
 }
-		
+
+    
 
 }

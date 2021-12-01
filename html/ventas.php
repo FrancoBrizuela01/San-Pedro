@@ -18,12 +18,22 @@
                 <tr>
                     <th>FECHA</th>
                     <th>TOTAL</th>
+                    <th>PRODUCTO</th>
+                    <th>CANTIDAD</th>
                     <th>ACCIONES</th>
                 </tr>
                 <tr>
                 <tr>
                     <td><input type="date" name="fecha" id="fecha" value=""></td>
                     <td><input type="number" name="total" id="total" value=""></td>
+                    <td>
+                        <select id="codigo" name="codigo">
+                        <?php foreach($this->productos as $p ) {  ?>
+                            <option value="<?= $p['codigo_producto'] ?>"><?= $p['descripcion'] ?></option>
+                        <?php } ?>
+                        </select>
+                    </td>
+                    <td><input type="number" name="cantidad" id="cantidad"></td>
                     <td><button type="submit" value="AGREGAR" class="btn-modificar" id="btn-limpiar" onclick="agregarVenta()">AGREGAR</button></td>
                 </tr>
                 </tr>

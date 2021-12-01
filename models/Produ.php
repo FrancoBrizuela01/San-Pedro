@@ -19,13 +19,11 @@
 	    	if(strlen($desc) < 1 ) throw new ValidacionException('error 2');
 	     	if(strlen($desc) > 20 ) throw new ValidacionException('error 3');
 	     	$desc = $this->db->escape($desc);
-	     	$desc = $this->db->escapeWildcards($desc);
 
 	   		if(!isset($nombre)) throw new ValidacionException('error 4');
 	    	if(strlen($nombre) < 1 ) throw new ValidacionException('error 5');
 	     	if(strlen($nombre) > 20 ) throw new ValidacionException('error 6');
 	     	$nombre = $this->db->escape($nombre);
-	     	$nombre = $this->db->escapeWildcards($nombre);
 
 	     	if(strlen($precio) < 1 ) throw new ValidacionException('error 7');
 			if(strlen($precio) > 40) throw new ValidacionException('error 8');
@@ -58,7 +56,6 @@
 	    	if(strlen($prove) < 1 ) throw new ValidacionException2('error 4');
 	     	if(strlen($prove) > 20 ) throw new ValidacionException2('error 5');
 	     	$prove = $this->db->escape($prove);
-	     	$prove = $this->db->escapeWildcards($prove);
 
 	     	if(strlen($stock) < 1 ) throw new ValidacionException2('error 6');
 			if(strlen($stock) > 40) throw new ValidacionException2('error 7');
@@ -68,7 +65,6 @@
 	    	if(strlen($desc) < 1 ) throw new ValidacionException2('error 9');
 	     	if(strlen($desc) > 20 ) throw new ValidacionException2('error 10');
 	     	$desc = $this->db->escape($desc);
-	     	$desc = $this->db->escapeWildcards($desc);
 
 	     	if(!is_numeric($id)) throw new ValidacionException1('error 11');
 			if(!ctype_digit($id))  throw new ValidacionException1('error 12');
@@ -79,6 +75,14 @@
 									nombre_prove = '$prove',
 									stock = $stock
 								WHERE codigo_producto = $id"); 
+
+		}
+
+		public function VentaRealizada ($id, $cantidad){
+
+			$this->db->query("UPDATE productos
+								set stock = stock - $cantidad
+								WHERE codigo_producto = $id	");
 
 		}
 		

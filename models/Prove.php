@@ -20,13 +20,11 @@ class Prove extends model {
 	    if(strlen($razonsocial) < 1 ) throw new ValidacionException3('error 2');
 	    if(strlen($razonsocial) > 20 ) throw new ValidacionException3('error 3');
 	    $razonsocial = $this->db->escape($razonsocial);
-	    $razonsocial = $this->db->escapeWildcards($razonsocial);
 
 	   	if(!isset($nombre)) throw new ValidacionException3('error 4');
 	    if(strlen($nombre) < 1 ) throw new ValidacionException3('error 5');
 	    if(strlen($nombre) > 20 ) throw new ValidacionException3('error 6');
 	   	$nombre = $this->db->escape($nombre);
-	    $nombre = $this->db->escapeWildcards($nombre);
 
 		$this->db->query("INSERT INTO proveedor
 							(razon_social, nombre) VALUES
@@ -41,13 +39,11 @@ class Prove extends model {
 	    if(strlen($nombre) < 1 ) throw new ValidacionException3('error 2');
 	    if(strlen($nombre) > 20 ) throw new ValidacionException3('error 3');
 	   	$nombre = $this->db->escape($nombre);
-	    $nombre = $this->db->escapeWildcards($nombre);
 
 	    if(!isset($razonsocial)) throw new ValidacionException3('error 4');
 	    if(strlen($razonsocial) < 1 ) throw new ValidacionException3('error 5');
 	    if(strlen($razonsocial) > 20 ) throw new ValidacionException3('error 6');
 	   	$razonsocial = $this->db->escape($razonsocial);
-	    $razonsocial = $this->db->escapeWildcards($razonsocial);
 
 	    if(!is_numeric($id)) throw new ValidacionException1('error 7');
 		if(!ctype_digit($id))  throw new ValidacionException1('error 8');
