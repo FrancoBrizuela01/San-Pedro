@@ -31,7 +31,7 @@
         </form>
 
         <?php if (!$this->totalAño['precio']) : ?>
-            <h2>AÑO SELECCIONADO: <?= $this->AnioSelect ?></h2>
+            <h2>AÑO SELECCIONADO: <?= htmlentities($this->AnioSelect) ?></h2>
             <table>
                 <tr>
                     <th>TOTAL</th>
@@ -53,7 +53,7 @@
         <?php endif ?>
 
         <?php if ($this->totalAño['precio']) : ?>
-            <h2>AÑO SELECCIONADO: <?=  $this->AnioSelect ?></h2>
+            <h2>AÑO SELECCIONADO: <?= htmlentities($this->AnioSelect) ?></h2>
             <table>
                 <tr>
                     <th>TOTAL</th>
