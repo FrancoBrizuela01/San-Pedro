@@ -1,28 +1,29 @@
-<?php 
+<?php
 
 // controllers/Estadistica-Anio.php
-	
-	require '../fw/fw.php' ;
-	require '../views/EstadisticasAnio.php' ;
-	require '../models/venta.php' ;
-	require '../html/partials/session.php';
 
-	$e = new EstadisticasAnio ;
-	$v = new venta ;
+require '../fw/fw.php';
+require '../views/EstadisticasAnio.php';
+require '../models/venta.php';
+require '../html/partials/session.php';
 
-	if ( isset ( $_POST['anio'] ) ) {
-		$anio = $_POST['anio'] ;
-	}
+$e = new EstadisticasAnio;
+$v = new venta;
 
-
-	if ( !isset ( $_POST['anio'] ) ) {
-		$anio = date ('Y') ;
-	}
+if (isset($_POST['anio'])) {
+    $anio = $_POST['anio'];
+}
 
 
-	$e->totalAño = $v->totalAño ( $anio ) ;
-	$e->mesMin = $v->mesMin ( $anio ) ;
-	$e->mesMax = $v->mesMax ( $anio ) ;
-	$e->record = $v->VentaRecord ( $anio ) ;
+if (!isset($_POST['anio'])) {
+    $anio = date('Y');
+}
 
-	$e->render() ;
+
+$e->totalAño = $v->totalAño($anio);
+$e->mesMin = $v->mesMin($anio);
+$e->mesMax = $v->mesMax($anio);
+$e->record = $v->VentaRecord($anio);
+$e->AnioSelect = $v->añoSeleccionado($anio);
+
+$e->render();

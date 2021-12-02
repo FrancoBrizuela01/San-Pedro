@@ -12,6 +12,7 @@
             <li><a href="../controllers/ListaAdelantos.php">Adelantos</a></li>
             <li><a href="../controllers/CrMdRProveedor.php">Proveedor</a></li>
             <li><a href="../controllers/CrMdRProductos.php">Productos</a></li>
+            <li><a href="../controllers/Compra-insumos.php">Compra insumos</a></li>
             <li><a href="../controllers/CrRVentas.php">Registrar ventas</a></li>
             <li><a>Estadísticas</a>
                 <ul>

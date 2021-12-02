@@ -31,7 +31,7 @@
         </form>
 
         <?php if (!$this->totalAño['precio']) : ?>
-            <h2>AÑO SELECCIONADO: <?= $_POST['anio'] ?></h2>
+            <h2>AÑO SELECCIONADO: <?= $this->AnioSelect ?></h2>
             <table>
                 <tr>
                     <th>TOTAL</th>
@@ -53,7 +53,7 @@
         <?php endif ?>
 
         <?php if ($this->totalAño['precio']) : ?>
-            <h2>AÑO SELECCIONADO: <?=  $anio - 10 ?></h2>
+            <h2>AÑO SELECCIONADO: <?=  $this->AnioSelect ?></h2>
             <table>
                 <tr>
                     <th>TOTAL</th>
@@ -64,11 +64,11 @@
                 <tr>
                     <td>$<?= htmlentities($this->totalAño['precio']) ?></td>
 
-    <td><?= htmlentities($this->mesMin['nombre']) ?> $<?= htmlentities($this->mesMin['total'])?></td>
+                    <td><?= htmlentities($this->mesMin['nombre']) ?> $<?= htmlentities($this->mesMin['total']) ?></td>
 
-    <td><?= htmlentities($this->mesMax['nombre']) ?> $<?= htmlentities($this->mesMax['total']) ?></td>
+                    <td><?= htmlentities($this->mesMax['nombre']) ?> $<?= htmlentities($this->mesMax['total']) ?></td>
 
-    <td><?= htmlentities($this->NombreDia($this->record['fecha'])) ?> <?= htmlentities($this->record['fechaRecord']) ?> <?= htmlentities($this->record['mes']) ?> $<?= htmlentities($this->record['precio']) ?></td>
+                    <td><?= htmlentities($this->NombreDia($this->record['fecha'])) ?> <?= htmlentities($this->record['fechaRecord']) ?> <?= htmlentities($this->record['mes']) ?> $<?= htmlentities($this->record['precio']) ?></td>
 
                 </tr>
             </table>

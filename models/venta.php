@@ -149,6 +149,14 @@ class venta extends model {
 	*                                                */
 
 
+    public function añoSeleccionado($anio){
+        if ($anio < 2019)  throw new ValidacionException5('error 1');
+        if (strlen($anio) != 4)  throw new ValidacionException5('error 2');
+        if (!is_numeric($anio))  throw new ValidacionException5('error 3');
+
+        return $anio;
+    }
+
 
 	public function totalAño ( $anio ) {
 
