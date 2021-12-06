@@ -37,7 +37,7 @@
                 </select>
                 <select name="anio" class="select">
                     <?php for ($i = 2021; $i < $anioActual + 10; $i++) { ?>
-                        <option value="<?= $i ?>"><?= $i ?></option>
+                        <option value="<?= $i ?>"><?= htmlentities($i) ?></option>
                     <?php } ?>
                 </select>
                 <input type="submit" value="Buscar" class="btn-search">

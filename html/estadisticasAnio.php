@@ -23,7 +23,7 @@
             <div class="divSelect">
                 <select name="anio" id="inputAño" class="select">
                     <?php for ($anio = 2021; $anio < $anioActual + 10; $anio++) { ?>
-                        <option value="<?= $anio ?>"><?= $anio ?></option>
+                        <option value="<?= $anio ?>"><?= htmlentities($anio) ?></option>
                     <?php } ?>
                 </select>
                 <input type="submit" value="buscar" class="btn-search">

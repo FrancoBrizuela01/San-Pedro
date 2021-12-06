@@ -26,7 +26,7 @@
                     <td>
                         <select id="codigo" name="codigo">
                             <?php foreach ($this->insu as $a) {  ?>
-                                <option value="<?= $a['codigo_producto'] ?>"><?= $a['descripcion'] ?></option>
+                                <option value="<?= htmlentities($a['codigo_producto']) ?>"><?= htmlentities($a['descripcion']) ?></option>
                             <?php } ?>
                         </select>
                     </td>
