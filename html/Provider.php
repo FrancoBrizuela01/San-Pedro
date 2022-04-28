@@ -15,6 +15,7 @@
         ?>
 
         <div class="Divcontainer">
+            <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO PROVEEDOR</button></a>
             <h2>LISTA DE PROVEEDORES:</h2>
             <table>
                 <tr>
@@ -35,7 +36,7 @@
             </table>
         </div>
 
-        <a href="#new-empleado"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">NUEVO PROVEEDOR</button></a>
+
 
         <div class="mod-empleados" id="new-empleado">
             <h2>Nuevo Proveedor:</h2>
@@ -73,7 +74,7 @@
                         <td>
                             <select id="id" name="id">
                                 <?php foreach ($this->proveedores as $p) { ?>
-                            <option value="<?= htmlentities($p['codigo_proveedor']) ?>"><?= htmlentities($p['nombre']) ?></option>
+                                    <option value="<?= htmlentities($p['codigo_proveedor']) ?>"><?= htmlentities($p['nombre']) ?></option>
                                 <?php  } ?>
                             </select>
                         </td>

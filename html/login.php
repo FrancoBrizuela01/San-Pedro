@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="../html/css/login.css">
 
-    <title>Panadería San Pedro</title>
+    <title>Gestion de negocios</title>
 </head>
 
 <body>

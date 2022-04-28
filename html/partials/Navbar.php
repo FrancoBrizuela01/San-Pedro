@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="content">
         <div class="logo">
-            <a href="../controllers/inicio.php">San Pedro</a>
+            <a href="../controllers/inicio.php">TecnoCel</a>
         </div>
         <ul class="menu-list nav">
             <div class="icon cancel-btn">
@@ -12,7 +12,7 @@
             <li><a href="../controllers/ListaAdelantos.php">Adelantos</a></li>
             <li><a href="../controllers/CrMdRProveedor.php">Proveedor</a></li>
             <li><a href="../controllers/CrMdRProductos.php">Productos</a></li>
-            <li><a href="../controllers/Compra-insumos.php">Compra insumos</a></li>
+            <li><a href="../controllers/Compra-insumos.php">Pedidos a Proveedor</a></li>
             <li><a href="../controllers/CrRVentas.php">Registrar ventas</a></li>
             <li><a>Estadísticas</a>
                 <ul>

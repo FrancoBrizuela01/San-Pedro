@@ -14,11 +14,9 @@ if (isset($_POST['anio'])) {
     $anio = $_POST['anio'];
 }
 
-
 if (!isset($_POST['anio'])) {
     $anio = date('Y');
 }
-
 
 $e->totalAño = $v->totalAño($anio);
 $e->mesMin = $v->mesMin($anio);

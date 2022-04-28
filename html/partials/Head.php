@@ -12,4 +12,4 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<title>Panaderia San Pedro</title>
+<title>Gestion de negocios</title>

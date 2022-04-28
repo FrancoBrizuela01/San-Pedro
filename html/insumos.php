@@ -14,7 +14,7 @@
     ?>
 
     <div class="Divcontainer" id="Divcontainer">
-        <h2>COMPRA DE INSUMOS:</h2>
+        <h2>PEDIDOS A PROVEEDOR</h2>
         <form method="post">
             <table>
                 <tr>

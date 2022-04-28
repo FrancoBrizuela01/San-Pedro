@@ -16,6 +16,7 @@
         ?>
 
         <div class="Divcontainer" id="Divcontainer">
+            <a href="../controllers/AltaAdelantos.php"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">ALTA DE ADELANTOS</button></a>
             <h2>LISTA DE ADELANTOS:</h2>
             <table>
                 <tr>
@@ -37,7 +38,7 @@
             </table>
         </div>
 
-        <a href="../controllers/AltaAdelantos.php"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="mostrarAgregarEmpleado()">ALTA DE ADELANTOS</button></a>
+
 
     </div>
 

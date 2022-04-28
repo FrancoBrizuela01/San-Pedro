@@ -15,6 +15,7 @@
         ?>
 
         <div class="Divcontainer" id="Divcontainer">
+            <a href="../controllers/ListaAdelantos.php"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="">VER LISTA DE ADELANTOS</button></a>
             <h2>AGREAGAR ADELANTO:</h2>
             <form action="" method="post">
                 <table>
@@ -28,7 +29,7 @@
                         <td>
                             <select name="empleado" id="empleado">
                                 <?php foreach ($this->empleados as $e) { ?>
-                                    <option value="<?= htmlentities($e['codigo_empleado']) ?>">             <?= htmlentities($e['nombre']) ?></option>
+                                    <option value="<?= htmlentities($e['codigo_empleado']) ?>"> <?= htmlentities($e['nombre']) ?></option>
                                 <?php  } ?>
                             </select>
                         </td>
@@ -42,7 +43,7 @@
 
         </div>
 
-        <a href="../controllers/ListaAdelantos.php"><button class="btn-newEmpleado" id="btn-newEmpleado" onclick="">VER LISTA DE ADELANTOS</button></a>
+
 
     </div>
 
